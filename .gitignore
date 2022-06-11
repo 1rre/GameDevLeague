@@ -1,0 +1,4 @@
+out/
+.metals/
+.vscode/
+.bloop/
