@@ -89,13 +89,11 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
       Trace.roundedRect(r, bounds)
       c2d.fill()
     }
-    def points(pts: Seq[(Int, Int)]): Unit = {
-      c2d.moveTo(pts.head._1, pts.head._2)
+    def points(pts: Seq[(Double, Double)]): Unit = {
       c2d.beginPath()
       Trace.points(pts)
       c2d.fill()
     }
-    def pointsd(pts: Seq[(Double, Double)]): Unit = points(pts.map((x,y) => (x.toInt, y.toInt)))
     def pixels(px: Iterable[Iterable[Colour]], width: Double, height: Double): Unit = {
       for ((pa, i) <- px.zipWithIndex; (pn, j) <- pa.zipWithIndex) {
         Fill.colour = pn
@@ -191,10 +189,16 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
       c2d.moveTo(p1x, p1y)
       c2d.lineTo(p2x, p2y)
     }
-    def points(pts: Seq[(Int, Int)]): Unit = {
+    def points(pts: Seq[(Double, Double)]): Unit = {
+      println(s"Draw $pts")
+      val p1x = cx + pts.head._1 * cw
+      val p1y = cy + pts.head._2 * ch
+      c2d.moveTo(p1x, p1y)
       (pts.tail :+ pts.head).foreach {
-        case (c,d) => 
-          c2d.lineTo(c, d)
+        case (a,b) =>
+          val p2x = cx + a * cw
+          val p2y = cy + b * ch
+          c2d.lineTo(p2x, p2y)
       }
     }
     def regularPoly(sides: Int, bounds: BoundingBox): Unit = {
