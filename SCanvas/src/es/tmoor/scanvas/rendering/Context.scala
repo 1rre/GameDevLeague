@@ -10,15 +10,32 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
     this(cnv.getContext("2d").asInstanceOf[CanvasRenderingContext2D])
 
   type Colour = String
-  def withOffset(offset: (Double, Double))(fn: => Unit) = {
-    c2d.translate(-offset._1, -offset._2)
-    fn
-    c2d.translate(offset._1, offset._2)
-  }
+  private var cx = 0d
+  private var cy = 0d
+  private var cw = c2d.canvas.width.toDouble
+  private var ch = c2d.canvas.height.toDouble
+
+  // TODO: make this rotate around the current centre
   def withRotation(r: Double)(fn: => Unit) = {
     c2d.rotate(r)
     fn
     c2d.rotate(-r)
+  }
+  
+  def withOffset(offset: (Double, Double))(fn: => Unit) = {
+    cx += offset._1 * cw
+    cy += offset._2 * ch
+    fn
+    cx -= offset._1 * cw
+    cy -= offset._2 * ch
+  }
+
+  def withScale(scale: (Double, Double))(fn: => Unit) = {
+    cw *= scale._1
+    ch *= scale._2
+    fn
+    cw /= scale._1
+    ch /= scale._2
   }
 
   def background = c2d.canvas.style.background
@@ -140,6 +157,7 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
   }
   object Trace {
     def roundedRect(r: Double, bounds: BoundingBox): Unit = {
+      ???
       val (x, y, w, h) = bounds
       c2d.moveTo(x, y + r)
       c2d.arc(x + r, y + r, r, math.Pi, 3 * math.Pi / 2)
@@ -153,28 +171,40 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
       c2d.arc(x + r, y + r, r, math.Pi, 3 * math.Pi / 2)
     }
     def circle(bounds: BoundingBox): Unit = {
+      ???
       val x = bounds._1 + bounds._3 / 2
       val y = bounds._2 + bounds._4 / 2
       val r = math.min(bounds._3 / 2, bounds._4 / 2)
       c2d.arc(x, y, r, 0, 2 * math.Pi)
     }
     def circle(r: Double, centre: (Double, Double)): Unit = {
+      ???
       val (x, y) = centre
       c2d.arc(x, y, r, 0, 2 * math.Pi)
     }
     def line(x1: Double, y1: Double, x2: Double, y2: Double) = {
-      c2d.moveTo(x1, y1)
-      c2d.lineTo(x2, y2)
+      val p1x = cx + x1 * cw
+      val p1y = cy + y1 * ch
+      val p2x = cx + x2 * cw
+      val p2y = cy + y2 * ch
+      println(s"Line from $x1, $y1 => $x2, $y2 ($p1x, $p1y => $p2x, $p2y)")
+      c2d.moveTo(p1x, p1y)
+      c2d.lineTo(p2x, p2y)
     }
     def points(pts: Seq[(Int, Int)]): Unit = {
-      c2d.moveTo(pts.head._1, pts.head._2)
       (pts.tail :+ pts.head).foreach {
         case (c,d) => 
           c2d.lineTo(c, d)
       }
     }
     def regularPoly(sides: Int, bounds: BoundingBox): Unit = {
-      val (x, y, w, h) = bounds
+      val (x_, y_, w_, h_) = bounds
+      println(s"Draw poly init/$sides, $x_, $y_, $w_, $h_ ($cx, $cy, $cw, $ch)")
+      val x = cx + x_ * cw
+      val y = cy + y_ * ch
+      val w = w_ * cw
+      val h = h_ * ch
+      println(s"Draw poly/$sides, $x, $y, $w, $h")
       val anglePerSide = 2 * math.Pi / sides
       var pos = (0d, 0d)
       var maxX = 0d

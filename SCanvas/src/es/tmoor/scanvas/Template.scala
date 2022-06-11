@@ -6,17 +6,23 @@ abstract class BaseTemplate {
   abstract class SubTemplate extends Template(this, context)
   def relativeBounds: BoundingBox
   def bounds: BoundingBox
-  final def x0 = bounds._1
-  final def y0 = bounds._2
-  final def width = bounds._3
-  final def height = bounds._4
+  final def x0 = relativeBounds._1
+  final def y0 = relativeBounds._2
+  final def width = relativeBounds._3
+  final def height = relativeBounds._4
   def context: Context
   def tick: Double
   def children: Seq[Template]
   def draw(): Unit
   final def render(): Unit = {
-    draw()
-    children.foreach(_.render())
+    context.withOffset(x0, y0) {
+      println(s"Offset $x0, $y0")
+      context.withScale(width, height) {
+        println(s"Scale $width, $height")
+        draw()
+        children.foreach(_.render())
+      }
+    }
   }
 }
 abstract class Template(val parent: BaseTemplate, val context: Context) extends BaseTemplate {

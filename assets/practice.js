@@ -1098,11 +1098,26 @@ function $ct_Les_tmoor_scanvas_BaseTemplate__($thiz) {
   $ct_O__($thiz);
   return $thiz
 }
-function $ps_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1__Les_tmoor_scanvas_Template__V(_$1) {
+function $ps_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1$$anonfun$1$$anonfun$1__Les_tmoor_scanvas_Template__V(_$1) {
   _$1.render__V()
 }
-function $ps_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$adapted$1__Les_tmoor_scanvas_Template__O(_$1) {
-  $ps_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1__Les_tmoor_scanvas_Template__V(_$1)
+function $ps_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1$$anonfun$1$$anonfun$adapted$1__Les_tmoor_scanvas_Template__O(_$1) {
+  $ps_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1$$anonfun$1$$anonfun$1__Les_tmoor_scanvas_Template__V(_$1)
+}
+function $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1$$anonfun$1__V($thiz) {
+  $m_s_Predef$().println__O__V(((("Scale " + $thiz.width__D()) + ", ") + $thiz.height__D()));
+  $thiz.draw__V();
+  $thiz.children__sci_Seq().foreach__F1__V(new $c_sjsr_AnonFunction1(((_$1) => $ps_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1$$anonfun$1$$anonfun$adapted$1__Les_tmoor_scanvas_Template__O($as_Les_tmoor_scanvas_Template(_$1)))))
+}
+function $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1$$anonfun$adapted$1__O($thiz) {
+  $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1$$anonfun$1__V($thiz)
+}
+function $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1__V($thiz) {
+  $m_s_Predef$().println__O__V(((("Offset " + $thiz.x0__D()) + ", ") + $thiz.y0__D()));
+  $thiz.context__Les_tmoor_scanvas_rendering_Context().withScale__T2__F0__V($m_T2$().apply__O__O__T2($thiz.width__D(), $thiz.height__D()), new $c_sjsr_AnonFunction0(((this\u00f8) => (() => $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1$$anonfun$adapted$1__O(this\u00f8)))($thiz)))
+}
+function $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$adapted$1__O($thiz) {
+  $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$1__V($thiz)
 }
 /** @constructor */
 function $c_Les_tmoor_scanvas_BaseTemplate() {
@@ -1121,9 +1136,20 @@ $c_Les_tmoor_scanvas_BaseTemplate.prototype.es$tmoor$scanvas$BaseTemplate$$SubTe
 $c_Les_tmoor_scanvas_BaseTemplate.prototype.es$tmoor$scanvas$BaseTemplate$$SubTemplate$superArg$2__Les_tmoor_scanvas_rendering_Context = (function() {
   return this.context__Les_tmoor_scanvas_rendering_Context()
 });
+$c_Les_tmoor_scanvas_BaseTemplate.prototype.x0__D = (function() {
+  return $uD(this.relativeBounds__T4()._1__O())
+});
+$c_Les_tmoor_scanvas_BaseTemplate.prototype.y0__D = (function() {
+  return $uD(this.relativeBounds__T4()._2__O())
+});
+$c_Les_tmoor_scanvas_BaseTemplate.prototype.width__D = (function() {
+  return $uD(this.relativeBounds__T4()._3__O())
+});
+$c_Les_tmoor_scanvas_BaseTemplate.prototype.height__D = (function() {
+  return $uD(this.relativeBounds__T4()._4__O())
+});
 $c_Les_tmoor_scanvas_BaseTemplate.prototype.render__V = (function() {
-  this.draw__V();
-  this.children__sci_Seq().foreach__F1__V(new $c_sjsr_AnonFunction1(((_$1) => $ps_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$adapted$1__Les_tmoor_scanvas_Template__O($as_Les_tmoor_scanvas_Template(_$1)))))
+  this.context__Les_tmoor_scanvas_rendering_Context().withOffset__T2__F0__V($m_T2$().apply__O__O__T2(this.x0__D(), this.y0__D()), new $c_sjsr_AnonFunction0(((this\u00f8) => (() => $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$adapted$1__O(this\u00f8)))(this)))
 });
 /** @constructor */
 function $c_Les_tmoor_scanvas_rendering_Colour$() {
@@ -1162,6 +1188,10 @@ function $m_Les_tmoor_scanvas_rendering_Colour$() {
 function $ct_Les_tmoor_scanvas_rendering_Context__Lorg_scalajs_dom_CanvasRenderingContext2D__($thiz, c2d) {
   $thiz.Les_tmoor_scanvas_rendering_Context__f_c2d = c2d;
   $ct_O__($thiz);
+  $thiz.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx = 0.0;
+  $thiz.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy = 0.0;
+  $thiz.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw = $uI(c2d.canvas.width);
+  $thiz.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch = $uI(c2d.canvas.height);
   return $thiz
 }
 function $ct_Les_tmoor_scanvas_rendering_Context__Lorg_scalajs_dom_HTMLCanvasElement__($thiz, cnv) {
@@ -1215,6 +1245,10 @@ function $s_Les_tmoor_scanvas_rendering_Context__es$tmoor$scanvas$rendering$Cont
 /** @constructor */
 function $c_Les_tmoor_scanvas_rendering_Context() {
   this.Les_tmoor_scanvas_rendering_Context__f_c2d = null;
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx = 0.0;
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy = 0.0;
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw = 0.0;
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch = 0.0;
   this.Les_tmoor_scanvas_rendering_Context__f_Text$lzy1 = null;
   this.Les_tmoor_scanvas_rendering_Context__f_Textbitmap$1 = false;
   this.Les_tmoor_scanvas_rendering_Context__f_Glow$lzy1 = null;
@@ -1239,9 +1273,18 @@ $c_Les_tmoor_scanvas_rendering_Context.prototype.c2d__Lorg_scalajs_dom_CanvasRen
   return this.Les_tmoor_scanvas_rendering_Context__f_c2d
 });
 $c_Les_tmoor_scanvas_rendering_Context.prototype.withOffset__T2__F0__V = (function(offset, fn) {
-  this.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().translate((-$uD(offset._1__O())), (-$uD(offset._2__O())));
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx = (this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx + ($uD(offset._1__O()) * this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw));
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy = (this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy + ($uD(offset._2__O()) * this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch));
   fn.apply__O();
-  this.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().translate($uD(offset._1__O()), $uD(offset._2__O()))
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx = (this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx - ($uD(offset._1__O()) * this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw));
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy = (this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy - ($uD(offset._2__O()) * this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch))
+});
+$c_Les_tmoor_scanvas_rendering_Context.prototype.withScale__T2__F0__V = (function(scale, fn) {
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw = (this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw * $uD(scale._1__O()));
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch = (this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch * $uD(scale._2__O()));
+  fn.apply__O();
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw = (this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw / $uD(scale._1__O()));
+  this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch = (this.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch / $uD(scale._2__O()))
 });
 $c_Les_tmoor_scanvas_rendering_Context.prototype.Fill__Les_tmoor_scanvas_rendering_Context$Fill$ = (function() {
   if ((!this.Les_tmoor_scanvas_rendering_Context__f_Fillbitmap$1)) {
@@ -1392,11 +1435,15 @@ function $h_Les_tmoor_scanvas_rendering_Context$Trace$() {
 }
 $h_Les_tmoor_scanvas_rendering_Context$Trace$.prototype = $c_Les_tmoor_scanvas_rendering_Context$Trace$.prototype;
 $c_Les_tmoor_scanvas_rendering_Context$Trace$.prototype.line__D__D__D__D__V = (function(x1, y1, x2, y2) {
-  this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().moveTo(x1, y1);
-  this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().lineTo(x2, y2)
+  var p1x = (this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx + (x1 * this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw));
+  var p1y = (this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy + (y1 * this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch));
+  var p2x = (this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx + (x2 * this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw));
+  var p2y = (this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy + (y2 * this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch));
+  $m_s_Predef$().println__O__V((((((((((((((((("Line from " + x1) + ", ") + y1) + " => ") + x2) + ", ") + y2) + " (") + p1x) + ", ") + p1y) + " => ") + p2x) + ", ") + p2y) + ")"));
+  this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().moveTo(p1x, p1y);
+  this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().lineTo(p2x, p2y)
 });
 $c_Les_tmoor_scanvas_rendering_Context$Trace$.prototype.points__sci_Seq__V = (function(pts) {
-  this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().moveTo($m_s_Int$().int2double__I__D($uI($as_T2(pts.head__O())._1__O())), $m_s_Int$().int2double__I__D($uI($as_T2(pts.head__O())._2__O())));
   $as_sc_IterableOnceOps($as_sc_SeqOps(pts.tail__O()).$colon$plus__O__O(pts.head__O())).foreach__F1__V(new $c_sjsr_AnonFunction1(((this\u00f8) => ((x$1) => $p_Les_tmoor_scanvas_rendering_Context$Trace$__points$$anonfun$adapted$1__T2__O(this\u00f8, $as_T2(x$1))))(this)))
 });
 $c_Les_tmoor_scanvas_rendering_Context$Trace$.prototype.regularPoly__I__T4__V = (function(sides, bounds) {
@@ -1404,19 +1451,25 @@ $c_Les_tmoor_scanvas_rendering_Context$Trace$.prototype.regularPoly__I__T4__V = 
     var \u03b45$;
     var x40 = bounds;
     if ((x40 !== null)) {
-      var x = $uD(x40._1__O());
-      var y = $uD(x40._2__O());
-      var w = $uD(x40._3__O());
-      var h = $uD(x40._4__O());
-      var \u03b45$ = $m_T4$().apply__O__O__O__O__T4(x, y, w, h);
+      var x_ = $uD(x40._1__O());
+      var y_ = $uD(x40._2__O());
+      var w_ = $uD(x40._3__O());
+      var h_ = $uD(x40._4__O());
+      var \u03b45$ = $m_T4$().apply__O__O__O__O__T4(x_, y_, w_, h_);
       break matchResult12
     };
     throw new $c_s_MatchError(x40)
   };
-  var x$2 = $uD(\u03b45$._1__O());
-  var y$2 = $uD(\u03b45$._2__O());
-  var w$2 = $uD(\u03b45$._3__O());
-  var h$2 = $uD(\u03b45$._4__O());
+  var x_$2 = $uD(\u03b45$._1__O());
+  var y_$2 = $uD(\u03b45$._2__O());
+  var w_$2 = $uD(\u03b45$._3__O());
+  var h_$2 = $uD(\u03b45$._4__O());
+  $m_s_Predef$().println__O__V((((((((((((((((((("Draw poly init/" + sides) + ", ") + x_$2) + ", ") + y_$2) + ", ") + w_$2) + ", ") + h_$2) + " (") + this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx) + ", ") + this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy) + ", ") + this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw) + ", ") + this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch) + ")"));
+  var x = (this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cx + (x_$2 * this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw));
+  var y = (this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cy + (y_$2 * this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch));
+  var w = (w_$2 * this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$cw);
+  var h = (h_$2 * this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.Les_tmoor_scanvas_rendering_Context__f_es$tmoor$scanvas$rendering$Context$$ch);
+  $m_s_Predef$().println__O__V(((((((((("Draw poly/" + sides) + ", ") + x) + ", ") + y) + ", ") + w) + ", ") + h));
   var anglePerSide = (6.283185307179586 / sides);
   var pos = $s_sr_ObjectRef__create__O__sr_ObjectRef($m_T2$().apply__O__O__T2(0.0, 0.0));
   var maxX = $s_sr_DoubleRef__create__D__sr_DoubleRef(0.0);
@@ -1425,7 +1478,7 @@ $c_Les_tmoor_scanvas_rendering_Context$Trace$.prototype.regularPoly__I__T4__V = 
   var minY = $s_sr_DoubleRef__create__D__sr_DoubleRef(0.0);
   var angle = $s_sr_DoubleRef__create__D__sr_DoubleRef(0.0);
   var localPoints = $m_sr_RichInt$().to$extension__I__I__sci_Range$Inclusive($m_s_Predef$().intWrapper__I__I(0), ((sides + 1) | 0)).map__F1__sci_IndexedSeq(new $c_sjsr_AnonFunction1(((anglePerSide$2, pos$2, maxX$2, maxY$2, minX$2, minY$2, angle$2) => ((i) => $s_Les_tmoor_scanvas_rendering_Context__es$tmoor$scanvas$rendering$Context$Trace$$$_$_$$anonfun$adapted$1__D__sr_ObjectRef__sr_DoubleRef__sr_DoubleRef__sr_DoubleRef__sr_DoubleRef__sr_DoubleRef__O__T2(anglePerSide$2, pos$2, maxX$2, maxY$2, minX$2, minY$2, angle$2, i)))(anglePerSide, pos, maxX, maxY, minX, minY, angle)));
-  var points = $as_sci_IndexedSeq(localPoints.map__F1__O(new $c_sjsr_AnonFunction1(((x$3, y$3, w$3, h$3, maxX$3, maxY$3, minX$3, minY$3) => ((x$1) => $s_Les_tmoor_scanvas_rendering_Context__es$tmoor$scanvas$rendering$Context$Trace$$$_$_$$anonfun$2__D__D__D__D__sr_DoubleRef__sr_DoubleRef__sr_DoubleRef__sr_DoubleRef__T2__T2(x$3, y$3, w$3, h$3, maxX$3, maxY$3, minX$3, minY$3, $as_T2(x$1))))(x$2, y$2, w$2, h$2, maxX, maxY, minX, minY))));
+  var points = $as_sci_IndexedSeq(localPoints.map__F1__O(new $c_sjsr_AnonFunction1(((x$2, y$2, w$2, h$2, maxX$3, maxY$3, minX$3, minY$3) => ((x$1) => $s_Les_tmoor_scanvas_rendering_Context__es$tmoor$scanvas$rendering$Context$Trace$$$_$_$$anonfun$2__D__D__D__D__sr_DoubleRef__sr_DoubleRef__sr_DoubleRef__sr_DoubleRef__T2__T2(x$2, y$2, w$2, h$2, maxX$3, maxY$3, minX$3, minY$3, $as_T2(x$1))))(x, y, w, h, maxX, maxY, minX, minY))));
   this.Les_tmoor_scanvas_rendering_Context$Trace$__f_$outer.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().moveTo($uD($as_T2(points.head__O())._1__O()), $uD($as_T2(points.head__O())._2__O()));
   points.foreach__F1__V(new $c_sjsr_AnonFunction1(((this\u00f8) => ((x$1$2) => $p_Les_tmoor_scanvas_rendering_Context$Trace$__regularPoly$$anonfun$adapted$1__T2__O(this\u00f8, $as_T2(x$1$2))))(this)))
 });
@@ -6613,6 +6666,9 @@ $c_Les_tmoor_scanvas_SCanvas.prototype.context__Les_tmoor_scanvas_rendering_Cont
 $c_Les_tmoor_scanvas_SCanvas.prototype.bounds__T4 = (function() {
   return $m_T4$().apply__O__O__O__O__T4(0.0, 0.0, this.Les_tmoor_scanvas_SCanvas__f_width, this.Les_tmoor_scanvas_SCanvas__f_height)
 });
+$c_Les_tmoor_scanvas_SCanvas.prototype.relativeBounds__T4 = (function() {
+  return $m_T4$().apply__O__O__O__O__T4(0.0, 0.0, 1.0, 1.0)
+});
 $c_Les_tmoor_scanvas_SCanvas.prototype.init__V = (function() {
   this.Les_tmoor_scanvas_SCanvas__f_web.width = this.Les_tmoor_scanvas_SCanvas__f_width;
   this.Les_tmoor_scanvas_SCanvas__f_web.height = this.Les_tmoor_scanvas_SCanvas__f_height;
@@ -8822,10 +8878,10 @@ $c_Ldevleague_Game$.prototype.backgroundColour__T = (function() {
 });
 $c_Ldevleague_Game$.prototype.draw__V = (function() {
   this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().colour_$eq__T__V(this.backgroundColour__T());
-  this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().regularPoly__I__T4__V(4, $m_T4$().apply__O__O__O__O__T4(0.0, 0.0, 640.0, 480.0))
+  this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().regularPoly__I__T4__V(4, $m_T4$().apply__O__O__O__O__T4(0.0, 0.0, 1.0, 1.0))
 });
 $c_Ldevleague_Game$.prototype.children__sci_Seq = (function() {
-  return $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Les_tmoor_scanvas_BaseTemplate$SubTemplate.getArrayOf().constr)([$m_Ldevleague_Game$Road$(), $m_Ldevleague_Game$Guy$()]))))
+  return $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Les_tmoor_scanvas_BaseTemplate$SubTemplate.getArrayOf().constr)([$m_Ldevleague_Road$(), $m_Ldevleague_Guy$()]))))
 });
 var $d_Ldevleague_Game$ = new $TypeData().initClass({
   Ldevleague_Game$: 0
@@ -10558,143 +10614,143 @@ var $d_sjsr_AnonFunction2 = new $TypeData().initClass({
   F2: 1
 });
 $c_sjsr_AnonFunction2.prototype.$classData = $d_sjsr_AnonFunction2;
-function $p_Ldevleague_Game$Guy$__arm$1__I__sci_Seq($thiz, w) {
+function $p_Ldevleague_Guy$__arm$1__I__sci_Seq($thiz, w) {
   return $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 7) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 7) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 7) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 15) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 5) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 15) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 5) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 14) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 6) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 14) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 6) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 12) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 5) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 12) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 5) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 8) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 6) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 8) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 6) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 7) / 21.0)))]))))
 }
-function $p_Ldevleague_Game$Guy$__leg$1__I__sci_Seq($thiz, w) {
+function $p_Ldevleague_Guy$__leg$1__I__sci_Seq($thiz, w) {
   return $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 4) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 18) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 1) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 18) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 1) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 19) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 4) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 19) / 21.0)))]))))
 }
-function $p_Ldevleague_Game$Guy$__drawSkin$$anonfun$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__V($thiz, head$1, arm1$1, arm2$1, leg1$1, leg2$1) {
+function $p_Ldevleague_Guy$__drawSkin$$anonfun$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__V($thiz, head$1, arm1$1, arm2$1, leg1$1, leg2$1) {
   $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(head$1);
   $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(arm1$1);
   $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(arm2$1);
   $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(leg1$1);
   $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(leg2$1)
 }
-function $p_Ldevleague_Game$Guy$__drawSkin$$anonfun$adapted$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__O($thiz, head$2, arm1$2, arm2$2, leg1$2, leg2$2) {
-  $p_Ldevleague_Game$Guy$__drawSkin$$anonfun$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__V($thiz, head$2, arm1$2, arm2$2, leg1$2, leg2$2)
+function $p_Ldevleague_Guy$__drawSkin$$anonfun$adapted$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__O($thiz, head$2, arm1$2, arm2$2, leg1$2, leg2$2) {
+  $p_Ldevleague_Guy$__drawSkin$$anonfun$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__V($thiz, head$2, arm1$2, arm2$2, leg1$2, leg2$2)
 }
 /** @constructor */
-function $c_Ldevleague_Game$Guy$() {
+function $c_Ldevleague_Guy$() {
   this.Les_tmoor_scanvas_Template__f_parent = null;
   this.Les_tmoor_scanvas_Template__f_context = null;
   this.Les_tmoor_scanvas_BaseTemplate$SubTemplate__f_$outer = null;
-  this.Ldevleague_Game$Guy$__f_px = 0.0;
-  this.Ldevleague_Game$Guy$__f_py = 0.0;
-  this.Ldevleague_Game$Guy$__f_pw = 0.0;
-  this.Ldevleague_Game$Guy$__f_ph = 0.0;
-  this.Ldevleague_Game$Guy$__f_w = 0;
-  this.Ldevleague_Game$Guy$__f_h = 0;
-  this.Ldevleague_Game$Guy$__f_x = 0.0;
-  this.Ldevleague_Game$Guy$__f_y = 0.0;
-  this.Ldevleague_Game$Guy$__f_dy = 0.0;
-  this.Ldevleague_Game$Guy$__f_dx = 0.0;
-  this.Ldevleague_Game$Guy$__f_gravity = 0.0;
-  this.Ldevleague_Game$Guy$__f_terminal = 0.0;
-  this.Ldevleague_Game$Guy$__f_ld = 0;
+  this.Ldevleague_Guy$__f_px = 0.0;
+  this.Ldevleague_Guy$__f_py = 0.0;
+  this.Ldevleague_Guy$__f_pw = 0.0;
+  this.Ldevleague_Guy$__f_ph = 0.0;
+  this.Ldevleague_Guy$__f_w = 0;
+  this.Ldevleague_Guy$__f_h = 0;
+  this.Ldevleague_Guy$__f_x = 0.0;
+  this.Ldevleague_Guy$__f_y = 0.0;
+  this.Ldevleague_Guy$__f_dy = 0.0;
+  this.Ldevleague_Guy$__f_dx = 0.0;
+  this.Ldevleague_Guy$__f_gravity = 0.0;
+  this.Ldevleague_Guy$__f_terminal = 0.0;
+  this.Ldevleague_Guy$__f_ld = 0;
   $ct_Les_tmoor_scanvas_BaseTemplate$SubTemplate__Les_tmoor_scanvas_BaseTemplate__(this, $m_Ldevleague_Game$());
-  $n_Ldevleague_Game$Guy$ = this;
-  matchResult2: {
-    var \u03b42$;
-    var x6 = this.parent__Les_tmoor_scanvas_BaseTemplate().bounds__T4();
-    if ((x6 !== null)) {
-      var px = $uD(x6._1__O());
-      var py = $uD(x6._2__O());
-      var pw = $uD(x6._3__O());
-      var ph = $uD(x6._4__O());
-      var \u03b42$ = $m_T4$().apply__O__O__O__O__T4(px, py, pw, ph);
-      break matchResult2
+  $n_Ldevleague_Guy$ = this;
+  matchResult1: {
+    var \u03b41$;
+    var x1 = this.parent__Les_tmoor_scanvas_BaseTemplate().bounds__T4();
+    if ((x1 !== null)) {
+      var px = $uD(x1._1__O());
+      var py = $uD(x1._2__O());
+      var pw = $uD(x1._3__O());
+      var ph = $uD(x1._4__O());
+      var \u03b41$ = $m_T4$().apply__O__O__O__O__T4(px, py, pw, ph);
+      break matchResult1
     };
-    throw new $c_s_MatchError(x6)
+    throw new $c_s_MatchError(x1)
   };
-  this.Ldevleague_Game$Guy$__f_px = $uD(\u03b42$._1__O());
-  this.Ldevleague_Game$Guy$__f_py = $uD(\u03b42$._2__O());
-  this.Ldevleague_Game$Guy$__f_pw = $uD(\u03b42$._3__O());
-  this.Ldevleague_Game$Guy$__f_ph = $uD(\u03b42$._4__O());
-  this.Ldevleague_Game$Guy$__f_w = 26;
-  this.Ldevleague_Game$Guy$__f_h = 42;
-  this.Ldevleague_Game$Guy$__f_x = ((this.px__D() + (this.pw__D() / 2)) - ((this.w__I() / 2) | 0));
-  this.Ldevleague_Game$Guy$__f_y = ((this.py__D() + (this.ph__D() / 2)) - ((this.h__I() / 2) | 0));
-  this.Ldevleague_Game$Guy$__f_dy = 0.0;
-  this.Ldevleague_Game$Guy$__f_dx = 0.0;
-  this.Ldevleague_Game$Guy$__f_gravity = ((0.02 * $m_Ldevleague_Game$().timeScale__D()) * $m_Ldevleague_Game$().timeScale__D());
-  this.Ldevleague_Game$Guy$__f_terminal = (2.5 * $m_Ldevleague_Game$().timeScale__D());
-  this.Ldevleague_Game$Guy$__f_ld = this.w__I()
+  this.Ldevleague_Guy$__f_px = $uD(\u03b41$._1__O());
+  this.Ldevleague_Guy$__f_py = $uD(\u03b41$._2__O());
+  this.Ldevleague_Guy$__f_pw = $uD(\u03b41$._3__O());
+  this.Ldevleague_Guy$__f_ph = $uD(\u03b41$._4__O());
+  this.Ldevleague_Guy$__f_w = 26;
+  this.Ldevleague_Guy$__f_h = 42;
+  this.Ldevleague_Guy$__f_x = ((this.px__D() + (this.pw__D() / 2)) - ((this.w__I() / 2) | 0));
+  this.Ldevleague_Guy$__f_y = ((this.py__D() + (this.ph__D() / 2)) - ((this.h__I() / 2) | 0));
+  this.Ldevleague_Guy$__f_dy = 0.0;
+  this.Ldevleague_Guy$__f_dx = 0.0;
+  this.Ldevleague_Guy$__f_gravity = ((0.02 * $m_Ldevleague_Game$().timeScale__D()) * $m_Ldevleague_Game$().timeScale__D());
+  this.Ldevleague_Guy$__f_terminal = (2.5 * $m_Ldevleague_Game$().timeScale__D());
+  this.Ldevleague_Guy$__f_ld = this.w__I()
 }
-$c_Ldevleague_Game$Guy$.prototype = new $h_Les_tmoor_scanvas_BaseTemplate$SubTemplate();
-$c_Ldevleague_Game$Guy$.prototype.constructor = $c_Ldevleague_Game$Guy$;
+$c_Ldevleague_Guy$.prototype = new $h_Les_tmoor_scanvas_BaseTemplate$SubTemplate();
+$c_Ldevleague_Guy$.prototype.constructor = $c_Ldevleague_Guy$;
 /** @constructor */
-function $h_Ldevleague_Game$Guy$() {
+function $h_Ldevleague_Guy$() {
   /*<skip>*/
 }
-$h_Ldevleague_Game$Guy$.prototype = $c_Ldevleague_Game$Guy$.prototype;
-$c_Ldevleague_Game$Guy$.prototype.s__T = (function() {
+$h_Ldevleague_Guy$.prototype = $c_Ldevleague_Guy$.prototype;
+$c_Ldevleague_Guy$.prototype.s__T = (function() {
   return $m_Les_tmoor_scanvas_rendering_Colour$().apply__I__T(13548185)
 });
-$c_Ldevleague_Game$Guy$.prototype.baseLine__D = (function() {
-  return ($m_Ldevleague_Game$Road$().y__D() + $m_Ldevleague_Game$Road$().offset__D())
+$c_Ldevleague_Guy$.prototype.baseLine__D = (function() {
+  return ($m_Ldevleague_Road$().y__D() + $m_Ldevleague_Road$().offset__D())
 });
-$c_Ldevleague_Game$Guy$.prototype.children__sci_Seq = (function() {
+$c_Ldevleague_Guy$.prototype.children__sci_Seq = (function() {
   return $m_s_package$().Nil__sci_Nil$()
 });
-$c_Ldevleague_Game$Guy$.prototype.px__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_px
+$c_Ldevleague_Guy$.prototype.px__D = (function() {
+  return this.Ldevleague_Guy$__f_px
 });
-$c_Ldevleague_Game$Guy$.prototype.py__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_py
+$c_Ldevleague_Guy$.prototype.py__D = (function() {
+  return this.Ldevleague_Guy$__f_py
 });
-$c_Ldevleague_Game$Guy$.prototype.pw__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_pw
+$c_Ldevleague_Guy$.prototype.pw__D = (function() {
+  return this.Ldevleague_Guy$__f_pw
 });
-$c_Ldevleague_Game$Guy$.prototype.ph__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_ph
+$c_Ldevleague_Guy$.prototype.ph__D = (function() {
+  return this.Ldevleague_Guy$__f_ph
 });
-$c_Ldevleague_Game$Guy$.prototype.w__I = (function() {
-  return this.Ldevleague_Game$Guy$__f_w
+$c_Ldevleague_Guy$.prototype.w__I = (function() {
+  return this.Ldevleague_Guy$__f_w
 });
-$c_Ldevleague_Game$Guy$.prototype.h__I = (function() {
-  return this.Ldevleague_Game$Guy$__f_h
+$c_Ldevleague_Guy$.prototype.h__I = (function() {
+  return this.Ldevleague_Guy$__f_h
 });
-$c_Ldevleague_Game$Guy$.prototype.x__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_x
+$c_Ldevleague_Guy$.prototype.x__D = (function() {
+  return this.Ldevleague_Guy$__f_x
 });
-$c_Ldevleague_Game$Guy$.prototype.x_$eq__D__V = (function(x$1) {
-  this.Ldevleague_Game$Guy$__f_x = x$1
+$c_Ldevleague_Guy$.prototype.x_$eq__D__V = (function(x$1) {
+  this.Ldevleague_Guy$__f_x = x$1
 });
-$c_Ldevleague_Game$Guy$.prototype.y__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_y
+$c_Ldevleague_Guy$.prototype.y__D = (function() {
+  return this.Ldevleague_Guy$__f_y
 });
-$c_Ldevleague_Game$Guy$.prototype.y_$eq__D__V = (function(x$1) {
-  this.Ldevleague_Game$Guy$__f_y = x$1
+$c_Ldevleague_Guy$.prototype.y_$eq__D__V = (function(x$1) {
+  this.Ldevleague_Guy$__f_y = x$1
 });
-$c_Ldevleague_Game$Guy$.prototype.dy__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_dy
+$c_Ldevleague_Guy$.prototype.dy__D = (function() {
+  return this.Ldevleague_Guy$__f_dy
 });
-$c_Ldevleague_Game$Guy$.prototype.dy_$eq__D__V = (function(x$1) {
-  this.Ldevleague_Game$Guy$__f_dy = x$1
+$c_Ldevleague_Guy$.prototype.dy_$eq__D__V = (function(x$1) {
+  this.Ldevleague_Guy$__f_dy = x$1
 });
-$c_Ldevleague_Game$Guy$.prototype.dx__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_dx
+$c_Ldevleague_Guy$.prototype.dx__D = (function() {
+  return this.Ldevleague_Guy$__f_dx
 });
-$c_Ldevleague_Game$Guy$.prototype.dx_$eq__D__V = (function(x$1) {
-  this.Ldevleague_Game$Guy$__f_dx = x$1
+$c_Ldevleague_Guy$.prototype.dx_$eq__D__V = (function(x$1) {
+  this.Ldevleague_Guy$__f_dx = x$1
 });
-$c_Ldevleague_Game$Guy$.prototype.gravity__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_gravity
+$c_Ldevleague_Guy$.prototype.gravity__D = (function() {
+  return this.Ldevleague_Guy$__f_gravity
 });
-$c_Ldevleague_Game$Guy$.prototype.terminal__D = (function() {
-  return this.Ldevleague_Game$Guy$__f_terminal
+$c_Ldevleague_Guy$.prototype.terminal__D = (function() {
+  return this.Ldevleague_Guy$__f_terminal
 });
-$c_Ldevleague_Game$Guy$.prototype.intersectRoad__Z = (function() {
+$c_Ldevleague_Guy$.prototype.intersectRoad__Z = (function() {
   return (this.y__D() > (this.baseLine__D() - this.h__I()))
 });
-$c_Ldevleague_Game$Guy$.prototype.shouldFall__Z = (function() {
+$c_Ldevleague_Guy$.prototype.shouldFall__Z = (function() {
   return (this.y__D() < (this.baseLine__D() - this.h__I()))
 });
-$c_Ldevleague_Game$Guy$.prototype.canMove__Z = (function() {
+$c_Ldevleague_Guy$.prototype.canMove__Z = (function() {
   return (this.y__D() === (this.baseLine__D() - this.h__I()))
 });
-$c_Ldevleague_Game$Guy$.prototype.setDx__V = (function() {
+$c_Ldevleague_Guy$.prototype.setDx__V = (function() {
   var decrease = (this.canMove__Z() ? (1 - (0.05 * $m_Ldevleague_Game$().timeScale__D())) : (1 - (0.005 * $m_Ldevleague_Game$().timeScale__D())));
   if (this.canMove__Z()) {
     if (($m_Ldevleague_Game$().keys__scm_Set().apply__O__Z(37) && (!$m_Ldevleague_Game$().keys__scm_Set().apply__O__Z(39)))) {
@@ -10714,7 +10770,7 @@ $c_Ldevleague_Game$Guy$.prototype.setDx__V = (function() {
     this.dx_$eq__D__V((this.dx__D() * decrease))
   }
 });
-$c_Ldevleague_Game$Guy$.prototype.setDy__V = (function() {
+$c_Ldevleague_Guy$.prototype.setDy__V = (function() {
   if (this.canMove__Z()) {
     if ($m_Ldevleague_Game$().keys__scm_Set().apply__O__Z(38)) {
       this.dy_$eq__D__V(((-5) * this.gravity__D()))
@@ -10729,7 +10785,7 @@ $c_Ldevleague_Game$Guy$.prototype.setDy__V = (function() {
     this.dy_$eq__D__V($m_sr_RichDouble$().min$extension__D__D__D($m_s_Predef$().doubleWrapper__D__D(this.dy__D()), this.terminal__D()))
   }
 });
-$c_Ldevleague_Game$Guy$.prototype.updatePos__V = (function() {
+$c_Ldevleague_Guy$.prototype.updatePos__V = (function() {
   $m_s_Predef$().println__O__V(this.y__D());
   this.x_$eq__D__V((this.x__D() + this.dx__D()));
   this.y_$eq__D__V((this.y__D() + this.dy__D()));
@@ -10751,63 +10807,64 @@ $c_Ldevleague_Game$Guy$.prototype.updatePos__V = (function() {
   this.setDy__V();
   this.setDx__V()
 });
-$c_Ldevleague_Game$Guy$.prototype.ld__I = (function() {
-  return this.Ldevleague_Game$Guy$__f_ld
+$c_Ldevleague_Guy$.prototype.ld__I = (function() {
+  return this.Ldevleague_Guy$__f_ld
 });
-$c_Ldevleague_Game$Guy$.prototype.ld_$eq__I__V = (function(x$1) {
-  this.Ldevleague_Game$Guy$__f_ld = x$1
+$c_Ldevleague_Guy$.prototype.ld_$eq__I__V = (function(x$1) {
+  this.Ldevleague_Guy$__f_ld = x$1
 });
-$c_Ldevleague_Game$Guy$.prototype.drawSkin__V = (function() {
-  var w = ((this.dx__D() > 0) ? $m_Ldevleague_Game$Guy$().w__I() : ((this.dx__D() < 0) ? ((-$m_Ldevleague_Game$Guy$().w__I()) | 0) : this.ld__I()));
+$c_Ldevleague_Guy$.prototype.drawSkin__V = (function() {
+  var w = ((this.dx__D() > 0) ? $m_Ldevleague_Guy$().w__I() : ((this.dx__D() < 0) ? ((-$m_Ldevleague_Guy$().w__I()) | 0) : this.ld__I()));
   this.ld_$eq__I__V(w);
   var head = $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2((this.x__D() - (Math.imul(w, 5) / 26.0)), this.y__D()), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 5) / 26.0)), this.y__D()), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 5) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 2) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 7) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 2) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 7) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 3) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 5) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 3) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 5) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 1) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 1) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 6) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() - (Math.imul(w, 1) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 6) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() - (Math.imul(w, 1) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() - (Math.imul(w, 5) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0)))]))));
-  var arm1 = $p_Ldevleague_Game$Guy$__arm$1__I__sci_Seq(this, w);
-  var arm2 = $p_Ldevleague_Game$Guy$__arm$1__I__sci_Seq(this, ((-w) | 0));
-  var leg1 = $p_Ldevleague_Game$Guy$__leg$1__I__sci_Seq(this, w);
-  var leg2 = $p_Ldevleague_Game$Guy$__leg$1__I__sci_Seq(this, ((-w) | 0));
+  var arm1 = $p_Ldevleague_Guy$__arm$1__I__sci_Seq(this, w);
+  var arm2 = $p_Ldevleague_Guy$__arm$1__I__sci_Seq(this, ((-w) | 0));
+  var leg1 = $p_Ldevleague_Guy$__leg$1__I__sci_Seq(this, w);
+  var leg2 = $p_Ldevleague_Guy$__leg$1__I__sci_Seq(this, ((-w) | 0));
   this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().colour_$eq__T__V(this.s__T());
-  this.context__Les_tmoor_scanvas_rendering_Context().withOffset__T2__F0__V($m_T2$().apply__O__O__T2($m_s_Int$().int2double__I__D(((((-$m_Ldevleague_Game$Guy$().w__I()) | 0) / 2) | 0)), 0.0), new $c_sjsr_AnonFunction0(((this\u00f8, head$2, arm1$2, arm2$2, leg1$2, leg2$2) => (() => $p_Ldevleague_Game$Guy$__drawSkin$$anonfun$adapted$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__O(this\u00f8, head$2, arm1$2, arm2$2, leg1$2, leg2$2)))(this, head, arm1, arm2, leg1, leg2)))
+  this.context__Les_tmoor_scanvas_rendering_Context().withOffset__T2__F0__V($m_T2$().apply__O__O__T2($m_s_Int$().int2double__I__D(((((-$m_Ldevleague_Guy$().w__I()) | 0) / 2) | 0)), 0.0), new $c_sjsr_AnonFunction0(((this\u00f8, head$2, arm1$2, arm2$2, leg1$2, leg2$2) => (() => $p_Ldevleague_Guy$__drawSkin$$anonfun$adapted$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__O(this\u00f8, head$2, arm1$2, arm2$2, leg1$2, leg2$2)))(this, head, arm1, arm2, leg1, leg2)))
 });
-$c_Ldevleague_Game$Guy$.prototype.draw__V = (function() {
+$c_Ldevleague_Guy$.prototype.draw__V = (function() {
   this.updatePos__V();
   this.drawSkin__V()
 });
-$c_Ldevleague_Game$Guy$.prototype.relativeBounds__T4 = (function() {
+$c_Ldevleague_Guy$.prototype.relativeBounds__T4 = (function() {
   return $m_T4$().apply__O__O__O__O__T4((this.x__D() / this.pw__D()), (this.y__D() / this.ph__D()), (this.w__I() / this.pw__D()), (this.h__I() / this.ph__D()))
 });
-var $d_Ldevleague_Game$Guy$ = new $TypeData().initClass({
-  Ldevleague_Game$Guy$: 0
-}, false, "devleague.Game$Guy$", {
-  Ldevleague_Game$Guy$: 1,
+var $d_Ldevleague_Guy$ = new $TypeData().initClass({
+  Ldevleague_Guy$: 0
+}, false, "devleague.Guy$", {
+  Ldevleague_Guy$: 1,
   Les_tmoor_scanvas_BaseTemplate$SubTemplate: 1,
   Les_tmoor_scanvas_Template: 1,
   Les_tmoor_scanvas_BaseTemplate: 1,
   O: 1
 });
-$c_Ldevleague_Game$Guy$.prototype.$classData = $d_Ldevleague_Game$Guy$;
-var $n_Ldevleague_Game$Guy$;
-function $m_Ldevleague_Game$Guy$() {
-  if ((!$n_Ldevleague_Game$Guy$)) {
-    $n_Ldevleague_Game$Guy$ = new $c_Ldevleague_Game$Guy$()
+$c_Ldevleague_Guy$.prototype.$classData = $d_Ldevleague_Guy$;
+var $n_Ldevleague_Guy$;
+function $m_Ldevleague_Guy$() {
+  if ((!$n_Ldevleague_Guy$)) {
+    $n_Ldevleague_Guy$ = new $c_Ldevleague_Guy$()
   };
-  return $n_Ldevleague_Game$Guy$
+  return $n_Ldevleague_Guy$
 }
 /** @constructor */
-function $c_Ldevleague_Game$Road$() {
+function $c_Ldevleague_Road$() {
   this.Les_tmoor_scanvas_Template__f_parent = null;
   this.Les_tmoor_scanvas_Template__f_context = null;
   this.Les_tmoor_scanvas_BaseTemplate$SubTemplate__f_$outer = null;
-  this.Ldevleague_Game$Road$__f_x = 0.0;
-  this.Ldevleague_Game$Road$__f_y = 0.0;
-  this.Ldevleague_Game$Road$__f_w = 0.0;
-  this.Ldevleague_Game$Road$__f_h = 0.0;
-  this.Ldevleague_Game$Road$__f_lineWidth = 0.0;
-  this.Ldevleague_Game$Road$__f_offset = 0.0;
+  this.Ldevleague_Road$__f_x = 0.0;
+  this.Ldevleague_Road$__f_y = 0.0;
+  this.Ldevleague_Road$__f_w = 0.0;
+  this.Ldevleague_Road$__f_h = 0.0;
+  this.Ldevleague_Road$__f_fh = 0.0;
+  this.Ldevleague_Road$__f_lineWidth = 0.0;
+  this.Ldevleague_Road$__f_offset = 0.0;
   $ct_Les_tmoor_scanvas_BaseTemplate$SubTemplate__Les_tmoor_scanvas_BaseTemplate__(this, $m_Ldevleague_Game$());
-  $n_Ldevleague_Game$Road$ = this;
+  $n_Ldevleague_Road$ = this;
   matchResult1: {
     var \u03b41$;
-    var x1 = this.bounds__T4();
+    var x1 = this.relativeBounds__T4();
     if ((x1 !== null)) {
       var x = $uD(x1._1__O());
       var y = $uD(x1._2__O());
@@ -10818,68 +10875,63 @@ function $c_Ldevleague_Game$Road$() {
     };
     throw new $c_s_MatchError(x1)
   };
-  this.Ldevleague_Game$Road$__f_x = $uD(\u03b41$._1__O());
-  this.Ldevleague_Game$Road$__f_y = $uD(\u03b41$._2__O());
-  this.Ldevleague_Game$Road$__f_w = $uD(\u03b41$._3__O());
-  this.Ldevleague_Game$Road$__f_h = $uD(\u03b41$._4__O());
-  this.Ldevleague_Game$Road$__f_lineWidth = (this.h__D() / 12);
-  this.Ldevleague_Game$Road$__f_offset = (this.h__D() / 2)
+  this.Ldevleague_Road$__f_x = $uD(\u03b41$._1__O());
+  this.Ldevleague_Road$__f_y = $uD(\u03b41$._2__O());
+  this.Ldevleague_Road$__f_w = $uD(\u03b41$._3__O());
+  this.Ldevleague_Road$__f_h = $uD(\u03b41$._4__O());
+  this.Ldevleague_Road$__f_fh = $uD(this.bounds__T4()._4__O());
+  this.Ldevleague_Road$__f_lineWidth = (this.fh__D() / 12);
+  this.Ldevleague_Road$__f_offset = (this.fh__D() / 2)
 }
-$c_Ldevleague_Game$Road$.prototype = new $h_Les_tmoor_scanvas_BaseTemplate$SubTemplate();
-$c_Ldevleague_Game$Road$.prototype.constructor = $c_Ldevleague_Game$Road$;
+$c_Ldevleague_Road$.prototype = new $h_Les_tmoor_scanvas_BaseTemplate$SubTemplate();
+$c_Ldevleague_Road$.prototype.constructor = $c_Ldevleague_Road$;
 /** @constructor */
-function $h_Ldevleague_Game$Road$() {
+function $h_Ldevleague_Road$() {
   /*<skip>*/
 }
-$h_Ldevleague_Game$Road$.prototype = $c_Ldevleague_Game$Road$.prototype;
-$c_Ldevleague_Game$Road$.prototype.x__D = (function() {
-  return this.Ldevleague_Game$Road$__f_x
+$h_Ldevleague_Road$.prototype = $c_Ldevleague_Road$.prototype;
+$c_Ldevleague_Road$.prototype.relativeBounds__T4 = (function() {
+  return $m_T4$().apply__O__O__O__O__T4(0.0, 0.9, 1.0, 0.1)
 });
-$c_Ldevleague_Game$Road$.prototype.y__D = (function() {
-  return this.Ldevleague_Game$Road$__f_y
+$c_Ldevleague_Road$.prototype.y__D = (function() {
+  return this.Ldevleague_Road$__f_y
 });
-$c_Ldevleague_Game$Road$.prototype.w__D = (function() {
-  return this.Ldevleague_Game$Road$__f_w
+$c_Ldevleague_Road$.prototype.fh__D = (function() {
+  return this.Ldevleague_Road$__f_fh
 });
-$c_Ldevleague_Game$Road$.prototype.h__D = (function() {
-  return this.Ldevleague_Game$Road$__f_h
+$c_Ldevleague_Road$.prototype.lineWidth__D = (function() {
+  return this.Ldevleague_Road$__f_lineWidth
 });
-$c_Ldevleague_Game$Road$.prototype.lineWidth__D = (function() {
-  return this.Ldevleague_Game$Road$__f_lineWidth
+$c_Ldevleague_Road$.prototype.offset__D = (function() {
+  return this.Ldevleague_Road$__f_offset
 });
-$c_Ldevleague_Game$Road$.prototype.offset__D = (function() {
-  return this.Ldevleague_Game$Road$__f_offset
-});
-$c_Ldevleague_Game$Road$.prototype.draw__V = (function() {
+$c_Ldevleague_Road$.prototype.draw__V = (function() {
   this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().colour_$eq__T__V($m_Les_tmoor_scanvas_rendering_Colour$().apply__I__T(5658212));
-  this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().regularPoly__I__T4__V(4, this.bounds__T4());
+  this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().regularPoly__I__T4__V(4, $m_T4$().apply__O__O__O__O__T4(0.0, 0.0, 1.0, 1.0));
   this.context__Les_tmoor_scanvas_rendering_Context().Draw__Les_tmoor_scanvas_rendering_Context$Draw$().dash_$eq__T2__V($m_T2$().apply__O__O__T2(this.lineWidth__D(), (3 * this.lineWidth__D())));
   this.context__Les_tmoor_scanvas_rendering_Context().Draw__Les_tmoor_scanvas_rendering_Context$Draw$().colour_$eq__T__V($m_Les_tmoor_scanvas_rendering_Colour$().apply__I__T(16646121));
   this.context__Les_tmoor_scanvas_rendering_Context().Draw__Les_tmoor_scanvas_rendering_Context$Draw$().thickness_$eq__D__V(this.lineWidth__D());
-  this.context__Les_tmoor_scanvas_rendering_Context().Draw__Les_tmoor_scanvas_rendering_Context$Draw$().line__D__D__D__D__V(this.x__D(), (this.y__D() + this.offset__D()), (this.x__D() + this.w__D()), (this.y__D() + this.offset__D()))
+  this.context__Les_tmoor_scanvas_rendering_Context().Draw__Les_tmoor_scanvas_rendering_Context$Draw$().line__D__D__D__D__V(0.0, 0.5, 1.0, 0.5)
 });
-$c_Ldevleague_Game$Road$.prototype.children__sci_Seq = (function() {
+$c_Ldevleague_Road$.prototype.children__sci_Seq = (function() {
   return $m_s_package$().Nil__sci_Nil$()
 });
-$c_Ldevleague_Game$Road$.prototype.relativeBounds__T4 = (function() {
-  return $m_T4$().apply__O__O__O__O__T4(0.0, 0.9, 1.0, 0.1)
-});
-var $d_Ldevleague_Game$Road$ = new $TypeData().initClass({
-  Ldevleague_Game$Road$: 0
-}, false, "devleague.Game$Road$", {
-  Ldevleague_Game$Road$: 1,
+var $d_Ldevleague_Road$ = new $TypeData().initClass({
+  Ldevleague_Road$: 0
+}, false, "devleague.Road$", {
+  Ldevleague_Road$: 1,
   Les_tmoor_scanvas_BaseTemplate$SubTemplate: 1,
   Les_tmoor_scanvas_Template: 1,
   Les_tmoor_scanvas_BaseTemplate: 1,
   O: 1
 });
-$c_Ldevleague_Game$Road$.prototype.$classData = $d_Ldevleague_Game$Road$;
-var $n_Ldevleague_Game$Road$;
-function $m_Ldevleague_Game$Road$() {
-  if ((!$n_Ldevleague_Game$Road$)) {
-    $n_Ldevleague_Game$Road$ = new $c_Ldevleague_Game$Road$()
+$c_Ldevleague_Road$.prototype.$classData = $d_Ldevleague_Road$;
+var $n_Ldevleague_Road$;
+function $m_Ldevleague_Road$() {
+  if ((!$n_Ldevleague_Road$)) {
+    $n_Ldevleague_Road$ = new $c_Ldevleague_Road$()
   };
-  return $n_Ldevleague_Game$Road$
+  return $n_Ldevleague_Road$
 }
 function $as_Ljava_io_IOException(obj) {
   return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "java.io.IOException"))
