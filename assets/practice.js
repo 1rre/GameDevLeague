@@ -1238,6 +1238,11 @@ $h_Les_tmoor_scanvas_rendering_Context.prototype = $c_Les_tmoor_scanvas_renderin
 $c_Les_tmoor_scanvas_rendering_Context.prototype.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D = (function() {
   return this.Les_tmoor_scanvas_rendering_Context__f_c2d
 });
+$c_Les_tmoor_scanvas_rendering_Context.prototype.withOffset__T2__F0__V = (function(offset, fn) {
+  this.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().translate((-$uD(offset._1__O())), (-$uD(offset._2__O())));
+  fn.apply__O();
+  this.c2d__Lorg_scalajs_dom_CanvasRenderingContext2D().translate($uD(offset._1__O()), $uD(offset._2__O()))
+});
 $c_Les_tmoor_scanvas_rendering_Context.prototype.Fill__Les_tmoor_scanvas_rendering_Context$Fill$ = (function() {
   if ((!this.Les_tmoor_scanvas_rendering_Context__f_Fillbitmap$1)) {
     this.Les_tmoor_scanvas_rendering_Context__f_Fill$lzy1 = new $c_Les_tmoor_scanvas_rendering_Context$Fill$(this);
@@ -1676,6 +1681,9 @@ function $s_jl_Math__max__J__J__J(a, b) {
 function $s_jl_Math__max__I__I__I(a, b) {
   return $m_jl_Math$().max__I__I__I(a, b)
 }
+function $s_jl_Math__abs__D__D(a) {
+  return $m_jl_Math$().abs__D__D(a)
+}
 function $s_jl_Math__abs__I__I(a) {
   return $m_jl_Math$().abs__I__I(a)
 }
@@ -1693,6 +1701,9 @@ function $h_jl_Math$() {
 $h_jl_Math$.prototype = $c_jl_Math$.prototype;
 $c_jl_Math$.prototype.abs__I__I = (function(a) {
   return ((a < 0) ? ((-a) | 0) : a)
+});
+$c_jl_Math$.prototype.abs__D__D = (function(a) {
+  return $uD(Math.abs(a))
 });
 $c_jl_Math$.prototype.max__I__I__I = (function(a, b) {
   return ((a > b) ? a : b)
@@ -5054,6 +5065,9 @@ $c_s_math_package$.prototype.sin__D__D = (function(x) {
 $c_s_math_package$.prototype.cos__D__D = (function(x) {
   return $s_jl_Math__cos__D__D(x)
 });
+$c_s_math_package$.prototype.abs__D__D = (function(x) {
+  return $s_jl_Math__abs__D__D(x)
+});
 $c_s_math_package$.prototype.max__I__I__I = (function(x, y) {
   return $s_jl_Math__max__I__I__I(x, y)
 });
@@ -5370,6 +5384,9 @@ function $h_sr_RichDouble$() {
   /*<skip>*/
 }
 $h_sr_RichDouble$.prototype = $c_sr_RichDouble$.prototype;
+$c_sr_RichDouble$.prototype.abs$extension__D__D = (function(this$) {
+  return $m_s_math_package$().abs__D__D(this$)
+});
 $c_sr_RichDouble$.prototype.max$extension__D__D__D = (function(this$, that) {
   return $m_s_math_package$().max__D__D__D(this$, that)
 });
@@ -8782,9 +8799,11 @@ function $c_Ldevleague_Game$() {
   this.Les_tmoor_scanvas_SCanvas__f_width = 0;
   this.Les_tmoor_scanvas_SCanvas__f_height = 0;
   this.Les_tmoor_scanvas_SCanvas__f_keys = null;
+  this.Ldevleague_Game$__f_timeScale = 0.0;
   this.Ldevleague_Game$__f_backgroundColour = null;
-  $ct_Les_tmoor_scanvas_SCanvas__T__D__I__I__(this, "game", 6.0, 640, 480);
+  $ct_Les_tmoor_scanvas_SCanvas__T__D__I__I__(this, "game", 33.0, 640, 480);
   $n_Ldevleague_Game$ = this;
+  this.Ldevleague_Game$__f_timeScale = (this.tick__D() / 6.95);
   this.Ldevleague_Game$__f_backgroundColour = $m_Les_tmoor_scanvas_rendering_Colour$().apply__I__T(12579581);
   $m_s_Predef$().println__O__V("Initialised")
 }
@@ -8795,6 +8814,9 @@ function $h_Ldevleague_Game$() {
   /*<skip>*/
 }
 $h_Ldevleague_Game$.prototype = $c_Ldevleague_Game$.prototype;
+$c_Ldevleague_Game$.prototype.timeScale__D = (function() {
+  return this.Ldevleague_Game$__f_timeScale
+});
 $c_Ldevleague_Game$.prototype.backgroundColour__T = (function() {
   return this.Ldevleague_Game$__f_backgroundColour
 });
@@ -10536,6 +10558,22 @@ var $d_sjsr_AnonFunction2 = new $TypeData().initClass({
   F2: 1
 });
 $c_sjsr_AnonFunction2.prototype.$classData = $d_sjsr_AnonFunction2;
+function $p_Ldevleague_Game$Guy$__arm$1__I__sci_Seq($thiz, w) {
+  return $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 7) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 7) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 7) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 15) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 5) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 15) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 5) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 14) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 6) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 14) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 6) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 12) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 5) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 12) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 5) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 8) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 6) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 8) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 6) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 7) / 21.0)))]))))
+}
+function $p_Ldevleague_Game$Guy$__leg$1__I__sci_Seq($thiz, w) {
+  return $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 4) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 18) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 1) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 18) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 1) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 19) / 21.0))), $m_T2$().apply__O__O__T2(($thiz.x__D() - (Math.imul(w, 4) / 13.0)), ($thiz.y__D() + (Math.imul($thiz.h__I(), 19) / 21.0)))]))))
+}
+function $p_Ldevleague_Game$Guy$__drawSkin$$anonfun$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__V($thiz, head$1, arm1$1, arm2$1, leg1$1, leg2$1) {
+  $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(head$1);
+  $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(arm1$1);
+  $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(arm2$1);
+  $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(leg1$1);
+  $thiz.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(leg2$1)
+}
+function $p_Ldevleague_Game$Guy$__drawSkin$$anonfun$adapted$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__O($thiz, head$2, arm1$2, arm2$2, leg1$2, leg2$2) {
+  $p_Ldevleague_Game$Guy$__drawSkin$$anonfun$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__V($thiz, head$2, arm1$2, arm2$2, leg1$2, leg2$2)
+}
 /** @constructor */
 function $c_Ldevleague_Game$Guy$() {
   this.Les_tmoor_scanvas_Template__f_parent = null;
@@ -10553,6 +10591,7 @@ function $c_Ldevleague_Game$Guy$() {
   this.Ldevleague_Game$Guy$__f_dx = 0.0;
   this.Ldevleague_Game$Guy$__f_gravity = 0.0;
   this.Ldevleague_Game$Guy$__f_terminal = 0.0;
+  this.Ldevleague_Game$Guy$__f_ld = 0;
   $ct_Les_tmoor_scanvas_BaseTemplate$SubTemplate__Les_tmoor_scanvas_BaseTemplate__(this, $m_Ldevleague_Game$());
   $n_Ldevleague_Game$Guy$ = this;
   matchResult2: {
@@ -10578,8 +10617,9 @@ function $c_Ldevleague_Game$Guy$() {
   this.Ldevleague_Game$Guy$__f_y = ((this.py__D() + (this.ph__D() / 2)) - ((this.h__I() / 2) | 0));
   this.Ldevleague_Game$Guy$__f_dy = 0.0;
   this.Ldevleague_Game$Guy$__f_dx = 0.0;
-  this.Ldevleague_Game$Guy$__f_gravity = 0.02;
-  this.Ldevleague_Game$Guy$__f_terminal = 2.5
+  this.Ldevleague_Game$Guy$__f_gravity = ((0.02 * $m_Ldevleague_Game$().timeScale__D()) * $m_Ldevleague_Game$().timeScale__D());
+  this.Ldevleague_Game$Guy$__f_terminal = (2.5 * $m_Ldevleague_Game$().timeScale__D());
+  this.Ldevleague_Game$Guy$__f_ld = this.w__I()
 }
 $c_Ldevleague_Game$Guy$.prototype = new $h_Les_tmoor_scanvas_BaseTemplate$SubTemplate();
 $c_Ldevleague_Game$Guy$.prototype.constructor = $c_Ldevleague_Game$Guy$;
@@ -10655,7 +10695,7 @@ $c_Ldevleague_Game$Guy$.prototype.canMove__Z = (function() {
   return (this.y__D() === (this.baseLine__D() - this.h__I()))
 });
 $c_Ldevleague_Game$Guy$.prototype.setDx__V = (function() {
-  var decrease = (this.canMove__Z() ? 0.95 : 0.995);
+  var decrease = (this.canMove__Z() ? (1 - (0.05 * $m_Ldevleague_Game$().timeScale__D())) : (1 - (0.005 * $m_Ldevleague_Game$().timeScale__D())));
   if (this.canMove__Z()) {
     if (($m_Ldevleague_Game$().keys__scm_Set().apply__O__Z(37) && (!$m_Ldevleague_Game$().keys__scm_Set().apply__O__Z(39)))) {
       $m_s_Predef$().println__O__V(((("Moving left, " + this.dx__D()) + " => ") + (this.dx__D() - this.gravity__D())));
@@ -10665,6 +10705,8 @@ $c_Ldevleague_Game$Guy$.prototype.setDx__V = (function() {
       $m_s_Predef$().println__O__V(((("Moving right, " + this.dx__D()) + " => ") + (this.dx__D() + this.gravity__D())));
       this.dx_$eq__D__V($m_sr_RichDouble$().max$extension__D__D__D($m_s_Predef$().doubleWrapper__D__D((this.dx__D() + this.gravity__D())), (this.dx__D() * decrease)));
       this.dx_$eq__D__V($m_sr_RichDouble$().min$extension__D__D__D($m_s_Predef$().doubleWrapper__D__D(this.dx__D()), this.terminal__D()))
+    } else if (($m_sr_RichDouble$().abs$extension__D__D($m_s_Predef$().doubleWrapper__D__D(this.dx__D())) < (0.05 * $m_Ldevleague_Game$().timeScale__D()))) {
+      this.dx_$eq__D__V(0.0)
     } else {
       this.dx_$eq__D__V((this.dx__D() * decrease))
     }
@@ -10675,7 +10717,7 @@ $c_Ldevleague_Game$Guy$.prototype.setDx__V = (function() {
 $c_Ldevleague_Game$Guy$.prototype.setDy__V = (function() {
   if (this.canMove__Z()) {
     if ($m_Ldevleague_Game$().keys__scm_Set().apply__O__Z(38)) {
-      this.dy_$eq__D__V((-this.terminal__D()))
+      this.dy_$eq__D__V(((-5) * this.gravity__D()))
     } else {
       this.dy_$eq__D__V(0.0)
     }
@@ -10688,6 +10730,7 @@ $c_Ldevleague_Game$Guy$.prototype.setDy__V = (function() {
   }
 });
 $c_Ldevleague_Game$Guy$.prototype.updatePos__V = (function() {
+  $m_s_Predef$().println__O__V(this.y__D());
   this.x_$eq__D__V((this.x__D() + this.dx__D()));
   this.y_$eq__D__V((this.y__D() + this.dy__D()));
   if ((this.x__D() < 0)) {
@@ -10708,14 +10751,22 @@ $c_Ldevleague_Game$Guy$.prototype.updatePos__V = (function() {
   this.setDy__V();
   this.setDx__V()
 });
+$c_Ldevleague_Game$Guy$.prototype.ld__I = (function() {
+  return this.Ldevleague_Game$Guy$__f_ld
+});
+$c_Ldevleague_Game$Guy$.prototype.ld_$eq__I__V = (function(x$1) {
+  this.Ldevleague_Game$Guy$__f_ld = x$1
+});
 $c_Ldevleague_Game$Guy$.prototype.drawSkin__V = (function() {
-  var head = $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 4) / 13.0)), this.y__D()), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 9) / 13.0)), this.y__D()), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 9) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 2) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 10) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 2) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 10) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 3) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 9) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 3) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 9) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 7) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 7) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 6) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 6) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 6) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 6) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 4) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0)))]))));
-  var arm1 = $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2((this.x__D() + this.w__I()), (this.y__D() + (Math.imul(this.h__I(), 7) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + this.w__I()), (this.y__D() + (Math.imul(this.h__I(), 15) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 11) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 15) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 11) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 14) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 12) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 14) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 12) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 12) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 11) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 12) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 11) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 8) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 12) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 8) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 12) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 7) / 21.0)))]))));
-  var arm2 = $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2(this.x__D(), (this.y__D() + (Math.imul(this.h__I(), 7) / 21.0))), $m_T2$().apply__O__O__T2(this.x__D(), (this.y__D() + (Math.imul(this.h__I(), 15) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 2) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 15) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 2) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 14) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 1) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 14) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 1) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 12) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 2) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 12) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 2) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 8) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 1) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 8) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(this.w__I(), 1) / 13.0)), (this.y__D() + (Math.imul(this.h__I(), 7) / 21.0)))]))));
+  var w = ((this.dx__D() > 0) ? $m_Ldevleague_Game$Guy$().w__I() : ((this.dx__D() < 0) ? ((-$m_Ldevleague_Game$Guy$().w__I()) | 0) : this.ld__I()));
+  this.ld_$eq__I__V(w);
+  var head = $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$m_T2$().apply__O__O__T2((this.x__D() - (Math.imul(w, 5) / 26.0)), this.y__D()), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 5) / 26.0)), this.y__D()), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 5) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 2) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 7) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 2) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 7) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 3) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 5) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 3) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 5) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 1) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() + (Math.imul(w, 1) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 6) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() - (Math.imul(w, 1) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 6) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() - (Math.imul(w, 1) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0))), $m_T2$().apply__O__O__T2((this.x__D() - (Math.imul(w, 5) / 26.0)), (this.y__D() + (Math.imul(this.h__I(), 5) / 21.0)))]))));
+  var arm1 = $p_Ldevleague_Game$Guy$__arm$1__I__sci_Seq(this, w);
+  var arm2 = $p_Ldevleague_Game$Guy$__arm$1__I__sci_Seq(this, ((-w) | 0));
+  var leg1 = $p_Ldevleague_Game$Guy$__leg$1__I__sci_Seq(this, w);
+  var leg2 = $p_Ldevleague_Game$Guy$__leg$1__I__sci_Seq(this, ((-w) | 0));
   this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().colour_$eq__T__V(this.s__T());
-  this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(head);
-  this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(arm1);
-  this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().pointsd__sci_Seq__V(arm2)
+  this.context__Les_tmoor_scanvas_rendering_Context().withOffset__T2__F0__V($m_T2$().apply__O__O__T2($m_s_Int$().int2double__I__D(((((-$m_Ldevleague_Game$Guy$().w__I()) | 0) / 2) | 0)), 0.0), new $c_sjsr_AnonFunction0(((this\u00f8, head$2, arm1$2, arm2$2, leg1$2, leg2$2) => (() => $p_Ldevleague_Game$Guy$__drawSkin$$anonfun$adapted$1__sci_Seq__sci_Seq__sci_Seq__sci_Seq__sci_Seq__O(this\u00f8, head$2, arm1$2, arm2$2, leg1$2, leg2$2)))(this, head, arm1, arm2, leg1, leg2)))
 });
 $c_Ldevleague_Game$Guy$.prototype.draw__V = (function() {
   this.updatePos__V();

@@ -4,7 +4,8 @@ import es.tmoor.scanvas.rendering._
 import org.scalajs.dom.KeyCode
 
 
-object Game extends SCanvas("game", 1000/144, 640, 480) {
+object Game extends SCanvas("game", 33, 640, 480) {
+  val timeScale = tick / 6.95d
   val backgroundColour = Colour(0xbff2fd)
   def draw(): Unit = {
     context.Fill.colour = backgroundColour
@@ -45,15 +46,15 @@ object Game extends SCanvas("game", 1000/144, 640, 480) {
     var dy = 0d
     var dx = 0d
 
-    val gravity = 0.02d
-    val terminal = 2.5d
+    val gravity = 0.02d * timeScale * timeScale // acceleration is ²
+    val terminal = 2.5d * timeScale
     
     def intersectRoad = y > baseLine - h
     def shouldFall = y < baseLine - h
     def canMove = y == baseLine - h
 
     def setDx(): Unit = {
-      val decrease = if (canMove) 0.95d else 0.995d
+      val decrease = if (canMove) 1 - 0.05 * timeScale else 1 - 0.005 * timeScale
       if (canMove) {
         if (keys(KeyCode.Left) && !keys(KeyCode.Right)) {
           println(s"Moving left, ${dx} => ${dx - gravity}")
@@ -63,13 +64,14 @@ object Game extends SCanvas("game", 1000/144, 640, 480) {
           println(s"Moving right, ${dx} => ${dx + gravity}")
           dx = (dx + gravity) max (dx * decrease)
           dx = dx min terminal
-        } else dx *= decrease
+        } else if (dx.abs < 0.05 * timeScale) dx = 0
+        else dx *= decrease
       } else dx *= decrease // Wind resistance?
     }
 
     def setDy(): Unit = {
       if (canMove) {
-        if (keys(KeyCode.Up)) dy = -terminal
+        if (keys(KeyCode.Up)) dy = -5 * gravity
         else dy = 0
       } else if (intersectRoad) {
         y = baseLine - h
@@ -81,6 +83,7 @@ object Game extends SCanvas("game", 1000/144, 640, 480) {
     }
 
     def updatePos(): Unit = {
+      println(y)
       x += dx
       y += dy
       if (x < 0) {
@@ -96,52 +99,59 @@ object Game extends SCanvas("game", 1000/144, 640, 480) {
       setDx()
     }
     // TODO: Setup mirroring
+    var ld = w
     def drawSkin() = {
+      val w = if (dx > 0) Guy.w else if (dx < 0) -Guy.w else ld
+      ld = w
       val head = Seq (
-        (x + w * 4/13d, y),
-        (x + w * 9/13d, y),
-        (x + w * 9/13d, y + h * 2/21d),
-        (x + w * 10/13d, y + h * 2/21d),
-        (x + w * 10/13d, y + h * 3/21d),
-        (x + w * 9/13d, y + h * 3/21d),
-        (x + w * 9/13d, y + h * 5/21d),
-        (x + w * 7/13d, y + h * 5/21d),
-        (x + w * 7/13d, y + h * 6/21d),
-        (x + w * 6/13d, y + h * 6/21d),
-        (x + w * 6/13d, y + h * 5/21d),
-        (x + w * 4/13d, y + h * 5/21d),
+        (x - w * 5/26d, y),
+        (x + w * 5/26d, y),
+        (x + w * 5/26d, y + h * 2/21d),
+        (x + w * 7/26d, y + h * 2/21d),
+        (x + w * 7/26d, y + h * 3/21d),
+        (x + w * 5/26d, y + h * 3/21d),
+        (x + w * 5/26d, y + h * 5/21d),
+        (x + w * 1/26d, y + h * 5/21d),
+        (x + w * 1/26d, y + h * 6/21d),
+        (x - w * 1/26d, y + h * 6/21d),
+        (x - w * 1/26d, y + h * 5/21d),
+        (x - w * 5/26d, y + h * 5/21d),
       )
-      val arm1 = Seq (
-        (x + w, y + h * 7/21d),
-        (x + w, y + h * 15/21d),
-        (x + w * 11/13d, y + h * 15/21d),
-        (x + w * 11/13d, y + h * 14/21d),
-        (x + w * 12/13d, y + h * 14/21d),
-        (x + w * 12/13d, y + h * 12/21d),
-        (x + w * 11/13d, y + h * 12/21d),
-        (x + w * 11/13d, y + h * 8/21d),
-        (x + w * 12/13d, y + h * 8/21d),
-        (x + w * 12/13d, y + h * 7/21d),
+
+      def arm(w: Int) = Seq(
+        (x - w * 7/13d, y + h * 7/21d),
+        (x - w * 7/13d, y + h * 15/21d),
+        (x - w * 5/13d, y + h * 15/21d),
+        (x - w * 5/13d, y + h * 14/21d),
+        (x - w * 6/13d, y + h * 14/21d),
+        (x - w * 6/13d, y + h * 12/21d),
+        (x - w * 5/13d, y + h * 12/21d),
+        (x - w * 5/13d, y + h * 8/21d),
+        (x - w * 6/13d, y + h * 8/21d),
+        (x - w * 6/13d, y + h * 7/21d),
       )
-      
-      val arm2 = Seq (
-        (x, y + h * 7/21d),
-        (x, y + h * 15/21d),
-        (x + w * 2/13d, y + h * 15/21d),
-        (x + w * 2/13d, y + h * 14/21d),
-        (x + w * 1/13d, y + h * 14/21d),
-        (x + w * 1/13d, y + h * 12/21d),
-        (x + w * 2/13d, y + h * 12/21d),
-        (x + w * 2/13d, y + h * 8/21d),
-        (x + w * 1/13d, y + h * 8/21d),
-        (x + w * 1/13d, y + h * 7/21d),
+      val arm1 = arm(w)
+      val arm2 = arm(-w)
+
+      def leg(w: Int) = Seq (
+        (x - w * 4/13d, y + h * 18/21d),
+        (x - w * 1/13d, y + h * 18/21d),
+        (x - w * 1/13d, y + h * 19/21d),
+        (x - w * 4/13d, y + h * 19/21d),    
       )
+
+      val leg1 = leg(w)
+
+      val leg2 = leg(-w)
       
       context.Fill.colour = s
-      context.Fill.pointsd(head)
-      context.Fill.pointsd(arm1)
-      context.Fill.pointsd(arm2)
-
+      context.withOffset((-Guy.w/2,0)) {
+        context.Fill.pointsd(head)
+        context.Fill.pointsd(arm1)
+        context.Fill.pointsd(arm2)
+        context.Fill.pointsd(leg1)
+        context.Fill.pointsd(leg2)
+      }
     }
 
     def draw(): Unit = {
