@@ -49,6 +49,12 @@ class Image(paths: Path*):
   img.draw(image.getGraphics.asInstanceOf[Graphics2D])
   val r = img.write
   println(r.toString)
-  println(r.toString(36))
+  def b92(i: BigInt): String =
+    if (i == 0) ""
+    else
+      val c = (i % 94 + 32).toChar
+      s"${b92(i / 94)}$c"
+  println(r)
+  println(r.toByteArray.toSeq.length)
   ImageIO.write(image, "png", java.io.File("out.png"))
   java.io.FileOutputStream("out.bin").write(r.toByteArray)

@@ -5,6 +5,7 @@ case class Region(colour: Int, pixels: Seq[(Int, Int)])
 
 @main def main(path: String) =
   val img = ImageIO.read(java.io.File(path))
+  img.getColorModel
   val regions = collection.mutable.Buffer[Region]()
   for (i <- 0 until img.getWidth; j <- 0 until img.getHeight)
     val c = img.getRGB(i, j)
@@ -24,14 +25,20 @@ case class Region(colour: Int, pixels: Seq[(Int, Int)])
   while (mr != regions)
     mr = regions.clone()
     mergeRegions()
-  def getExterior(p: Seq[(Int, Int)]): Seq[(Int, Int)] =
-    p.filter((x,y) => !p.contains(x+1, y) || !p.contains(x-1, y) || !p.contains(x, y+1) || !p.contains(x, y-1))
+
+  case class BorderPixel(borders: Byte, colour: Int, pos: (Int, Int))
+  def getExterior(p: Seq[(Int, Int)]): Seq[(Int, (Int, Int))] =
+    p.map {
+      case (x,y) =>
+        val m1 = if (!p.contains(x+1, y)) 8 else 0
+        val m2 = if (!p.contains(x-1, y)) 4 else 0
+        val m3 = if (!p.contains(x, y+1)) 2 else 0
+        val m4 = if (!p.contains(x, y-1)) 1 else 0
+        (m1 | m2 | m3 | m4, (x,y))
+    }.filter(_._1 != 0)
   def getCorners(p: Seq[(Int, Int)]): Seq[(Int, Int)] =
     p.filter((x,y) => Seq((x+1, y), (x-1, y), (x, y+1), (x, y-1)).count(px => p.contains(px)) <= 2)
   // TODO: convert lines to path
   for (r <- regions) yield
     val ext = getExterior(r.pixels)
-    // println(ext)
-    val c = getCorners(r.pixels)
-    println(r.colour)
-    println(c)
+    println(ext)

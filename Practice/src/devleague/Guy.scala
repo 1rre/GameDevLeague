@@ -16,7 +16,8 @@ object Guy extends SubTemplate {
 
   def relativeBounds = (x,y,w,h)
 
-  val intContent = BigInt("t654bgurc92pdkvva94un75wqm599xzivg72yp2vqdx5t7ea3w9yg2o0qmou99j0bw6nc3beso3ph3t5vdq7f0086u590p574o8smmq8l0a3xh28ky10cy14dlqakthxry5wkqun4c5wnpbhtkg84us8mp6fo19ip8bcvd95y3q6jtr9kbpd0oozf5rffokf5jn6ntw0g7rxdr2xa5joz8uykdb69j2hlj91mvbxztw2n78i5i1m6nnrjr8sspqafbuno3smzwmctsdpn304zp1v4um51nrwo621dt2jjn0qtbmkcn47", 36)
+  val intContent = """XY(Nf3t!:;`1rZl*N$w&DN`Zm!IW*vE>0>dmaEa`9s['/x2(zqs*f@9p`Z9|LvtvH2$mF|eKU)7YU[__GSQn_W%qW(37z[[PMtg@irf-1r"1v9-\[xWlG6 D6Ce^`AzDVXqbD)D_iS%2{\;!Ejs]p{5?4D[clD%}?28<% rq% TtFabR68*nmLY"ZQsl/QdtBWX+} H8o5m-J}rI*Sh:n!]Id5WI0&ri{>b7L=f,@Ss|[HaNw=E"""
+
   val img = EncImage.decode(intContent)
   var dy = 0d
   var dx = 0d
@@ -73,19 +74,13 @@ object Guy extends SubTemplate {
     setDy()
     setDx()
   }
-
-  var ld: (=> Unit) => _ = context.withFlip
-  val img1 = document.getElementById("sprite")
-  val img = img1.asInstanceOf[html.Object]
-  println(s"Loading Image")
-  println(img.contentDocument)
+  
+  def sIdent[T](i: => T) = i
+  var ld: (=> Unit) => _ = sIdent
   def drawSkin() = {    
-    val fn = if (dx > 0) context.withFlip else if (dx < 0) identity else ld
-    ld = fn
-    
-    
-    context.withOffset(0.5, 0) {
-      img
+    ld = if (dx > 0) sIdent else if (dx < 0) context.withFlip else ld
+    ld {
+      img(context)
     }
   }
 

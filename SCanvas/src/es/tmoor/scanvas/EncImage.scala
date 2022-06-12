@@ -1,12 +1,16 @@
 package es.tmoor.scanvas
 import org.scalajs.dom.{document, HTMLElement, html}
 import collection.mutable.Buffer
+import es.tmoor.scanvas.rendering._
 
 object EncImage:
   private implicit class Bstr(s: String):
     def base2: Int = java.lang.Long.parseLong(s, 2).toInt
-  def decode(input: BigInt): rendering.Context => Unit =
-    println(input.toString)
+  def d94(s: String): BigInt =
+    if (s == "") BigInt(0)
+    else (s.last - 32) + 94 * d94(s.init)
+  def decode(s: String): Context => Unit =
+    val input = d94(s)
     var x = input.toString(2).tail
     val longest = x.take(8).base2
     x = x.drop(8)
@@ -30,7 +34,7 @@ object EncImage:
     println(paths)
     (r: rendering.Context) => {
       for ((c, p) <- paths)
-        r.Fill.colour = c
+        r.Fill.colour = Colour((c >>> 16) & 0xff, (c >>> 8) & 0xff, c & 0xff, (c >>> 24) & 0xff)
         r.Fill.points(p.map((a,b) => (a/13d, b/21d)))
     }
     

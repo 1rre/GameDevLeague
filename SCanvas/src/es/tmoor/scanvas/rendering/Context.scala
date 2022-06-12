@@ -22,13 +22,13 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
   }
 
   def withFlip(fn: => Unit) = {
-    cw *= -1
     cx *= -1
+    cx -= cw
     c2d.scale(-1, 1)
     fn
     c2d.scale(-1, 1)
+    cx += cw
     cx *= -1
-    cw *= -1
   }
   
   def withOffset(offset: (Double, Double))(fn: => Unit) = {
