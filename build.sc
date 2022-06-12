@@ -13,3 +13,9 @@ object Practice extends ScalaJSModule {
   def ivyDeps = Agg(ivy"org.scala-js:scalajs-dom_sjs1_3:2.2.0")
   def moduleDeps = Seq(SCanvas)
 }
+object ImgCnv extends ScalaModule {
+  def scalaVersion = "3.1.1"
+}
+object ImgWrite extends ScalaModule {
+  def scalaVersion = "3.1.1"
+}

@@ -29,6 +29,6 @@ abstract class SCanvas(web: html.Canvas, val tick: Double, width: Int, height: I
     web.width = width
     web.height = height
     render()
-    setInterval(tick)(render())
+    //setInterval(tick)(render())
   }
 }

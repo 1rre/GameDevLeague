@@ -1,17 +1,11 @@
 package devleague
 import es.tmoor.scanvas._
 import es.tmoor.scanvas.rendering._
-import org.scalajs.dom.KeyCode
+import org.scalajs.dom.{KeyCode, document, HTMLElement, html}
 import Game._
 
 object Guy extends SubTemplate {
-  def t = Colour(0,0,0,0)  // Transparent
-  def s = Colour(0xceba99) // Skin
-  def r = Colour(0xeb2d1d) // Red
-  def j = Colour(0x523ab5) // Jeans
-  def b = Colour(0)        // Black
-  def e = Colour(0xffffff) // Eye
-  def baseLine = 0.95
+  def baseLine = Road.relativeBounds._2 + Road.relativeBounds._4 / 2d
   def children: Seq[Template] = Nil
   val (px,py,pw,ph) = parent.bounds
 
@@ -22,6 +16,8 @@ object Guy extends SubTemplate {
 
   def relativeBounds = (x,y,w,h)
 
+  val intContent = BigInt("t654bgurc92pdkvva94un75wqm599xzivg72yp2vqdx5t7ea3w9yg2o0qmou99j0bw6nc3beso3ph3t5vdq7f0086u590p574o8smmq8l0a3xh28ky10cy14dlqakthxry5wkqun4c5wnpbhtkg84us8mp6fo19ip8bcvd95y3q6jtr9kbpd0oozf5rffokf5jn6ntw0g7rxdr2xa5joz8uykdb69j2hlj91mvbxztw2n78i5i1m6nnrjr8sspqafbuno3smzwmctsdpn304zp1v4um51nrwo621dt2jjn0qtbmkcn47", 36)
+  val img = EncImage.decode(intContent)
   var dy = 0d
   var dx = 0d
 
@@ -78,62 +74,19 @@ object Guy extends SubTemplate {
     setDx()
   }
 
-  var ld = w
-  def drawSkin() = {
-    val w = if (dx > 0) Guy.w else if (dx < 0) -Guy.w else ld
-    ld = w
-    val head = Seq (
-      (-5/26d, 0d),
-      (5/26d, 0d),
-      (5/26d, 2/21d),
-      (7/26d, 2/21d),
-      (7/26d, 3/21d),
-      (5/26d, 3/21d),
-      (5/26d, 5/21d),
-      (1/26d, 5/21d),
-      (1/26d, 6/21d),
-      (-1/26d, 6/21d),
-      (-1/26d, 5/21d),
-      (-5/26d, 5/21d),
-    ).map((a,b) => (a*w.sign, b))
-      
-
-    def arm(w: Double) = Seq(
-      (x - w * 7/13d, y + h * 7/21d),
-      (x - w * 7/13d, y + h * 15/21d),
-      (x - w * 5/13d, y + h * 15/21d),
-      (x - w * 5/13d, y + h * 14/21d),
-      (x - w * 6/13d, y + h * 14/21d),
-      (x - w * 6/13d, y + h * 12/21d),
-      (x - w * 5/13d, y + h * 12/21d),
-      (x - w * 5/13d, y + h * 8/21d),
-      (x - w * 6/13d, y + h * 8/21d),
-      (x - w * 6/13d, y + h * 7/21d),
-    )
-    val arm1 = arm(w)
-    val arm2 = arm(-w)
-
-    def leg(w: Double) = Seq (
-      (x - w * 4/13d, y + h * 18/21d),
-      (x - w * 1/13d, y + h * 18/21d),
-      (x - w * 1/13d, y + h * 19/21d),
-      (x - w * 4/13d, y + h * 19/21d),    
-    )
-
-    val leg1 = leg(w)
-    val leg2 = leg(-w)
+  var ld: (=> Unit) => _ = context.withFlip
+  val img1 = document.getElementById("sprite")
+  val img = img1.asInstanceOf[html.Object]
+  println(s"Loading Image")
+  println(img.contentDocument)
+  def drawSkin() = {    
+    val fn = if (dx > 0) context.withFlip else if (dx < 0) identity else ld
+    ld = fn
     
-    context.Fill.colour = s
+    
     context.withOffset(0.5, 0) {
-      context.Fill.points(head)
-
+      img
     }
-    /*
-    context.Fill.pointsd(arm1)
-    context.Fill.pointsd(arm2)
-    context.Fill.pointsd(leg1)
-    context.Fill.pointsd(leg2)
-    */
   }
 
   def draw(): Unit = {

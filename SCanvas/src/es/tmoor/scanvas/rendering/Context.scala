@@ -1,9 +1,8 @@
 package es.tmoor.scanvas.rendering
 
-import org.scalajs.dom.html
+import org.scalajs.dom.{html, HTMLElement}
 import org.scalajs.dom.raw.{CanvasRenderingContext2D, CanvasGradient}
 import es.tmoor.scanvas.BoundingBox._
-import org.scalajs.dom.raw.HTMLImageElement
 
 class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
   def this(cnv: html.Canvas) =
@@ -20,6 +19,16 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
     c2d.rotate(r)
     fn
     c2d.rotate(-r)
+  }
+
+  def withFlip(fn: => Unit) = {
+    cw *= -1
+    cx *= -1
+    c2d.scale(-1, 1)
+    fn
+    c2d.scale(-1, 1)
+    cx *= -1
+    cw *= -1
   }
   
   def withOffset(offset: (Double, Double))(fn: => Unit) = {
@@ -69,6 +78,11 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
     def colour = c2d.fillStyle
     def colour_=(c: Colour) = c2d.fillStyle = c
     def colour_=(g: CanvasGradient) = c2d.fillStyle = g
+    def image(i: HTMLElement) = {
+      c2d.imageSmoothingEnabled = false
+      println(s"Draw image $i @ $cx, $cy/$cw, $ch")
+      c2d.drawImage(i, cx, cy, cw, ch)
+    }
     def regularPoly(sides: Int, bounds: BoundingBox): Unit = {
       c2d.beginPath()
       Trace.regularPoly(sides, bounds)
