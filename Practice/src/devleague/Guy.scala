@@ -1,91 +1,70 @@
 package devleague
-import es.tmoor.scanvas._
-import es.tmoor.scanvas.rendering._
+import es.tmoor.scanvas._, rendering._, BoundingBox._
 import org.scalajs.dom.{KeyCode, document, HTMLElement, html}
+import Fraction.FractionComparisonOps.{mkNumericOps, mkOrderingOps}
 import Game._
 
-object Guy extends SubTemplate {
-  def baseLine = Road.relativeBounds._2 + Road.relativeBounds._4 / 2d
-  def children: Seq[Template] = Nil
-  val (px,py,pw,ph) = parent.bounds
+object Guy extends SubTemplate with Gravitational {
+  val children: Seq[Template] = Nil
+  val (px,py,pw,ph) = parent.bounds.extract
 
-  val w = 13 * 2 / pw
-  val h = 21 * 2 / ph
-  var x = 0.5
-  var y = 0.5
+  val timeScale = (tick*20) ¦ 139
+  // println(s"Guy timescale is $timeScale")
 
-  def relativeBounds = (x,y,w,h)
+  def checkForJump(): Boolean = 
+    for (l@Line(x1,y1,x2,y2) <- borders.bottom if !(l.exempt contains this.uid))
+      def vInLine = y + h == y1
+      def hInLine = x + w > x1 && x < x2
+      if (vInLine && hInLine)
+        if (keys(KeyCode.Up))
+          onGround = false
+          dy = gravity * -6
+        else
+          onGround = true
+          dy = 0¦1
+        return true
+    false
+
+  val w = (26¦1) / pw
+  val h = (42¦1) / ph
+  x = 1¦2
+  y = 1¦2
+
+  def relativeBounds = BoundingBox(x,y,w,h)
+  // println(s"Relative bounds of guy: $relativeBounds")
+  // println(s"Global bounds of guy: $bounds")
 
   val intContent = """XY(Nf3t!:;`1rZl*N$w&DN`Zm!IW*vE>0>dmaEa`9s['/x2(zqs*f@9p`Z9|LvtvH2$mF|eKU)7YU[__GSQn_W%qW(37z[[PMtg@irf-1r"1v9-\[xWlG6 D6Ce^`AzDVXqbD)D_iS%2{\;!Ejs]p{5?4D[clD%}?28<% rq% TtFabR68*nmLY"ZQsl/QdtBWX+} H8o5m-J}rI*Sh:n!]Id5WI0&ri{>b7L=f,@Ss|[HaNw=E"""
 
   val img = EncImage.decode(intContent)
-  var dy = 0d
-  var dx = 0d
 
-  val gravity = 0.000035d * timeScale * timeScale // acceleration is ²
-  val terminal = 0.0025d * timeScale
-  
-  def intersectRoad = y > baseLine - h
-  def shouldFall = y < baseLine - h
-  def canMove = y == baseLine - h
-
-  def setDx(): Unit = {
-    val decrease = if (canMove) 1 - 0.05 * timeScale else 1 - 0.005 * timeScale
-    if (canMove) {
-      if (keys(KeyCode.Left) && !keys(KeyCode.Right)) {
-        println(s"Moving left, ${dx} => ${dx - gravity}")
-        dx = (dx - gravity) min (dx * decrease)
-        dx = dx max -terminal
-      } else if (!keys(KeyCode.Left) && keys(KeyCode.Right)) {
-        println(s"Moving right, ${dx} => ${dx + gravity}")
-        dx = (dx + gravity) max (dx * decrease)
-        dx = dx min terminal
-      } else if (dx.abs < 0.0001 * timeScale) dx = 0
-      else dx *= decrease
-    } else dx *= decrease // Wind resistance?
-  }
-
-  def setDy(): Unit = {
-    if (canMove) {
-      if (keys(KeyCode.Up)) dy = -5 * gravity
-      else dy = 0
-    } else if (intersectRoad) {
-      y = baseLine - h
-      dy = 0
-    } else if (shouldFall) {
-      dy += gravity
-      dy = dy min terminal
-    }
-  }
-
-  def updatePos(): Unit = {
-    println(y)
-    x += dx
-    y += dy
-    if (x < 0) {
-      x = 0
-      if (canMove) dx = 0
-      else dx *= -0.4
-    } else if (x > 1 - w) {
-      if (canMove) dx = 0
-      else dx *= -0.4
-      x = 1 - w
-    }
-    setDy()
-    setDx()
+  def moveX(): Boolean = {
+    val decrease =
+      if (onGround) (1¦1) - (1¦20) * timeScale else (1¦1) - (1¦200) * timeScale
+    if (onGround && keys(KeyCode.Left) && !keys(KeyCode.Right)) {
+      // println(s"Moving left, ${dx} => ${dx - gravity}")
+      dx = (dx - gravity) min (dx * decrease)
+      dx = dx max -terminal
+    } else if (onGround && !keys(KeyCode.Left) && keys(KeyCode.Right)) {
+      // println(s"Moving right, ${dx} => ${dx + gravity}")
+      dx = (dx + gravity) max (dx * decrease)
+      dx = dx min terminal
+    } else if (onGround && dx.abs < (1¦10000) * timeScale) dx = 0¦1
+    else dx *= decrease
+    return true
   }
   
   def sIdent[T](i: => T) = i
   var ld: (=> Unit) => _ = sIdent
   def drawSkin() = {    
-    ld = if (dx > 0) sIdent else if (dx < 0) context.withFlip else ld
+    ld = if (dx > (0¦1)) sIdent else if (dx < (0¦1)) context.withFlip else ld
     ld {
       img(context)
     }
   }
 
   def draw(): Unit = {
-    updatePos()
+    // println(s"Guy @ $bounds")
     drawSkin()
   }
 }

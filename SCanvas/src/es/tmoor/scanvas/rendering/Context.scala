@@ -1,18 +1,20 @@
-package es.tmoor.scanvas.rendering
+package es.tmoor.scanvas
+package rendering
 
 import org.scalajs.dom.{html, HTMLElement}
 import org.scalajs.dom.raw.{CanvasRenderingContext2D, CanvasGradient}
-import es.tmoor.scanvas.BoundingBox._
+import BoundingBox._
+import Fraction.FractionComparisonOps.mkNumericOps
 
-class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
+class Context(val c2d: CanvasRenderingContext2D) {
   def this(cnv: html.Canvas) =
     this(cnv.getContext("2d").asInstanceOf[CanvasRenderingContext2D])
 
   type Colour = String
-  private var cx = 0d
-  private var cy = 0d
-  private var cw = c2d.canvas.width.toDouble
-  private var ch = c2d.canvas.height.toDouble
+  private var cx = 0¦1
+  private var cy = 0¦1
+  private var cw = c2d.canvas.width ¦ 1
+  private var ch = c2d.canvas.height ¦ 1
 
   // TODO: make this rotate around the current centre
   def withRotation(r: Double)(fn: => Unit) = {
@@ -21,30 +23,40 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
     c2d.rotate(-r)
   }
 
+  val stack = collection.mutable.Stack[Fraction]()
+
   def withFlip(fn: => Unit) = {
+    val rcx = cx
     cx *= -1
     cx -= cw
     c2d.scale(-1, 1)
     fn
     c2d.scale(-1, 1)
-    cx += cw
-    cx *= -1
+    cx = rcx
   }
   
-  def withOffset(offset: (Double, Double))(fn: => Unit) = {
+  def withOffset(offset: (Fraction, Fraction))(fn: => Unit) = {
+    // println(s"Set offset $cx $cy + ${offset._1 * cw} ${offset._2 * ch} on $this")
+    stack.push(cx)
+    stack.push(cy)
     cx += offset._1 * cw
     cy += offset._2 * ch
     fn
-    cx -= offset._1 * cw
-    cy -= offset._2 * ch
+    cy = stack.pop()
+    cx = stack.pop()
+    // println(s"Unset offset $cx $cy + ${offset._1 * cw} ${offset._2 * ch} on $this")
   }
 
-  def withScale(scale: (Double, Double))(fn: => Unit) = {
+  def withScale(scale: (Fraction, Fraction))(fn: => Unit) = {
+    // println(s"Set scale $cw $ch * ${scale._1} ${scale._2} on $this")
+    stack.push(cw)
+    stack.push(ch)
     cw *= scale._1
     ch *= scale._2
     fn
-    cw /= scale._1
-    ch /= scale._2
+    ch = stack.pop()
+    cw = stack.pop()
+    // println(s"Unset scale $cw $ch * ${scale._1} ${scale._2} on $this")
   }
 
   def background = c2d.canvas.style.background
@@ -56,13 +68,13 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
     def font = c2d.font
     def font_=(f: String) = c2d.font = f
     def centred(s: String, bounds: BoundingBox) = {
-      val (x, y, w, h) = bounds
+      val (x, y, w, h) = bounds.doubles
       c2d.textAlign = "center"
       c2d.textBaseline = "middle"
       c2d.fillText(s, x + w / 2, y + h / 2)
     }
     def left(s: String, bounds: BoundingBox) = {
-      val (x, y, w, h) = bounds
+      val (x, y, w, h) = bounds.doubles
       c2d.textAlign = "left"
       c2d.textBaseline = "middle"
       c2d.fillText(s, x, y + h / 2)
@@ -80,8 +92,8 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
     def colour_=(g: CanvasGradient) = c2d.fillStyle = g
     def image(i: HTMLElement) = {
       c2d.imageSmoothingEnabled = false
-      println(s"Draw image $i @ $cx, $cy/$cw, $ch")
-      c2d.drawImage(i, cx, cy, cw, ch)
+      // println(s"Draw image $i @ $cx, $cy/$cw, $ch")
+      c2d.drawImage(i, cx.toDouble, cy.toDouble, cw.toDouble, ch.toDouble)
     }
     def regularPoly(sides: Int, bounds: BoundingBox): Unit = {
       c2d.beginPath()
@@ -107,13 +119,6 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
       c2d.beginPath()
       Trace.points(pts)
       c2d.fill()
-    }
-    def pixels(px: Iterable[Iterable[Colour]], width: Double, height: Double): Unit = {
-      for ((pa, i) <- px.zipWithIndex; (pn, j) <- pa.zipWithIndex) {
-        Fill.colour = pn
-        val bb = (width * j, height * i, width, height)
-        Fill.regularPoly(4, bb)
-      }
     }
   }
   object Draw {
@@ -170,7 +175,7 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
   object Trace {
     def roundedRect(r: Double, bounds: BoundingBox): Unit = {
       ???
-      val (x, y, w, h) = bounds
+      val (x, y, w, h) = bounds.doubles
       c2d.moveTo(x, y + r)
       c2d.arc(x + r, y + r, r, math.Pi, 3 * math.Pi / 2)
       c2d.lineTo(x + w - r, y)
@@ -182,7 +187,8 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
       c2d.moveTo(x, y + r)
       c2d.arc(x + r, y + r, r, math.Pi, 3 * math.Pi / 2)
     }
-    def circle(bounds: BoundingBox): Unit = {
+    def circle(input: BoundingBox): Unit = {
+      val bounds = input.doubles
       ???
       val x = bounds._1 + bounds._3 / 2
       val y = bounds._2 + bounds._4 / 2
@@ -195,34 +201,33 @@ class Context(private[rendering] val c2d: CanvasRenderingContext2D) {
       c2d.arc(x, y, r, 0, 2 * math.Pi)
     }
     def line(x1: Double, y1: Double, x2: Double, y2: Double) = {
-      val p1x = cx + x1 * cw
-      val p1y = cy + y1 * ch
-      val p2x = cx + x2 * cw
-      val p2y = cy + y2 * ch
-      println(s"Line from $x1, $y1 => $x2, $y2 ($p1x, $p1y => $p2x, $p2y)")
+      val p1x = cx.toDouble + x1 * cw.toDouble
+      val p1y = cy.toDouble + y1 * ch.toDouble
+      val p2x = cx.toDouble + x2 * cw.toDouble
+      val p2y = cy.toDouble + y2 * ch.toDouble
+      // println(s"Line from $x1, $y1 => $x2, $y2 ($p1x, $p1y => $p2x, $p2y)")
       c2d.moveTo(p1x, p1y)
       c2d.lineTo(p2x, p2y)
     }
     def points(pts: Seq[(Double, Double)]): Unit = {
-      println(s"Draw $pts")
-      val p1x = cx + pts.head._1 * cw
-      val p1y = cy + pts.head._2 * ch
+      val p1x = cx.toDouble + pts.head._1 * cw.toDouble
+      val p1y = cy.toDouble + pts.head._2 * ch.toDouble
       c2d.moveTo(p1x, p1y)
       (pts.tail :+ pts.head).foreach {
         case (a,b) =>
-          val p2x = cx + a * cw
-          val p2y = cy + b * ch
+          val p2x = cx.toDouble + a * cw.toDouble
+          val p2y = cy.toDouble + b * ch.toDouble
           c2d.lineTo(p2x, p2y)
       }
     }
     def regularPoly(sides: Int, bounds: BoundingBox): Unit = {
-      val (x_, y_, w_, h_) = bounds
-      println(s"Draw poly init/$sides, $x_, $y_, $w_, $h_ ($cx, $cy, $cw, $ch)")
-      val x = cx + x_ * cw
-      val y = cy + y_ * ch
-      val w = w_ * cw
-      val h = h_ * ch
-      println(s"Draw poly/$sides, $x, $y, $w, $h")
+      val (x_, y_, w_, h_) = bounds.doubles
+      // println(s"Draw poly init/$sides, $x_, $y_, $w_, $h_ ($cx, $cy, $cw, $ch)")
+      val x = cx.toDouble + x_ * cw.toDouble
+      val y = cy.toDouble + y_ * ch.toDouble
+      val w = w_ * cw.toDouble
+      val h = h_ * ch.toDouble
+      // println(s"Draw poly/$sides, $x, $y, $w, $h")
       val anglePerSide = 2 * math.Pi / sides
       var pos = (0d, 0d)
       var maxX = 0d

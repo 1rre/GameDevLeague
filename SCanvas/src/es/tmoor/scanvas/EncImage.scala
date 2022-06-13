@@ -32,10 +32,12 @@ object EncImage:
         (a, b)
       paths += ((colour, (pts)))
     println(paths)
+    val maxW = paths.map(_._2.map(_._1).max.toDouble).max
+    val maxH = paths.map(_._2.map(_._2).max.toDouble).max
     (r: rendering.Context) => {
       for ((c, p) <- paths)
         r.Fill.colour = Colour((c >>> 16) & 0xff, (c >>> 8) & 0xff, c & 0xff, (c >>> 24) & 0xff)
-        r.Fill.points(p.map((a,b) => (a/13d, b/21d)))
+        r.Fill.points(p.map((a,b) => (a / maxW, b / maxH)))
     }
     
 

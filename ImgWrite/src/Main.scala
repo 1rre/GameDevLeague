@@ -55,6 +55,6 @@ class Image(paths: Path*):
       val c = (i % 94 + 32).toChar
       s"${b92(i / 94)}$c"
   println(r)
-  println(r.toByteArray.toSeq.length)
+  println(r.toByteArray.toSeq)
   ImageIO.write(image, "png", java.io.File("out.png"))
   java.io.FileOutputStream("out.bin").write(r.toByteArray)
