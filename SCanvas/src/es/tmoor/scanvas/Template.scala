@@ -3,19 +3,13 @@ import rendering.Context
 import BoundingBox._
 
 import Fraction.FractionComparisonOps.mkNumericOps
+import scala.reflect.ClassTag
+import scala.reflect.TypeTest
 
-
-case class Line(x1: Fraction, y1: Fraction, x2: Fraction, y2: Fraction):
-  val exempt = collection.mutable.Set[String]()
-class Borders:
-  val left = collection.mutable.Set[Line]()
-  val right = collection.mutable.Set[Line]()
-  val top = collection.mutable.Set[Line]()
-  val bottom = collection.mutable.Set[Line]()
 
 abstract class BaseTemplate {
   val uid = util.Random.alphanumeric.take(32).mkString
-  val borders: Borders
+  val blocks: collection.mutable.Set[Block[_]]
   abstract class SubTemplate extends Template(this, context)
   def relativeBounds: BoundingBox
   def bounds: BoundingBox
@@ -47,5 +41,14 @@ abstract class Template(val parent: BaseTemplate, val context: Context) extends 
   }
   val keys: collection.mutable.Set[Int] = parent.keys
   def tick = parent.tick
-  val borders: Borders = parent.borders
+  val blocks = parent.blocks
 }
+
+type TemplateOrNot = BaseTemplate | None.type
+
+class Block[T <: BaseTemplate](
+    left: => Fraction, right: => Fraction, top: => Fraction, bottom: => Fraction,
+    excludeSeq: Seq[String], excludeType: Class[T] = classOf[Nothing]
+)(using tt: TypeTest[BaseTemplate, T]):
+  def excludes[Tx <: BaseTemplate](elem: Tx): Boolean =
+    (excludeSeq contains elem.uid) || tt.unapply(elem).isDefined

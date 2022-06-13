@@ -1176,6 +1176,9 @@ function $h_Les_tmoor_scanvas_Borders() {
   /*<skip>*/
 }
 $h_Les_tmoor_scanvas_Borders.prototype = $c_Les_tmoor_scanvas_Borders.prototype;
+$c_Les_tmoor_scanvas_Borders.prototype.all__scm_Set = (function() {
+  return $as_scm_Set(this.left__scm_Set().$plus$plus__sc_IterableOnce__sc_SetOps(this.right__scm_Set()).$plus$plus__sc_IterableOnce__sc_SetOps(this.top__scm_Set()).$plus$plus__sc_IterableOnce__sc_SetOps(this.bottom__scm_Set()))
+});
 $c_Les_tmoor_scanvas_Borders.prototype.left__scm_Set = (function() {
   return this.Les_tmoor_scanvas_Borders__f_left
 });
@@ -1376,6 +1379,9 @@ $c_Les_tmoor_scanvas_Fraction.prototype.equals__O__Z = (function(x) {
   };
   return false
 });
+$c_Les_tmoor_scanvas_Fraction.prototype.in__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z = (function(lo, hi) {
+  return ($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps(this).$greater__O__Z(lo) && $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps(this).$less__O__Z(hi))
+});
 $c_Les_tmoor_scanvas_Fraction.prototype.$times__I__Les_tmoor_scanvas_Fraction = (function(that) {
   return $m_Les_tmoor_scanvas_Fraction$().apply__J__J__Les_tmoor_scanvas_Fraction(this.num__J().$times__RTLong__RTLong($m_RTLong$().fromInt__I__RTLong(that)), this.den__J())
 });
@@ -1520,8 +1526,7 @@ function $f_Les_tmoor_scanvas_Gravitational__$init$__V($thiz) {
   $thiz.x_$eq__Les_tmoor_scanvas_Fraction__V($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1));
   $thiz.y_$eq__Les_tmoor_scanvas_Fraction__V($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1));
   $thiz.dy_$eq__Les_tmoor_scanvas_Fraction__V($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1));
-  $thiz.dx_$eq__Les_tmoor_scanvas_Fraction__V($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1));
-  $thiz.onGround_$eq__Z__V(false)
+  $thiz.dx_$eq__Les_tmoor_scanvas_Fraction__V($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1))
 }
 function $f_Les_tmoor_scanvas_Gravitational__gravity__Les_tmoor_scanvas_Fraction($thiz) {
   return $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(35).$u00A6__I__Les_tmoor_scanvas_Fraction(1000000), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$times__O__O($thiz.timeScale__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$times__O__O($thiz.timeScale__Les_tmoor_scanvas_Fraction()))
@@ -1529,61 +1534,20 @@ function $f_Les_tmoor_scanvas_Gravitational__gravity__Les_tmoor_scanvas_Fraction
 function $f_Les_tmoor_scanvas_Gravitational__terminal__Les_tmoor_scanvas_Fraction($thiz) {
   return $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(25).$u00A6__I__Les_tmoor_scanvas_Fraction(10000), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$times__O__O($thiz.timeScale__Les_tmoor_scanvas_Fraction()))
 }
-function $f_Les_tmoor_scanvas_Gravitational__bounceOffWalls__Z($thiz) {
-  var nonLocalReturnKey1 = $ct_O__(new $c_O());
-  try {
-    $as_Les_tmoor_scanvas_Template($thiz).borders__Les_tmoor_scanvas_Borders().left__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => $ps_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$1__Les_tmoor_scanvas_Line__Z($as_Les_tmoor_scanvas_Line(x$1))))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this\u00f8) => ((x$1$2) => $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$2__Les_tmoor_scanvas_Line__Z(this\u00f8, $as_Les_tmoor_scanvas_Line(x$1$2))))($thiz))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$2, nonLocalReturnKey1$2) => ((x$1$3) => $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$adapted$1__O__Les_tmoor_scanvas_Line__O(this$2, nonLocalReturnKey1$2, $as_Les_tmoor_scanvas_Line(x$1$3))))($thiz, nonLocalReturnKey1)));
-    $as_Les_tmoor_scanvas_Template($thiz).borders__Les_tmoor_scanvas_Borders().right__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$4) => $ps_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$4__Les_tmoor_scanvas_Line__Z($as_Les_tmoor_scanvas_Line(x$1$4))))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this$3) => ((x$1$5) => $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$5__Les_tmoor_scanvas_Line__Z(this$3, $as_Les_tmoor_scanvas_Line(x$1$5))))($thiz))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$4, nonLocalReturnKey1$3) => ((x$1$6) => $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$adapted$2__O__Les_tmoor_scanvas_Line__O(this$4, nonLocalReturnKey1$3, $as_Les_tmoor_scanvas_Line(x$1$6))))($thiz, nonLocalReturnKey1)));
-    return false
-  } catch (e) {
-    if ((e instanceof $c_sr_NonLocalReturnControl)) {
-      var ex = $as_sr_NonLocalReturnControl(e);
-      if (Object.is(ex.key__O(), nonLocalReturnKey1)) {
-        return $uZ(ex.value__O())
-      } else {
-        throw ex
-      }
-    } else {
-      throw e
-    }
-  }
-}
-function $f_Les_tmoor_scanvas_Gravitational__setDx__V($thiz) {
-  ($thiz.bounceOffWalls__Z() || $thiz.moveX__Z())
-}
-function $f_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect__Z($thiz) {
-  var nonLocalReturnKey2 = $ct_O__(new $c_O());
-  try {
-    $as_Les_tmoor_scanvas_Template($thiz).borders__Les_tmoor_scanvas_Borders().bottom__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => $ps_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect$$anonfun$1__Les_tmoor_scanvas_Line__Z($as_Les_tmoor_scanvas_Line(x$1))))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this\u00f8) => ((x$1$2) => $p_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect$$anonfun$2__Les_tmoor_scanvas_Line__Z(this\u00f8, $as_Les_tmoor_scanvas_Line(x$1$2))))($thiz))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$2, nonLocalReturnKey2$2) => ((x$1$3) => $p_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect$$anonfun$adapted$1__O__Les_tmoor_scanvas_Line__O(this$2, nonLocalReturnKey2$2, $as_Les_tmoor_scanvas_Line(x$1$3))))($thiz, nonLocalReturnKey2)));
-    return false
-  } catch (e) {
-    if ((e instanceof $c_sr_NonLocalReturnControl)) {
-      var ex = $as_sr_NonLocalReturnControl(e);
-      if (Object.is(ex.key__O(), nonLocalReturnKey2)) {
-        return $uZ(ex.value__O())
-      } else {
-        throw ex
-      }
-    } else {
-      throw e
-    }
-  }
-}
-function $f_Les_tmoor_scanvas_Gravitational__increaseFall__Z($thiz) {
-  $thiz.dy_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.dy__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.gravity__Les_tmoor_scanvas_Fraction())));
-  $thiz.dy_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.dy__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).min__O__O($thiz.terminal__Les_tmoor_scanvas_Fraction())));
-  return true
-}
-function $f_Les_tmoor_scanvas_Gravitational__setDy__V($thiz) {
-  (($thiz.checkForFloorIntersect__Z() || $thiz.checkForJump__Z()) || $thiz.increaseFall__Z())
-}
 function $f_Les_tmoor_scanvas_Gravitational__updateEnv__V($thiz) {
-  $thiz.x_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.dx__Les_tmoor_scanvas_Fraction())));
-  $thiz.y_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.dy__Les_tmoor_scanvas_Fraction())));
-  $thiz.setDy__V();
-  $thiz.setDx__V()
+  var cx = $thiz.x__Les_tmoor_scanvas_Fraction();
+  var cy = $thiz.y__Les_tmoor_scanvas_Fraction();
+  var nx = $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.dx__Les_tmoor_scanvas_Fraction()));
+  var ny = $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.dy__Les_tmoor_scanvas_Fraction()));
+  $as_Les_tmoor_scanvas_Template($thiz).borders__Les_tmoor_scanvas_Borders().all__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => $ps_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$1__Les_tmoor_scanvas_Line__Z($as_Les_tmoor_scanvas_Line(x$1))))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this\u00f8) => ((x$1$2) => $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$2__Les_tmoor_scanvas_Line__Z(this\u00f8, $as_Les_tmoor_scanvas_Line(x$1$2))))($thiz))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$2, cx$2, cy$2) => ((x$1$3) => $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$adapted$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line__O(this$2, cx$2, cy$2, $as_Les_tmoor_scanvas_Line(x$1$3))))($thiz, cx, cy)));
+  if ((nx.in__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$minus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()))) && ny.in__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$minus__O__O($thiz.h__Les_tmoor_scanvas_Fraction()))))) {
+    $thiz.x_$eq__Les_tmoor_scanvas_Fraction__V(nx);
+    $thiz.y_$eq__Les_tmoor_scanvas_Fraction__V(ny);
+    $thiz.dy_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.terminal__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).min__O__O($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.dy__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.gravity__Les_tmoor_scanvas_Fraction()))));
+    $m_s_Predef$().println__O__V(((("Next: " + nx) + ", ") + ny))
+  }
 }
-function $ps_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$1__Les_tmoor_scanvas_Line__Z(x$1) {
+function $ps_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$1__Les_tmoor_scanvas_Line__Z(x$1) {
   var x1 = x$1;
   if ((x1 !== null)) {
     var x2 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x1);
@@ -1600,7 +1564,7 @@ function $ps_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$1__Les_tmo
   };
   return false
 }
-function $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$2__Les_tmoor_scanvas_Line__Z($thiz, x$1) {
+function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$2__Les_tmoor_scanvas_Line__Z($thiz, x$1) {
   var x7 = x$1;
   if ((x7 !== null)) {
     var x8 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x7);
@@ -1617,13 +1581,7 @@ function $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$2__Les_tmoo
   };
   throw new $c_s_MatchError(x7)
 }
-function $p_Les_tmoor_scanvas_Gravitational__vInLine$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, y1$1, y2$1) {
-  return ($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.h__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(y1$1) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(y2$1))
-}
-function $p_Les_tmoor_scanvas_Gravitational__hInLine$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, x1$1, x2$1) {
-  return ($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(x1$1) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(x2$1))
-}
-function $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$3__O__Les_tmoor_scanvas_Line__V($thiz, nonLocalReturnKey1$1, x$1) {
+function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$3__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line__V($thiz, cx$1, cy$1, x$1) {
   var x13 = x$1;
   if ((x13 !== null)) {
     var x14 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x13);
@@ -1636,158 +1594,15 @@ function $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$3__O__Les_t
     var x2 = x17;
     var y2 = x18;
     var l = x13;
-    if (($p_Les_tmoor_scanvas_Gravitational__vInLine$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, y1, y2) && $p_Les_tmoor_scanvas_Gravitational__hInLine$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, x1, x2))) {
-      $thiz.x_$eq__Les_tmoor_scanvas_Fraction__V(x1);
-      if ($thiz.dx__Les_tmoor_scanvas_Fraction().num__J().$less__RTLong__Z($m_RTLong$().fromInt__I__RTLong(0))) {
-        $thiz.dx_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.dx__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$times__O__O($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f((-2)).$u00A6__I__Les_tmoor_scanvas_Fraction(5))))
-      };
-      throw new $c_sr_NonLocalReturnControl(nonLocalReturnKey1$1, true)
+    if (((($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps(cx$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(x1) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps(cx$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(x2)) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps(cy$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.h__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(y1)) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps(cy$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(y2))) {
+      $m_s_Predef$().println__O__V(("Intersecting line " + l))
     };
     return (void 0)
   };
   throw new $c_s_MatchError(x13)
 }
-function $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$adapted$1__O__Les_tmoor_scanvas_Line__O($thiz, nonLocalReturnKey1$3, x$1) {
-  $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$3__O__Les_tmoor_scanvas_Line__V($thiz, nonLocalReturnKey1$3, x$1)
-}
-function $ps_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$4__Les_tmoor_scanvas_Line__Z(x$1) {
-  var x19 = x$1;
-  if ((x19 !== null)) {
-    var x20 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x19);
-    var x21 = x20._1__Les_tmoor_scanvas_Fraction();
-    var x22 = x20._2__Les_tmoor_scanvas_Fraction();
-    var x23 = x20._3__Les_tmoor_scanvas_Fraction();
-    var x24 = x20._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x21;
-    var y1 = x22;
-    var x2 = x23;
-    var y2 = x24;
-    var l = x19;
-    return true
-  };
-  return false
-}
-function $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$5__Les_tmoor_scanvas_Line__Z($thiz, x$1) {
-  var x25 = x$1;
-  if ((x25 !== null)) {
-    var x26 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x25);
-    var x27 = x26._1__Les_tmoor_scanvas_Fraction();
-    var x28 = x26._2__Les_tmoor_scanvas_Fraction();
-    var x29 = x26._3__Les_tmoor_scanvas_Fraction();
-    var x30 = x26._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x27;
-    var y1 = x28;
-    var x2 = x29;
-    var y2 = x30;
-    var l = x25;
-    return (!l.exempt__scm_Set().contains__O__Z($as_Les_tmoor_scanvas_Template($thiz).uid__T()))
-  };
-  throw new $c_s_MatchError(x25)
-}
-function $p_Les_tmoor_scanvas_Gravitational__vInLine$2__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, y1$2, y2$2) {
-  return ($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.h__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(y1$2) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(y2$2))
-}
-function $p_Les_tmoor_scanvas_Gravitational__hInLine$2__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, x1$2, x2$2) {
-  return ($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(x1$2) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(x2$2))
-}
-function $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$6__O__Les_tmoor_scanvas_Line__V($thiz, nonLocalReturnKey1$2, x$1) {
-  var x31 = x$1;
-  if ((x31 !== null)) {
-    var x32 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x31);
-    var x33 = x32._1__Les_tmoor_scanvas_Fraction();
-    var x34 = x32._2__Les_tmoor_scanvas_Fraction();
-    var x35 = x32._3__Les_tmoor_scanvas_Fraction();
-    var x36 = x32._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x33;
-    var y1 = x34;
-    var x2 = x35;
-    var y2 = x36;
-    var l = x31;
-    if (($p_Les_tmoor_scanvas_Gravitational__vInLine$2__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, y1, y2) && $p_Les_tmoor_scanvas_Gravitational__hInLine$2__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, x1, x2))) {
-      $thiz.x_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps(x1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$minus__O__O($thiz.w__Les_tmoor_scanvas_Fraction())));
-      if ($thiz.dx__Les_tmoor_scanvas_Fraction().num__J().$greater__RTLong__Z($m_RTLong$().fromInt__I__RTLong(0))) {
-        $thiz.dx_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.dx__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$times__O__O($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f((-2)).$u00A6__I__Les_tmoor_scanvas_Fraction(5))))
-      };
-      throw new $c_sr_NonLocalReturnControl(nonLocalReturnKey1$2, true)
-    };
-    return (void 0)
-  };
-  throw new $c_s_MatchError(x31)
-}
-function $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$adapted$2__O__Les_tmoor_scanvas_Line__O($thiz, nonLocalReturnKey1$4, x$1) {
-  $p_Les_tmoor_scanvas_Gravitational__bounceOffWalls$$anonfun$6__O__Les_tmoor_scanvas_Line__V($thiz, nonLocalReturnKey1$4, x$1)
-}
-function $ps_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect$$anonfun$1__Les_tmoor_scanvas_Line__Z(x$1) {
-  var x37 = x$1;
-  if ((x37 !== null)) {
-    var x38 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x37);
-    var x39 = x38._1__Les_tmoor_scanvas_Fraction();
-    var x40 = x38._2__Les_tmoor_scanvas_Fraction();
-    var x41 = x38._3__Les_tmoor_scanvas_Fraction();
-    var x42 = x38._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x39;
-    var y1 = x40;
-    var x2 = x41;
-    var y2 = x42;
-    var l = x37;
-    return true
-  };
-  return false
-}
-function $p_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect$$anonfun$2__Les_tmoor_scanvas_Line__Z($thiz, x$1) {
-  var x43 = x$1;
-  if ((x43 !== null)) {
-    var x44 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x43);
-    var x45 = x44._1__Les_tmoor_scanvas_Fraction();
-    var x46 = x44._2__Les_tmoor_scanvas_Fraction();
-    var x47 = x44._3__Les_tmoor_scanvas_Fraction();
-    var x48 = x44._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x45;
-    var y1 = x46;
-    var x2 = x47;
-    var y2 = x48;
-    var l = x43;
-    return (!l.exempt__scm_Set().contains__O__Z($as_Les_tmoor_scanvas_Template($thiz).uid__T()))
-  };
-  throw new $c_s_MatchError(x43)
-}
-function $p_Les_tmoor_scanvas_Gravitational__vInLine$3__Les_tmoor_scanvas_Fraction__Z($thiz, y1$3) {
-  return ($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.h__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(y1$3) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(y1$3))
-}
-function $p_Les_tmoor_scanvas_Gravitational__hInLine$3__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, x1$3, x2$3) {
-  return ($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(x1$3) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(x2$3))
-}
-function $p_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect$$anonfun$3__O__Les_tmoor_scanvas_Line__V($thiz, nonLocalReturnKey2$1, x$1) {
-  var x49 = x$1;
-  if ((x49 !== null)) {
-    var x50 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x49);
-    var x51 = x50._1__Les_tmoor_scanvas_Fraction();
-    var x52 = x50._2__Les_tmoor_scanvas_Fraction();
-    var x53 = x50._3__Les_tmoor_scanvas_Fraction();
-    var x54 = x50._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x51;
-    var y1 = x52;
-    var x2 = x53;
-    var y2 = x54;
-    var l = x49;
-    var x = y1;
-    var x$2 = y2;
-    if ((!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))) {
-      $m_sr_Scala3RunTime$().assertFailed__E()
-    };
-    if (($p_Les_tmoor_scanvas_Gravitational__vInLine$3__Les_tmoor_scanvas_Fraction__Z($thiz, y1) && $p_Les_tmoor_scanvas_Gravitational__hInLine$3__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, x1, x2))) {
-      $m_s_Predef$().println__O__V((((("Intersect @ " + y1) + " (other @ ") + $m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.h__Les_tmoor_scanvas_Fraction())) + ")"));
-      $thiz.dy_$eq__Les_tmoor_scanvas_Fraction__V($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1));
-      $thiz.y_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps(y1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$minus__O__O($thiz.h__Les_tmoor_scanvas_Fraction())));
-      $thiz.onGround_$eq__Z__V(true);
-      throw new $c_sr_NonLocalReturnControl(nonLocalReturnKey2$1, true)
-    };
-    return (void 0)
-  };
-  throw new $c_s_MatchError(x49)
-}
-function $p_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect$$anonfun$adapted$1__O__Les_tmoor_scanvas_Line__O($thiz, nonLocalReturnKey2$2, x$1) {
-  $p_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect$$anonfun$3__O__Les_tmoor_scanvas_Line__V($thiz, nonLocalReturnKey2$2, x$1)
+function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$adapted$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line__O($thiz, cx$2, cy$2, x$1) {
+  $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$3__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line__V($thiz, cx$2, cy$2, x$1)
 }
 /** @constructor */
 function $c_Les_tmoor_scanvas_rendering_Colour$() {
@@ -6852,12 +6667,6 @@ $c_s_math_Numeric$NumericOps.prototype.$minus__O__O = (function(rhs) {
 $c_s_math_Numeric$NumericOps.prototype.$times__O__O = (function(rhs) {
   return this.scala$math$Numeric$NumericOps$$$outer__s_math_Numeric().times__O__O__O(this.s_math_Numeric$NumericOps__f_lhs, rhs)
 });
-$c_s_math_Numeric$NumericOps.prototype.unary_$minus__O = (function() {
-  return this.scala$math$Numeric$NumericOps$$$outer__s_math_Numeric().negate__O__O(this.s_math_Numeric$NumericOps__f_lhs)
-});
-$c_s_math_Numeric$NumericOps.prototype.abs__O = (function() {
-  return this.scala$math$Numeric$NumericOps$$$outer__s_math_Numeric().abs__O__O(this.s_math_Numeric$NumericOps__f_lhs)
-});
 $c_s_math_Numeric$NumericOps.prototype.toDouble__D = (function() {
   return this.scala$math$Numeric$NumericOps$$$outer__s_math_Numeric().toDouble__O__D(this.s_math_Numeric$NumericOps__f_lhs)
 });
@@ -6920,9 +6729,6 @@ $c_s_math_Ordering$OrderingOps.prototype.$less__O__Z = (function(rhs) {
 });
 $c_s_math_Ordering$OrderingOps.prototype.$greater__O__Z = (function(rhs) {
   return this.scala$math$Ordering$OrderingOps$$$outer__s_math_Ordering().gt__O__O__Z(this.s_math_Ordering$OrderingOps__f_lhs, rhs)
-});
-$c_s_math_Ordering$OrderingOps.prototype.max__O__O = (function(rhs) {
-  return this.scala$math$Ordering$OrderingOps$$$outer__s_math_Ordering().max__O__O__O(this.s_math_Ordering$OrderingOps__f_lhs, rhs)
 });
 $c_s_math_Ordering$OrderingOps.prototype.min__O__O = (function(rhs) {
   return this.scala$math$Ordering$OrderingOps$$$outer__s_math_Ordering().min__O__O__O(this.s_math_Ordering$OrderingOps__f_lhs, rhs)
@@ -7423,35 +7229,6 @@ function $m_sr_RichInt$() {
     $n_sr_RichInt$ = new $c_sr_RichInt$()
   };
   return $n_sr_RichInt$
-}
-/** @constructor */
-function $c_sr_Scala3RunTime$() {
-  $ct_O__(this);
-  $n_sr_Scala3RunTime$ = this
-}
-$c_sr_Scala3RunTime$.prototype = new $h_O();
-$c_sr_Scala3RunTime$.prototype.constructor = $c_sr_Scala3RunTime$;
-/** @constructor */
-function $h_sr_Scala3RunTime$() {
-  /*<skip>*/
-}
-$h_sr_Scala3RunTime$.prototype = $c_sr_Scala3RunTime$.prototype;
-$c_sr_Scala3RunTime$.prototype.assertFailed__E = (function() {
-  throw $ct_jl_AssertionError__O__(new $c_jl_AssertionError(), "assertion failed")
-});
-var $d_sr_Scala3RunTime$ = new $TypeData().initClass({
-  sr_Scala3RunTime$: 0
-}, false, "scala.runtime.Scala3RunTime$", {
-  sr_Scala3RunTime$: 1,
-  O: 1
-});
-$c_sr_Scala3RunTime$.prototype.$classData = $d_sr_Scala3RunTime$;
-var $n_sr_Scala3RunTime$;
-function $m_sr_Scala3RunTime$() {
-  if ((!$n_sr_Scala3RunTime$)) {
-    $n_sr_Scala3RunTime$ = new $c_sr_Scala3RunTime$()
-  };
-  return $n_sr_Scala3RunTime$
 }
 /** @constructor */
 function $c_sr_ScalaRunTime$() {
@@ -12685,6 +12462,65 @@ $c_sci_BitmapIndexedSetNode.prototype.updated__O__I__I__I__sci_BitmapIndexedSetN
   };
   return this.copyAndInsertValue__I__O__I__I__sci_BitmapIndexedSetNode(bitpos, element, originalHash, elementHash)
 });
+$c_sci_BitmapIndexedSetNode.prototype.updateWithShallowMutations__O__I__I__I__I__I = (function(element, originalHash, elementHash, shift, shallowlyMutableNodeMap) {
+  var mask = $m_sci_Node$().maskFrom__I__I__I(elementHash, shift);
+  var bitpos = $m_sci_Node$().bitposFrom__I__I(mask);
+  if (((this.dataMap__I() & bitpos) !== 0)) {
+    var index = $m_sci_Node$().indexFrom__I__I__I__I(this.dataMap__I(), mask, bitpos);
+    var element0 = this.getPayload__I__O(index);
+    var element0UnimprovedHash = this.getHash__I__I(index);
+    if (((element0UnimprovedHash === originalHash) && $m_sr_BoxesRunTime$().equals__O__O__Z(element0, element))) {
+      return shallowlyMutableNodeMap
+    } else {
+      var element0Hash = $m_sc_Hashing$().improve__I__I(element0UnimprovedHash);
+      var subNodeNew = this.mergeTwoKeyValPairs__O__I__I__O__I__I__I__sci_SetNode(element0, element0UnimprovedHash, element0Hash, element, originalHash, elementHash, ((shift + 5) | 0));
+      this.migrateFromInlineToNodeInPlace__I__I__sci_SetNode__sci_BitmapIndexedSetNode(bitpos, element0Hash, subNodeNew);
+      return (shallowlyMutableNodeMap | bitpos)
+    }
+  } else if (((this.nodeMap__I() & bitpos) !== 0)) {
+    var index$2 = $m_sci_Node$().indexFrom__I__I__I__I(this.nodeMap__I(), mask, bitpos);
+    var subNode = this.getNode__I__sci_SetNode(index$2);
+    var subNodeSize = subNode.size__I();
+    var subNodeCachedJavaKeySetHashCode = subNode.cachedJavaKeySetHashCode__I();
+    var returnNodeMap = shallowlyMutableNodeMap;
+    var x1 = subNode;
+    matchEnd4: {
+      var subNodeNew$3;
+      if ((x1 instanceof $c_sci_BitmapIndexedSetNode)) {
+        var x2 = $as_sci_BitmapIndexedSetNode(x1);
+        if (((bitpos & shallowlyMutableNodeMap) !== 0)) {
+          x2.updateWithShallowMutations__O__I__I__I__I__I(element, originalHash, elementHash, ((shift + 5) | 0), 0);
+          var subNodeNew$3 = x2;
+          break matchEnd4
+        }
+      };
+      var subNodeNew$2 = subNode.updated__O__I__I__I__sci_SetNode(element, originalHash, elementHash, ((shift + 5) | 0));
+      if ((!Object.is(subNodeNew$2, subNode))) {
+        returnNodeMap = (returnNodeMap | bitpos)
+      };
+      var subNodeNew$3 = subNodeNew$2
+    };
+    this.content__AO().set(((((this.content__AO().u.length - 1) | 0) - this.nodeIndex__I__I(bitpos)) | 0), subNodeNew$3);
+    this.size_$eq__I__V(((((this.size__I() - subNodeSize) | 0) + subNodeNew$3.size__I()) | 0));
+    this.cachedJavaKeySetHashCode_$eq__I__V(((((this.cachedJavaKeySetHashCode__I() - subNodeCachedJavaKeySetHashCode) | 0) + subNodeNew$3.cachedJavaKeySetHashCode__I()) | 0));
+    return returnNodeMap
+  } else {
+    var dataIx = this.dataIndex__I__I(bitpos);
+    var idx = dataIx;
+    var src = this.content__AO();
+    var dst = new $ac_O(((src.u.length + 1) | 0));
+    $s_jl_System__arraycopy__O__I__O__I__I__V(src, 0, dst, 0, idx);
+    dst.set(idx, element);
+    $s_jl_System__arraycopy__O__I__O__I__I__V(src, idx, dst, ((idx + 1) | 0), ((src.u.length - idx) | 0));
+    var dstHashes = this.insertElement__AI__I__I__AI(this.originalHashes__AI(), dataIx, originalHash);
+    this.dataMap_$eq__I__V((this.dataMap__I() | bitpos));
+    this.content_$eq__AO__V(dst);
+    this.originalHashes_$eq__AI__V(dstHashes);
+    this.size_$eq__I__V(((this.size__I() + 1) | 0));
+    this.cachedJavaKeySetHashCode_$eq__I__V(((this.cachedJavaKeySetHashCode__I() + elementHash) | 0));
+    return shallowlyMutableNodeMap
+  }
+});
 $c_sci_BitmapIndexedSetNode.prototype.removed__O__I__I__I__sci_BitmapIndexedSetNode = (function(element, originalHash, elementHash, shift) {
   var mask = $m_sci_Node$().maskFrom__I__I__I(elementHash, shift);
   var bitpos = $m_sci_Node$().bitposFrom__I__I(mask);
@@ -12974,6 +12810,197 @@ $c_sci_BitmapIndexedSetNode.prototype.copy__sci_BitmapIndexedSetNode = (function
   };
   return new $c_sci_BitmapIndexedSetNode(this.dataMap__I(), this.nodeMap__I(), contentClone, $asArrayOf_I(this.originalHashes__AI().clone__O(), 1), this.size__I(), this.cachedJavaKeySetHashCode__I())
 });
+$c_sci_BitmapIndexedSetNode.prototype.concat__sci_SetNode__I__sci_BitmapIndexedSetNode = (function(that, shift) {
+  var x1 = that;
+  if ((x1 instanceof $c_sci_BitmapIndexedSetNode)) {
+    var x2 = $as_sci_BitmapIndexedSetNode(x1);
+    if ((this.size__I() === 0)) {
+      return x2
+    } else if (((x2.size__I() === 0) || Object.is(x2, this))) {
+      return this
+    } else if ((x2.size__I() === 1)) {
+      var originalHash = x2.getHash__I__I(0);
+      return this.updated__O__I__I__I__sci_BitmapIndexedSetNode(x2.getPayload__I__O(0), originalHash, $m_sc_Hashing$().improve__I__I(originalHash), shift)
+    };
+    var anyChangesMadeSoFar = false;
+    var allMap = (((this.dataMap__I() | x2.dataMap__I()) | this.nodeMap__I()) | x2.nodeMap__I());
+    var minimumBitPos = $m_sci_Node$().bitposFrom__I__I($s_jl_Integer__numberOfTrailingZeros__I__I(allMap));
+    var maximumBitPos = $m_sci_Node$().bitposFrom__I__I(((((32 - $s_jl_Integer__numberOfLeadingZeros__I__I(allMap)) | 0) - 1) | 0));
+    var leftNodeRightNode = 0;
+    var leftDataRightNode = 0;
+    var leftNodeRightData = 0;
+    var leftDataOnly = 0;
+    var rightDataOnly = 0;
+    var leftNodeOnly = 0;
+    var rightNodeOnly = 0;
+    var leftDataRightDataMigrateToNode = 0;
+    var leftDataRightDataLeftOverwrites = 0;
+    var dataToNodeMigrationTargets = 0;
+    var bitpos = minimumBitPos;
+    var leftIdx = 0;
+    var rightIdx = 0;
+    var finished = false;
+    while ((!finished)) {
+      if (((bitpos & this.dataMap__I()) !== 0)) {
+        if (((bitpos & x2.dataMap__I()) !== 0)) {
+          if (((this.getHash__I__I(leftIdx) === x2.getHash__I__I(rightIdx)) && $m_sr_BoxesRunTime$().equals__O__O__Z(this.getPayload__I__O(leftIdx), x2.getPayload__I__O(rightIdx)))) {
+            leftDataRightDataLeftOverwrites = (leftDataRightDataLeftOverwrites | bitpos)
+          } else {
+            leftDataRightDataMigrateToNode = (leftDataRightDataMigrateToNode | bitpos);
+            dataToNodeMigrationTargets = (dataToNodeMigrationTargets | $m_sci_Node$().bitposFrom__I__I($m_sci_Node$().maskFrom__I__I__I($m_sc_Hashing$().improve__I__I(this.getHash__I__I(leftIdx)), shift)))
+          };
+          rightIdx = ((rightIdx + 1) | 0)
+        } else if (((bitpos & x2.nodeMap__I()) !== 0)) {
+          leftDataRightNode = (leftDataRightNode | bitpos)
+        } else {
+          leftDataOnly = (leftDataOnly | bitpos)
+        };
+        leftIdx = ((leftIdx + 1) | 0)
+      } else if (((bitpos & this.nodeMap__I()) !== 0)) {
+        if (((bitpos & x2.dataMap__I()) !== 0)) {
+          leftNodeRightData = (leftNodeRightData | bitpos);
+          rightIdx = ((rightIdx + 1) | 0)
+        } else if (((bitpos & x2.nodeMap__I()) !== 0)) {
+          leftNodeRightNode = (leftNodeRightNode | bitpos)
+        } else {
+          leftNodeOnly = (leftNodeOnly | bitpos)
+        }
+      } else if (((bitpos & x2.dataMap__I()) !== 0)) {
+        rightDataOnly = (rightDataOnly | bitpos);
+        rightIdx = ((rightIdx + 1) | 0)
+      } else if (((bitpos & x2.nodeMap__I()) !== 0)) {
+        rightNodeOnly = (rightNodeOnly | bitpos)
+      };
+      if ((bitpos === maximumBitPos)) {
+        finished = true
+      } else {
+        bitpos = (bitpos << 1)
+      }
+    };
+    var newDataMap = ((leftDataOnly | rightDataOnly) | leftDataRightDataLeftOverwrites);
+    var newNodeMap = (((((leftNodeRightNode | leftDataRightNode) | leftNodeRightData) | leftNodeOnly) | rightNodeOnly) | dataToNodeMigrationTargets);
+    if (((newDataMap === (leftDataOnly | leftDataRightDataLeftOverwrites)) && (newNodeMap === leftNodeOnly))) {
+      return this
+    };
+    var newDataSize = $s_jl_Integer__bitCount__I__I(newDataMap);
+    var newContentSize = ((newDataSize + $s_jl_Integer__bitCount__I__I(newNodeMap)) | 0);
+    var newContent = new $ac_O(newContentSize);
+    var newOriginalHashes = new $ac_I(newDataSize);
+    var newSize = 0;
+    var newCachedHashCode = 0;
+    var leftDataIdx = 0;
+    var rightDataIdx = 0;
+    var leftNodeIdx = 0;
+    var rightNodeIdx = 0;
+    var nextShift = ((shift + 5) | 0);
+    var compressedDataIdx = 0;
+    var compressedNodeIdx = 0;
+    var bitpos$2 = minimumBitPos;
+    var finished$2 = false;
+    while ((!finished$2)) {
+      if (((bitpos$2 & leftNodeRightNode) !== 0)) {
+        var leftNode = this.getNode__I__sci_SetNode(leftNodeIdx);
+        var newNode = leftNode.concat__sci_SetNode__I__sci_SetNode(x2.getNode__I__sci_SetNode(rightNodeIdx), nextShift);
+        if ((!Object.is(leftNode, newNode))) {
+          anyChangesMadeSoFar = true
+        };
+        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode);
+        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
+        rightNodeIdx = ((rightNodeIdx + 1) | 0);
+        leftNodeIdx = ((leftNodeIdx + 1) | 0);
+        newSize = ((newSize + newNode.size__I()) | 0);
+        newCachedHashCode = ((newCachedHashCode + newNode.cachedJavaKeySetHashCode__I()) | 0)
+      } else if (((bitpos$2 & leftDataRightNode) !== 0)) {
+        anyChangesMadeSoFar = true;
+        var n = x2.getNode__I__sci_SetNode(rightNodeIdx);
+        var leftPayload = this.getPayload__I__O(leftDataIdx);
+        var leftOriginalHash = this.getHash__I__I(leftDataIdx);
+        var leftImproved = $m_sc_Hashing$().improve__I__I(leftOriginalHash);
+        var newNode$2 = n.updated__O__I__I__I__sci_SetNode(leftPayload, leftOriginalHash, leftImproved, nextShift);
+        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$2);
+        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
+        rightNodeIdx = ((rightNodeIdx + 1) | 0);
+        leftDataIdx = ((leftDataIdx + 1) | 0);
+        newSize = ((newSize + newNode$2.size__I()) | 0);
+        newCachedHashCode = ((newCachedHashCode + newNode$2.cachedJavaKeySetHashCode__I()) | 0)
+      } else if (((bitpos$2 & leftNodeRightData) !== 0)) {
+        var rightOriginalHash = x2.getHash__I__I(rightDataIdx);
+        var leftNode$2 = this.getNode__I__sci_SetNode(leftNodeIdx);
+        var updated = leftNode$2.updated__O__I__I__I__sci_SetNode(x2.getPayload__I__O(rightDataIdx), x2.getHash__I__I(rightDataIdx), $m_sc_Hashing$().improve__I__I(rightOriginalHash), nextShift);
+        if ((!Object.is(updated, leftNode$2))) {
+          anyChangesMadeSoFar = true
+        };
+        var newNode$3 = updated;
+        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$3);
+        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
+        leftNodeIdx = ((leftNodeIdx + 1) | 0);
+        rightDataIdx = ((rightDataIdx + 1) | 0);
+        newSize = ((newSize + newNode$3.size__I()) | 0);
+        newCachedHashCode = ((newCachedHashCode + newNode$3.cachedJavaKeySetHashCode__I()) | 0)
+      } else if (((bitpos$2 & leftDataOnly) !== 0)) {
+        var originalHash$2 = this.originalHashes__AI().get(leftDataIdx);
+        newContent.set(compressedDataIdx, this.getPayload__I__O(leftDataIdx));
+        newOriginalHashes.set(compressedDataIdx, originalHash$2);
+        compressedDataIdx = ((compressedDataIdx + 1) | 0);
+        leftDataIdx = ((leftDataIdx + 1) | 0);
+        newSize = ((newSize + 1) | 0);
+        newCachedHashCode = ((newCachedHashCode + $m_sc_Hashing$().improve__I__I(originalHash$2)) | 0)
+      } else if (((bitpos$2 & rightDataOnly) !== 0)) {
+        anyChangesMadeSoFar = true;
+        var originalHash$3 = x2.originalHashes__AI().get(rightDataIdx);
+        newContent.set(compressedDataIdx, x2.getPayload__I__O(rightDataIdx));
+        newOriginalHashes.set(compressedDataIdx, originalHash$3);
+        compressedDataIdx = ((compressedDataIdx + 1) | 0);
+        rightDataIdx = ((rightDataIdx + 1) | 0);
+        newSize = ((newSize + 1) | 0);
+        newCachedHashCode = ((newCachedHashCode + $m_sc_Hashing$().improve__I__I(originalHash$3)) | 0)
+      } else if (((bitpos$2 & leftNodeOnly) !== 0)) {
+        var newNode$4 = this.getNode__I__sci_SetNode(leftNodeIdx);
+        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$4);
+        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
+        leftNodeIdx = ((leftNodeIdx + 1) | 0);
+        newSize = ((newSize + newNode$4.size__I()) | 0);
+        newCachedHashCode = ((newCachedHashCode + newNode$4.cachedJavaKeySetHashCode__I()) | 0)
+      } else if (((bitpos$2 & rightNodeOnly) !== 0)) {
+        anyChangesMadeSoFar = true;
+        var newNode$5 = x2.getNode__I__sci_SetNode(rightNodeIdx);
+        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$5);
+        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
+        rightNodeIdx = ((rightNodeIdx + 1) | 0);
+        newSize = ((newSize + newNode$5.size__I()) | 0);
+        newCachedHashCode = ((newCachedHashCode + newNode$5.cachedJavaKeySetHashCode__I()) | 0)
+      } else if (((bitpos$2 & leftDataRightDataMigrateToNode) !== 0)) {
+        anyChangesMadeSoFar = true;
+        var leftOriginalHash$2 = this.getHash__I__I(leftDataIdx);
+        var rightOriginalHash$2 = x2.getHash__I__I(rightDataIdx);
+        var newNode$6 = x2.mergeTwoKeyValPairs__O__I__I__O__I__I__I__sci_SetNode(this.getPayload__I__O(leftDataIdx), leftOriginalHash$2, $m_sc_Hashing$().improve__I__I(leftOriginalHash$2), x2.getPayload__I__O(rightDataIdx), rightOriginalHash$2, $m_sc_Hashing$().improve__I__I(rightOriginalHash$2), nextShift);
+        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$6);
+        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
+        leftDataIdx = ((leftDataIdx + 1) | 0);
+        rightDataIdx = ((rightDataIdx + 1) | 0);
+        newSize = ((newSize + newNode$6.size__I()) | 0);
+        newCachedHashCode = ((newCachedHashCode + newNode$6.cachedJavaKeySetHashCode__I()) | 0)
+      } else if (((bitpos$2 & leftDataRightDataLeftOverwrites) !== 0)) {
+        var originalHash$4 = x2.originalHashes__AI().get(rightDataIdx);
+        newContent.set(compressedDataIdx, x2.getPayload__I__O(rightDataIdx));
+        newOriginalHashes.set(compressedDataIdx, originalHash$4);
+        compressedDataIdx = ((compressedDataIdx + 1) | 0);
+        rightDataIdx = ((rightDataIdx + 1) | 0);
+        newSize = ((newSize + 1) | 0);
+        newCachedHashCode = ((newCachedHashCode + $m_sc_Hashing$().improve__I__I(originalHash$4)) | 0);
+        leftDataIdx = ((leftDataIdx + 1) | 0)
+      };
+      if ((bitpos$2 === maximumBitPos)) {
+        finished$2 = true
+      } else {
+        bitpos$2 = (bitpos$2 << 1)
+      }
+    };
+    return (anyChangesMadeSoFar ? new $c_sci_BitmapIndexedSetNode(newDataMap, newNodeMap, newContent, newOriginalHashes, newSize, newCachedHashCode) : this)
+  } else {
+    throw $ct_jl_UnsupportedOperationException__T__(new $c_jl_UnsupportedOperationException(), "Cannot concatenate a HashCollisionSetNode with a BitmapIndexedSetNode")
+  }
+});
 $c_sci_BitmapIndexedSetNode.prototype.foreachWithHash__F2__V = (function(f) {
   var iN = this.payloadArity__I();
   var i = 0;
@@ -12987,6 +13014,9 @@ $c_sci_BitmapIndexedSetNode.prototype.foreachWithHash__F2__V = (function(f) {
     this.getNode__I__sci_SetNode(j).foreachWithHash__F2__V(f);
     j = ((j + 1) | 0)
   }
+});
+$c_sci_BitmapIndexedSetNode.prototype.concat__sci_SetNode__I__sci_SetNode = (function(that, shift) {
+  return this.concat__sci_SetNode__I__sci_BitmapIndexedSetNode(that, shift)
 });
 $c_sci_BitmapIndexedSetNode.prototype.copy__sci_SetNode = (function() {
   return this.copy__sci_BitmapIndexedSetNode()
@@ -13138,6 +13168,33 @@ $c_sci_HashCollisionSetNode.prototype.hashCode__I = (function() {
 });
 $c_sci_HashCollisionSetNode.prototype.copy__sci_HashCollisionSetNode = (function() {
   return new $c_sci_HashCollisionSetNode(this.originalHash__I(), this.hash__I(), this.content__sci_Vector())
+});
+$c_sci_HashCollisionSetNode.prototype.concat__sci_SetNode__I__sci_SetNode = (function(that, shift) {
+  var x1 = that;
+  if ((x1 instanceof $c_sci_HashCollisionSetNode)) {
+    var x2 = $as_sci_HashCollisionSetNode(x1);
+    if (Object.is(x2, this)) {
+      return this
+    } else {
+      var newContent = null;
+      var iter = x2.content__sci_Vector().iterator__sc_Iterator();
+      while (iter.hasNext__Z()) {
+        var nextPayload = iter.next__O();
+        if ((!this.content__sci_Vector().contains__O__Z(nextPayload))) {
+          if ((newContent === null)) {
+            newContent = new $c_sci_VectorBuilder();
+            newContent.addAll__sc_IterableOnce__sci_VectorBuilder(this.content__sci_Vector())
+          };
+          newContent.addOne__O__sci_VectorBuilder(nextPayload)
+        }
+      };
+      return ((newContent === null) ? this : new $c_sci_HashCollisionSetNode(this.originalHash__I(), this.hash__I(), newContent.result__sci_Vector()))
+    }
+  } else if ((x1 instanceof $c_sci_BitmapIndexedSetNode)) {
+    throw $ct_jl_UnsupportedOperationException__T__(new $c_jl_UnsupportedOperationException(), "Cannot concatenate a HashCollisionSetNode with a BitmapIndexedSetNode")
+  } else {
+    throw new $c_s_MatchError(x1)
+  }
 });
 $c_sci_HashCollisionSetNode.prototype.foreachWithHash__F2__V = (function(f) {
   var iter = this.content__sci_Vector().iterator__sc_Iterator();
@@ -13723,16 +13780,6 @@ function $m_s_util_Random$() {
     $n_s_util_Random$ = new $c_s_util_Random$()
   };
   return $n_s_util_Random$
-}
-function $ct_s_util_control_ControlThrowable__T__($thiz, message) {
-  $ct_jl_Throwable__T__jl_Throwable__Z__Z__($thiz, message, null, false, false);
-  return $thiz
-}
-function $ct_s_util_control_ControlThrowable__($thiz) {
-  $ct_s_util_control_ControlThrowable__T__($thiz, null);
-  return $thiz
-}
-class $c_s_util_control_ControlThrowable extends $c_jl_Throwable {
 }
 /** @constructor */
 function $c_Ldevleague_Road$() {
@@ -16079,44 +16126,6 @@ function $m_scm_Set$() {
   };
   return $n_scm_Set$
 }
-class $c_sr_NonLocalReturnControl extends $c_s_util_control_ControlThrowable {
-  constructor(key, value) {
-    super();
-    this.sr_NonLocalReturnControl__f_key = null;
-    this.sr_NonLocalReturnControl__f_value = null;
-    this.sr_NonLocalReturnControl__f_key = key;
-    this.sr_NonLocalReturnControl__f_value = value;
-    $ct_s_util_control_ControlThrowable__(this)
-  };
-  key__O() {
-    return this.sr_NonLocalReturnControl__f_key
-  };
-  value__O() {
-    return this.sr_NonLocalReturnControl__f_value
-  };
-  fillInStackTrace__jl_Throwable() {
-    return this
-  };
-}
-function $as_sr_NonLocalReturnControl(obj) {
-  return (((obj instanceof $c_sr_NonLocalReturnControl) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.runtime.NonLocalReturnControl"))
-}
-function $isArrayOf_sr_NonLocalReturnControl(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sr_NonLocalReturnControl)))
-}
-function $asArrayOf_sr_NonLocalReturnControl(obj, depth) {
-  return (($isArrayOf_sr_NonLocalReturnControl(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.runtime.NonLocalReturnControl;", depth))
-}
-var $d_sr_NonLocalReturnControl = new $TypeData().initClass({
-  sr_NonLocalReturnControl: 0
-}, false, "scala.runtime.NonLocalReturnControl", {
-  sr_NonLocalReturnControl: 1,
-  s_util_control_ControlThrowable: 1,
-  jl_Throwable: 1,
-  O: 1,
-  Ljava_io_Serializable: 1
-});
-$c_sr_NonLocalReturnControl.prototype.$classData = $d_sr_NonLocalReturnControl;
 function $p_Ldevleague_Box__rmBorders$$anonfun$1__Les_tmoor_scanvas_Line__Z($thiz, b) {
   return b.exempt__scm_Set().contains__O__Z($thiz.uid__T())
 }
@@ -16153,7 +16162,6 @@ function $c_Ldevleague_Box(pxW, pxH, sx, sy) {
   this.Ldevleague_Box__f_y = null;
   this.Ldevleague_Box__f_dy = null;
   this.Ldevleague_Box__f_dx = null;
-  this.Ldevleague_Box__f_onGround = false;
   this.Ldevleague_Box__f_timeScale = null;
   this.Ldevleague_Box__f_children = null;
   this.Ldevleague_Box__f_img = null;
@@ -16210,9 +16218,6 @@ $c_Ldevleague_Box.prototype.dy__Les_tmoor_scanvas_Fraction = (function() {
 $c_Ldevleague_Box.prototype.dx__Les_tmoor_scanvas_Fraction = (function() {
   return this.Ldevleague_Box__f_dx
 });
-$c_Ldevleague_Box.prototype.onGround__Z = (function() {
-  return this.Ldevleague_Box__f_onGround
-});
 $c_Ldevleague_Box.prototype.x_$eq__Les_tmoor_scanvas_Fraction__V = (function(x$1) {
   this.Ldevleague_Box__f_x = x$1
 });
@@ -16225,29 +16230,11 @@ $c_Ldevleague_Box.prototype.dy_$eq__Les_tmoor_scanvas_Fraction__V = (function(x$
 $c_Ldevleague_Box.prototype.dx_$eq__Les_tmoor_scanvas_Fraction__V = (function(x$1) {
   this.Ldevleague_Box__f_dx = x$1
 });
-$c_Ldevleague_Box.prototype.onGround_$eq__Z__V = (function(x$1) {
-  this.Ldevleague_Box__f_onGround = x$1
-});
 $c_Ldevleague_Box.prototype.gravity__Les_tmoor_scanvas_Fraction = (function() {
   return $f_Les_tmoor_scanvas_Gravitational__gravity__Les_tmoor_scanvas_Fraction(this)
 });
 $c_Ldevleague_Box.prototype.terminal__Les_tmoor_scanvas_Fraction = (function() {
   return $f_Les_tmoor_scanvas_Gravitational__terminal__Les_tmoor_scanvas_Fraction(this)
-});
-$c_Ldevleague_Box.prototype.bounceOffWalls__Z = (function() {
-  return $f_Les_tmoor_scanvas_Gravitational__bounceOffWalls__Z(this)
-});
-$c_Ldevleague_Box.prototype.setDx__V = (function() {
-  $f_Les_tmoor_scanvas_Gravitational__setDx__V(this)
-});
-$c_Ldevleague_Box.prototype.checkForFloorIntersect__Z = (function() {
-  return $f_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect__Z(this)
-});
-$c_Ldevleague_Box.prototype.increaseFall__Z = (function() {
-  return $f_Les_tmoor_scanvas_Gravitational__increaseFall__Z(this)
-});
-$c_Ldevleague_Box.prototype.setDy__V = (function() {
-  $f_Les_tmoor_scanvas_Gravitational__setDy__V(this)
 });
 $c_Ldevleague_Box.prototype.updateEnv__V = (function() {
   $f_Les_tmoor_scanvas_Gravitational__updateEnv__V(this)
@@ -16286,12 +16273,6 @@ $c_Ldevleague_Box.prototype.draw__V = (function() {
   this.setBorders__scm_Set();
   this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().image__Lorg_scalajs_dom_HTMLElement__V(this.img__Lorg_scalajs_dom_HTMLImageElement())
 });
-$c_Ldevleague_Box.prototype.moveX__Z = (function() {
-  return false
-});
-$c_Ldevleague_Box.prototype.checkForJump__Z = (function() {
-  return this.onGround__Z()
-});
 $c_Ldevleague_Box.prototype.pw__Les_tmoor_scanvas_Fraction = (function() {
   return this.Ldevleague_Box__f_pw
 });
@@ -16321,78 +16302,6 @@ $c_Ldevleague_Box.prototype.$classData = $d_Ldevleague_Box;
 function $p_Ldevleague_Guy$__$init$$$anonfun$1__F0__O($thiz, i) {
   return $thiz.sIdent__F0__O(i)
 }
-function $p_Ldevleague_Guy$__checkForJump$$anonfun$1__Les_tmoor_scanvas_Line__Z($thiz, x$1) {
-  var x6 = x$1;
-  if ((x6 !== null)) {
-    var x7 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x6);
-    var x8 = x7._1__Les_tmoor_scanvas_Fraction();
-    var x9 = x7._2__Les_tmoor_scanvas_Fraction();
-    var x10 = x7._3__Les_tmoor_scanvas_Fraction();
-    var x11 = x7._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x8;
-    var y1 = x9;
-    var x2 = x10;
-    var y2 = x11;
-    var l = x6;
-    return true
-  };
-  return false
-}
-function $p_Ldevleague_Guy$__checkForJump$$anonfun$2__Les_tmoor_scanvas_Line__Z($thiz, x$1) {
-  var x12 = x$1;
-  if ((x12 !== null)) {
-    var x13 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x12);
-    var x14 = x13._1__Les_tmoor_scanvas_Fraction();
-    var x15 = x13._2__Les_tmoor_scanvas_Fraction();
-    var x16 = x13._3__Les_tmoor_scanvas_Fraction();
-    var x17 = x13._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x14;
-    var y1 = x15;
-    var x2 = x16;
-    var y2 = x17;
-    var l = x12;
-    return (!l.exempt__scm_Set().contains__O__Z($thiz.uid__T()))
-  };
-  throw new $c_s_MatchError(x12)
-}
-function $p_Ldevleague_Guy$__vInLine$1__Les_tmoor_scanvas_Fraction__Z($thiz, y1$1) {
-  var x = $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction()).$plus__O__O($thiz.h__Les_tmoor_scanvas_Fraction());
-  var x$2 = y1$1;
-  return ((x === null) ? (x$2 === null) : $dp_equals__O__Z(x, x$2))
-}
-function $p_Ldevleague_Guy$__hInLine$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, x1$1, x2$1) {
-  return ($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($thiz.x__Les_tmoor_scanvas_Fraction()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction())).$greater__O__Z(x1$1) && $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps($thiz.x__Les_tmoor_scanvas_Fraction()).$less__O__Z(x2$1))
-}
-function $p_Ldevleague_Guy$__checkForJump$$anonfun$3__O__Les_tmoor_scanvas_Line__V($thiz, nonLocalReturnKey1$1, x$1) {
-  var x18 = x$1;
-  if ((x18 !== null)) {
-    var x19 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x18);
-    var x20 = x19._1__Les_tmoor_scanvas_Fraction();
-    var x21 = x19._2__Les_tmoor_scanvas_Fraction();
-    var x22 = x19._3__Les_tmoor_scanvas_Fraction();
-    var x23 = x19._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x20;
-    var y1 = x21;
-    var x2 = x22;
-    var y2 = x23;
-    var l = x18;
-    if (($p_Ldevleague_Guy$__vInLine$1__Les_tmoor_scanvas_Fraction__Z($thiz, y1) && $p_Ldevleague_Guy$__hInLine$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($thiz, x1, x2))) {
-      if ($thiz.keys__scm_Set().apply__O__Z(38)) {
-        $thiz.onGround_$eq__Z__V(false);
-        $thiz.dy_$eq__Les_tmoor_scanvas_Fraction__V($thiz.gravity__Les_tmoor_scanvas_Fraction().$times__I__Les_tmoor_scanvas_Fraction((-6)))
-      } else {
-        $thiz.onGround_$eq__Z__V(true);
-        $thiz.dy_$eq__Les_tmoor_scanvas_Fraction__V($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1))
-      };
-      throw new $c_sr_NonLocalReturnControl(nonLocalReturnKey1$1, true)
-    };
-    return (void 0)
-  };
-  throw new $c_s_MatchError(x18)
-}
-function $p_Ldevleague_Guy$__checkForJump$$anonfun$adapted$1__O__Les_tmoor_scanvas_Line__O($thiz, nonLocalReturnKey1$2, x$1) {
-  $p_Ldevleague_Guy$__checkForJump$$anonfun$3__O__Les_tmoor_scanvas_Line__V($thiz, nonLocalReturnKey1$2, x$1)
-}
 function $p_Ldevleague_Guy$__drawSkin$$anonfun$1__F0__O($thiz, i) {
   return $thiz.sIdent__F0__O(i)
 }
@@ -16417,7 +16326,6 @@ function $c_Ldevleague_Guy$() {
   this.Ldevleague_Guy$__f_y = null;
   this.Ldevleague_Guy$__f_dy = null;
   this.Ldevleague_Guy$__f_dx = null;
-  this.Ldevleague_Guy$__f_onGround = false;
   this.Ldevleague_Guy$__f_children = null;
   this.Ldevleague_Guy$__f_px = null;
   this.Ldevleague_Guy$__f_py = null;
@@ -16478,9 +16386,6 @@ $c_Ldevleague_Guy$.prototype.dy__Les_tmoor_scanvas_Fraction = (function() {
 $c_Ldevleague_Guy$.prototype.dx__Les_tmoor_scanvas_Fraction = (function() {
   return this.Ldevleague_Guy$__f_dx
 });
-$c_Ldevleague_Guy$.prototype.onGround__Z = (function() {
-  return this.Ldevleague_Guy$__f_onGround
-});
 $c_Ldevleague_Guy$.prototype.x_$eq__Les_tmoor_scanvas_Fraction__V = (function(x$1) {
   this.Ldevleague_Guy$__f_x = x$1
 });
@@ -16493,29 +16398,11 @@ $c_Ldevleague_Guy$.prototype.dy_$eq__Les_tmoor_scanvas_Fraction__V = (function(x
 $c_Ldevleague_Guy$.prototype.dx_$eq__Les_tmoor_scanvas_Fraction__V = (function(x$1) {
   this.Ldevleague_Guy$__f_dx = x$1
 });
-$c_Ldevleague_Guy$.prototype.onGround_$eq__Z__V = (function(x$1) {
-  this.Ldevleague_Guy$__f_onGround = x$1
-});
 $c_Ldevleague_Guy$.prototype.gravity__Les_tmoor_scanvas_Fraction = (function() {
   return $f_Les_tmoor_scanvas_Gravitational__gravity__Les_tmoor_scanvas_Fraction(this)
 });
 $c_Ldevleague_Guy$.prototype.terminal__Les_tmoor_scanvas_Fraction = (function() {
   return $f_Les_tmoor_scanvas_Gravitational__terminal__Les_tmoor_scanvas_Fraction(this)
-});
-$c_Ldevleague_Guy$.prototype.bounceOffWalls__Z = (function() {
-  return $f_Les_tmoor_scanvas_Gravitational__bounceOffWalls__Z(this)
-});
-$c_Ldevleague_Guy$.prototype.setDx__V = (function() {
-  $f_Les_tmoor_scanvas_Gravitational__setDx__V(this)
-});
-$c_Ldevleague_Guy$.prototype.checkForFloorIntersect__Z = (function() {
-  return $f_Les_tmoor_scanvas_Gravitational__checkForFloorIntersect__Z(this)
-});
-$c_Ldevleague_Guy$.prototype.increaseFall__Z = (function() {
-  return $f_Les_tmoor_scanvas_Gravitational__increaseFall__Z(this)
-});
-$c_Ldevleague_Guy$.prototype.setDy__V = (function() {
-  $f_Les_tmoor_scanvas_Gravitational__setDy__V(this)
 });
 $c_Ldevleague_Guy$.prototype.updateEnv__V = (function() {
   $f_Les_tmoor_scanvas_Gravitational__updateEnv__V(this)
@@ -16532,24 +16419,6 @@ $c_Ldevleague_Guy$.prototype.ph__Les_tmoor_scanvas_Fraction = (function() {
 $c_Ldevleague_Guy$.prototype.timeScale__Les_tmoor_scanvas_Fraction = (function() {
   return this.Ldevleague_Guy$__f_timeScale
 });
-$c_Ldevleague_Guy$.prototype.checkForJump__Z = (function() {
-  var nonLocalReturnKey1 = $ct_O__(new $c_O());
-  try {
-    this.borders__Les_tmoor_scanvas_Borders().bottom__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this\u00f8) => ((x$1) => $p_Ldevleague_Guy$__checkForJump$$anonfun$1__Les_tmoor_scanvas_Line__Z(this\u00f8, $as_Les_tmoor_scanvas_Line(x$1))))(this))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this$2) => ((x$1$2) => $p_Ldevleague_Guy$__checkForJump$$anonfun$2__Les_tmoor_scanvas_Line__Z(this$2, $as_Les_tmoor_scanvas_Line(x$1$2))))(this))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$3, nonLocalReturnKey1$2) => ((x$1$3) => $p_Ldevleague_Guy$__checkForJump$$anonfun$adapted$1__O__Les_tmoor_scanvas_Line__O(this$3, nonLocalReturnKey1$2, $as_Les_tmoor_scanvas_Line(x$1$3))))(this, nonLocalReturnKey1)));
-    return false
-  } catch (e) {
-    if ((e instanceof $c_sr_NonLocalReturnControl)) {
-      var ex = $as_sr_NonLocalReturnControl(e);
-      if (Object.is(ex.key__O(), nonLocalReturnKey1)) {
-        return $uZ(ex.value__O())
-      } else {
-        throw ex
-      }
-    } else {
-      throw e
-    }
-  }
-});
 $c_Ldevleague_Guy$.prototype.w__Les_tmoor_scanvas_Fraction = (function() {
   return this.Ldevleague_Guy$__f_w
 });
@@ -16564,21 +16433,6 @@ $c_Ldevleague_Guy$.prototype.intContent__T = (function() {
 });
 $c_Ldevleague_Guy$.prototype.img__F1 = (function() {
   return this.Ldevleague_Guy$__f_img
-});
-$c_Ldevleague_Guy$.prototype.moveX__Z = (function() {
-  var decrease = (this.onGround__Z() ? $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1)).$minus__O__O($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(20)).$times__O__O(this.timeScale__Les_tmoor_scanvas_Fraction()))) : $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1)).$minus__O__O($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(200)).$times__O__O(this.timeScale__Les_tmoor_scanvas_Fraction()))));
-  if (((this.onGround__Z() && this.keys__scm_Set().apply__O__Z(37)) && (!this.keys__scm_Set().apply__O__Z(39)))) {
-    this.dx_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.dx__Les_tmoor_scanvas_Fraction()).$minus__O__O(this.gravity__Les_tmoor_scanvas_Fraction())).min__O__O($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.dx__Les_tmoor_scanvas_Fraction()).$times__O__O(decrease))));
-    this.dx_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps(this.dx__Les_tmoor_scanvas_Fraction()).max__O__O($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.terminal__Les_tmoor_scanvas_Fraction()).unary_$minus__O())))
-  } else if (((this.onGround__Z() && (!this.keys__scm_Set().apply__O__Z(37))) && this.keys__scm_Set().apply__O__Z(39))) {
-    this.dx_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.dx__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.gravity__Les_tmoor_scanvas_Fraction())).max__O__O($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.dx__Les_tmoor_scanvas_Fraction()).$times__O__O(decrease))));
-    this.dx_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps(this.dx__Les_tmoor_scanvas_Fraction()).min__O__O(this.terminal__Les_tmoor_scanvas_Fraction())))
-  } else if ((this.onGround__Z() && $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkOrderingOps__O__s_math_Ordering$OrderingOps($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.dx__Les_tmoor_scanvas_Fraction()).abs__O()).$less__O__Z($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(10000)).$times__O__O(this.timeScale__Les_tmoor_scanvas_Fraction())))) {
-    this.dx_$eq__Les_tmoor_scanvas_Fraction__V($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1))
-  } else {
-    this.dx_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.dx__Les_tmoor_scanvas_Fraction()).$times__O__O(decrease)))
-  };
-  return true
 });
 $c_Ldevleague_Guy$.prototype.sIdent__F0__O = (function(i) {
   return i.apply__O()
@@ -17945,8 +17799,36 @@ function $f_sc_SetOps__apply__O__Z($thiz, elem) {
 function $f_sc_SetOps__subsetOf__sc_Set__Z($thiz, that) {
   return $thiz.forall__F1__Z(that)
 }
+function $f_sc_SetOps__concat__sc_IterableOnce__sc_SetOps($thiz, that) {
+  var x1 = that;
+  if ($is_sc_Iterable(x1)) {
+    var x2 = $as_sc_Iterable(x1);
+    var $$x1 = new $c_sc_View$Concat($thiz, x2)
+  } else {
+    var $$x1 = $thiz.iterator__sc_Iterator().concat__F0__sc_Iterator(new $c_sjsr_AnonFunction0(((this\u00f8, that) => (() => $p_sc_SetOps__$anonfun$concat$1__sc_IterableOnce__sc_Iterator(this\u00f8, that)))($thiz, that)))
+  };
+  return $as_sc_SetOps($thiz.fromSpecific__sc_IterableOnce__O($$x1))
+}
+function $f_sc_SetOps__$plus$plus__sc_IterableOnce__sc_SetOps($thiz, that) {
+  return $thiz.concat__sc_IterableOnce__sc_SetOps(that)
+}
+function $p_sc_SetOps__$anonfun$concat$1__sc_IterableOnce__sc_Iterator($thiz, that$1) {
+  return that$1.iterator__sc_Iterator()
+}
 function $f_sc_SetOps__$init$__V($thiz) {
   /*<skip>*/
+}
+function $is_sc_SetOps(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sc_SetOps)))
+}
+function $as_sc_SetOps(obj) {
+  return (($is_sc_SetOps(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.SetOps"))
+}
+function $isArrayOf_sc_SetOps(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sc_SetOps)))
+}
+function $asArrayOf_sc_SetOps(obj, depth) {
+  return (($isArrayOf_sc_SetOps(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.SetOps;", depth))
 }
 function $f_sc_StrictOptimizedClassTagSeqFactory__$init$__V($thiz) {
   /*<skip>*/
@@ -21676,12 +21558,6 @@ $c_scm_HashSet$$anon$3.prototype.$classData = $d_scm_HashSet$$anon$3;
 function $f_scm_Iterable__$init$__V($thiz) {
   /*<skip>*/
 }
-function $f_s_math_Numeric__zero__O($thiz) {
-  return $thiz.fromInt__I__O(0)
-}
-function $f_s_math_Numeric__abs__O__O($thiz, x) {
-  return ($thiz.lt__O__O__Z(x, $thiz.zero__O()) ? $thiz.negate__O__O(x) : x)
-}
 function $f_s_math_Numeric__$init$__V($thiz) {
   /*<skip>*/
 }
@@ -23195,29 +23071,17 @@ $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.min__O__O__O = (f
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.mkOrderingOps__O__s_math_Ordering$OrderingOps = (function(lhs) {
   return $f_s_math_Ordering__mkOrderingOps__O__s_math_Ordering$OrderingOps(this, lhs)
 });
-$c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.zero__O = (function() {
-  return $f_s_math_Numeric__zero__O(this)
-});
-$c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.abs__O__O = (function(x) {
-  return $f_s_math_Numeric__abs__O__O(this, x)
-});
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.mkNumericOps__O__s_math_Fractional$FractionalOps = (function(lhs) {
   return $f_s_math_Fractional__mkNumericOps__O__s_math_Fractional$FractionalOps(this, lhs)
 });
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.compare__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__I = (function(x, y) {
   return new $c_sr_RichDouble($m_s_Predef$().doubleWrapper__D__D(this.mkNumericOps__O__s_math_Fractional$FractionalOps(x).toDouble__D())).compare__O__I(this.mkNumericOps__O__s_math_Fractional$FractionalOps(y).toDouble__D())
 });
-$c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.fromInt__I__Les_tmoor_scanvas_Fraction = (function(x) {
-  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(x).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
-});
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.div__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction = (function(x, y) {
   return $m_Les_tmoor_scanvas_Fraction$().apply__J__J__Les_tmoor_scanvas_Fraction(x.num__J().$times__RTLong__RTLong(y.den__J()), x.den__J().$times__RTLong__RTLong(y.num__J()))
 });
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.minus__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction = (function(x, y) {
   return $m_Les_tmoor_scanvas_Fraction$().apply__J__J__Les_tmoor_scanvas_Fraction(x.num__J().$times__RTLong__RTLong(y.den__J()).$minus__RTLong__RTLong(y.num__J().$times__RTLong__RTLong(x.den__J())), x.den__J().$times__RTLong__RTLong(y.den__J()))
-});
-$c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.negate__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction = (function(x) {
-  return $m_Les_tmoor_scanvas_Fraction$().apply__J__J__Les_tmoor_scanvas_Fraction(x.num__J().unary_$minus__RTLong(), x.den__J())
 });
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.plus__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction = (function(x, y) {
   return $m_Les_tmoor_scanvas_Fraction$().apply__J__J__Les_tmoor_scanvas_Fraction(x.num__J().$times__RTLong__RTLong(y.den__J()).$plus__RTLong__RTLong(y.num__J().$times__RTLong__RTLong(x.den__J())), x.den__J().$times__RTLong__RTLong(y.den__J()))
@@ -23231,17 +23095,11 @@ $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.toDouble__Les_tmo
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.compare__O__O__I = (function(x, y) {
   return this.compare__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__I($as_Les_tmoor_scanvas_Fraction(x), $as_Les_tmoor_scanvas_Fraction(y))
 });
-$c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.fromInt__I__O = (function(x) {
-  return this.fromInt__I__Les_tmoor_scanvas_Fraction(x)
-});
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.div__O__O__O = (function(x, y) {
   return this.div__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction($as_Les_tmoor_scanvas_Fraction(x), $as_Les_tmoor_scanvas_Fraction(y))
 });
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.minus__O__O__O = (function(x, y) {
   return this.minus__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction($as_Les_tmoor_scanvas_Fraction(x), $as_Les_tmoor_scanvas_Fraction(y))
-});
-$c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.negate__O__O = (function(x) {
-  return this.negate__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction($as_Les_tmoor_scanvas_Fraction(x))
 });
 $c_Les_tmoor_scanvas_Fraction$FractionComparisonOps$.prototype.plus__O__O__O = (function(x, y) {
   return this.plus__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction($as_Les_tmoor_scanvas_Fraction(x), $as_Les_tmoor_scanvas_Fraction(y))
@@ -25092,6 +24950,12 @@ $c_sc_AbstractSet.prototype.apply__O__Z = (function(elem) {
 });
 $c_sc_AbstractSet.prototype.subsetOf__sc_Set__Z = (function(that) {
   return $f_sc_SetOps__subsetOf__sc_Set__Z(this, that)
+});
+$c_sc_AbstractSet.prototype.concat__sc_IterableOnce__sc_SetOps = (function(that) {
+  return $f_sc_SetOps__concat__sc_IterableOnce__sc_SetOps(this, that)
+});
+$c_sc_AbstractSet.prototype.$plus$plus__sc_IterableOnce__sc_SetOps = (function(that) {
+  return $f_sc_SetOps__$plus$plus__sc_IterableOnce__sc_SetOps(this, that)
 });
 $c_sc_AbstractSet.prototype.apply__O__O = (function(v1) {
   return this.apply__O__Z(v1)
@@ -27377,6 +27241,59 @@ $c_sci_HashSet.prototype.excl__O__sci_HashSet = (function(element) {
   var newRootNode = this.rootNode__sci_BitmapIndexedSetNode().removed__O__I__I__I__sci_BitmapIndexedSetNode(element, elementUnimprovedHash, elementHash, 0);
   return $p_sci_HashSet__newHashSetOrThis__sci_BitmapIndexedSetNode__sci_HashSet(this, newRootNode)
 });
+$c_sci_HashSet.prototype.concat__sc_IterableOnce__sci_HashSet = (function(that) {
+  var x1 = that;
+  if ((x1 instanceof $c_sci_HashSet)) {
+    var x2 = $as_sci_HashSet(x1);
+    if (this.isEmpty__Z()) {
+      return x2
+    } else {
+      var newNode = this.rootNode__sci_BitmapIndexedSetNode().concat__sci_SetNode__I__sci_BitmapIndexedSetNode(x2.rootNode__sci_BitmapIndexedSetNode(), 0);
+      return (Object.is(newNode, x2.rootNode__sci_BitmapIndexedSetNode()) ? x2 : $p_sci_HashSet__newHashSetOrThis__sci_BitmapIndexedSetNode__sci_HashSet(this, newNode))
+    }
+  } else if ((x1 instanceof $c_scm_HashSet)) {
+    var x3 = $as_scm_HashSet(x1);
+    var iter = x3.nodeIterator__sc_Iterator();
+    var current = this.rootNode__sci_BitmapIndexedSetNode();
+    while (iter.hasNext__Z()) {
+      var next = $as_scm_HashSet$Node(iter.next__O());
+      var originalHash = x3.unimproveHash__I__I(next.hash__I());
+      var improved = $m_sc_Hashing$().improve__I__I(originalHash);
+      current = current.updated__O__I__I__I__sci_BitmapIndexedSetNode(next.key__O(), originalHash, improved, 0);
+      if ((!Object.is(current, this.rootNode__sci_BitmapIndexedSetNode()))) {
+        var shallowlyMutableNodeMap = $m_sci_Node$().bitposFrom__I__I($m_sci_Node$().maskFrom__I__I__I(improved, 0));
+        while (iter.hasNext__Z()) {
+          var next$2 = $as_scm_HashSet$Node(iter.next__O());
+          var originalHash$2 = x3.unimproveHash__I__I(next$2.hash__I());
+          var improved$2 = $m_sc_Hashing$().improve__I__I(originalHash$2);
+          shallowlyMutableNodeMap = current.updateWithShallowMutations__O__I__I__I__I__I(next$2.key__O(), originalHash$2, improved$2, 0, shallowlyMutableNodeMap)
+        };
+        return new $c_sci_HashSet(current)
+      }
+    };
+    return this
+  } else {
+    var iter$2 = that.iterator__sc_Iterator();
+    var current$2 = this.rootNode__sci_BitmapIndexedSetNode();
+    while (iter$2.hasNext__Z()) {
+      var element = iter$2.next__O();
+      var originalHash$3 = $s_sr_Statics__anyHash__O__I(element);
+      var improved$3 = $m_sc_Hashing$().improve__I__I(originalHash$3);
+      current$2 = current$2.updated__O__I__I__I__sci_BitmapIndexedSetNode(element, originalHash$3, improved$3, 0);
+      if ((!Object.is(current$2, this.rootNode__sci_BitmapIndexedSetNode()))) {
+        var shallowlyMutableNodeMap$2 = $m_sci_Node$().bitposFrom__I__I($m_sci_Node$().maskFrom__I__I__I(improved$3, 0));
+        while (iter$2.hasNext__Z()) {
+          var element$2 = iter$2.next__O();
+          var originalHash$4 = $s_sr_Statics__anyHash__O__I(element$2);
+          var improved$4 = $m_sc_Hashing$().improve__I__I(originalHash$4);
+          shallowlyMutableNodeMap$2 = current$2.updateWithShallowMutations__O__I__I__I__I__I(element$2, originalHash$4, improved$4, 0, shallowlyMutableNodeMap$2)
+        };
+        return new $c_sci_HashSet(current$2)
+      }
+    };
+    return this
+  }
+});
 $c_sci_HashSet.prototype.tail__sci_HashSet = (function() {
   return $as_sci_HashSet(this.$minus__O__sci_SetOps(this.head__O()))
 });
@@ -27427,6 +27344,9 @@ $c_sci_HashSet.prototype.filterImpl__F1__Z__O = (function(pred, isFlipped) {
 });
 $c_sci_HashSet.prototype.tail__O = (function() {
   return this.tail__sci_HashSet()
+});
+$c_sci_HashSet.prototype.concat__sc_IterableOnce__sc_SetOps = (function(that) {
+  return this.concat__sc_IterableOnce__sci_HashSet(that)
 });
 $c_sci_HashSet.prototype.excl__O__sci_SetOps = (function(elem) {
   return this.excl__O__sci_HashSet(elem)

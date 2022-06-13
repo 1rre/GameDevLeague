@@ -1,6 +1,7 @@
 package es.tmoor.scanvas
 
 import Fraction.FractionComparisonOps.mkNumericOps
+import Fraction.FractionComparisonOps.mkOrderingOps
 
 object Fraction:
   private def gcd(a: Long, b: Long): Long =
@@ -45,6 +46,7 @@ class Fraction private (val num: Long, val den: Long):
     case Fraction(`num`, `den`) => true
     case _ => false
   }
+  def in(lo: Fraction, hi: Fraction): Boolean = this > lo && this < hi
   def *(that: Int) =
     Fraction(this.num * that, this.den)
   def /(that: Int) =
