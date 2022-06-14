@@ -2,6 +2,7 @@ package es.tmoor.scanvas
 import org.scalajs.dom.{html, raw, document}
 import scala.scalajs.js.timers._
 import rendering.Context
+import gametools.Block
 import BoundingBox._
 
 abstract class SCanvas(web: html.Canvas, val tick: Int, width: Int, height: Int)

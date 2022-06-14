@@ -1,5 +1,5 @@
 package devleague
-import es.tmoor.scanvas._, rendering._, BoundingBox._
+import es.tmoor.scanvas._, rendering._, BoundingBox._, gametools._
 import org.scalajs.dom.{KeyCode, document, HTMLImageElement, html}
 import Fraction.FractionComparisonOps.mkNumericOps
 import Game._
@@ -9,8 +9,11 @@ class Box(pxW: Fraction, pxH: Fraction, sx: Fraction, sy: Fraction) extends SubT
   val children: Seq[Template] = Nil
   val img = scalajs.js.eval("new Image(17, 17);").asInstanceOf[HTMLImageElement]
   img.src = "box.png"
+  val asBox = this
   
-  val blocker = new Block[this.type | Guy.type](x, x + w, y, y + w, Seq(uid))
+  val blocker = new Block[this.type](x, x + w, y, y + w) {
+    override def owner: String = s"$asBox"
+  }
   blocks += blocker
   def draw(): Unit = {
     // println(s"Drawing box @ $bounds")
