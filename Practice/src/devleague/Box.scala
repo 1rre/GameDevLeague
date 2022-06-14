@@ -10,7 +10,8 @@ class Box(pxW: Fraction, pxH: Fraction, sx: Fraction, sy: Fraction) extends SubT
   val img = scalajs.js.eval("new Image(17, 17);").asInstanceOf[HTMLImageElement]
   img.src = "box.png"
   
-  val blocker = new Block(x, x + w, y, y + w, Seq(uid))
+  val blocker = new Block[this.type | Guy.type](x, x + w, y, y + w, Seq(uid))
+  blocks += blocker
   def draw(): Unit = {
     // println(s"Drawing box @ $bounds")
     context.Fill.image(img)

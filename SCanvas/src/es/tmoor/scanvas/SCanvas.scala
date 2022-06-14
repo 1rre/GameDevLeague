@@ -26,7 +26,7 @@ abstract class SCanvas(web: html.Canvas, val tick: Int, width: Int, height: Int)
 
   val context = new Context(web)
 
-  val borders = collection.mutable.Set[Block[?]]()
+  val blocks = collection.mutable.Set[Block[?]]()
 
   def bounds = BoundingBox(0¦1, 0¦1, width¦1, height¦1)
   def relativeBounds = BoundingBox(0¦1, 0¦1, 1¦1, 1¦1)

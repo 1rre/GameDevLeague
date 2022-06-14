@@ -1157,47 +1157,91 @@ $c_Les_tmoor_scanvas_BaseTemplate.prototype.render__V = (function() {
   this.updateEnv__V();
   this.context__Les_tmoor_scanvas_rendering_Context().withOffset__T2__F0__V($m_T2$().apply__O__O__T2(this.x0__Les_tmoor_scanvas_Fraction(), this.y0__Les_tmoor_scanvas_Fraction()), new $c_sjsr_AnonFunction0(((this\u00f8) => (() => $p_Les_tmoor_scanvas_BaseTemplate__render$$anonfun$adapted$1__O(this\u00f8)))(this)))
 });
-/** @constructor */
-function $c_Les_tmoor_scanvas_Borders() {
-  this.Les_tmoor_scanvas_Borders__f_left = null;
-  this.Les_tmoor_scanvas_Borders__f_right = null;
-  this.Les_tmoor_scanvas_Borders__f_top = null;
-  this.Les_tmoor_scanvas_Borders__f_bottom = null;
-  $ct_O__(this);
-  this.Les_tmoor_scanvas_Borders__f_left = $as_scm_Set($m_scm_Set$().apply__sci_Seq__O($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Les_tmoor_scanvas_Line.getArrayOf().constr)([]))));
-  this.Les_tmoor_scanvas_Borders__f_right = $as_scm_Set($m_scm_Set$().apply__sci_Seq__O($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Les_tmoor_scanvas_Line.getArrayOf().constr)([]))));
-  this.Les_tmoor_scanvas_Borders__f_top = $as_scm_Set($m_scm_Set$().apply__sci_Seq__O($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Les_tmoor_scanvas_Line.getArrayOf().constr)([]))));
-  this.Les_tmoor_scanvas_Borders__f_bottom = $as_scm_Set($m_scm_Set$().apply__sci_Seq__O($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Les_tmoor_scanvas_Line.getArrayOf().constr)([]))))
+function $as_Les_tmoor_scanvas_BaseTemplate(obj) {
+  return (((obj instanceof $c_Les_tmoor_scanvas_BaseTemplate) || (obj === null)) ? obj : $throwClassCastException(obj, "es.tmoor.scanvas.BaseTemplate"))
 }
-$c_Les_tmoor_scanvas_Borders.prototype = new $h_O();
-$c_Les_tmoor_scanvas_Borders.prototype.constructor = $c_Les_tmoor_scanvas_Borders;
+function $isArrayOf_Les_tmoor_scanvas_BaseTemplate(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Les_tmoor_scanvas_BaseTemplate)))
+}
+function $asArrayOf_Les_tmoor_scanvas_BaseTemplate(obj, depth) {
+  return (($isArrayOf_Les_tmoor_scanvas_BaseTemplate(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Les.tmoor.scanvas.BaseTemplate;", depth))
+}
+function $ct_Les_tmoor_scanvas_Block__F0__F0__F0__F0__sci_Seq__s_reflect_TypeTest__($thiz, _left, _right, _top, _bottom, excludeSeq, evidence$1) {
+  $thiz.Les_tmoor_scanvas_Block__f__left = _left;
+  $thiz.Les_tmoor_scanvas_Block__f__right = _right;
+  $thiz.Les_tmoor_scanvas_Block__f__top = _top;
+  $thiz.Les_tmoor_scanvas_Block__f__bottom = _bottom;
+  $thiz.Les_tmoor_scanvas_Block__f_excludeSeq = excludeSeq;
+  $thiz.Les_tmoor_scanvas_Block__f_evidence$1 = evidence$1;
+  $ct_O__($thiz);
+  return $thiz
+}
+function $ct_Les_tmoor_scanvas_Block__F0__F0__F0__F0__s_reflect_TypeTest__($thiz, left, right, top, bottom, evidence$1) {
+  $ct_Les_tmoor_scanvas_Block__F0__F0__F0__F0__sci_Seq__s_reflect_TypeTest__($thiz, left, right, top, bottom, $m_s_package$().Nil__sci_Nil$(), evidence$1);
+  return $thiz
+}
 /** @constructor */
-function $h_Les_tmoor_scanvas_Borders() {
+function $c_Les_tmoor_scanvas_Block() {
+  this.Les_tmoor_scanvas_Block__f__left = null;
+  this.Les_tmoor_scanvas_Block__f__right = null;
+  this.Les_tmoor_scanvas_Block__f__top = null;
+  this.Les_tmoor_scanvas_Block__f__bottom = null;
+  this.Les_tmoor_scanvas_Block__f_excludeSeq = null;
+  this.Les_tmoor_scanvas_Block__f_evidence$1 = null
+}
+$c_Les_tmoor_scanvas_Block.prototype = new $h_O();
+$c_Les_tmoor_scanvas_Block.prototype.constructor = $c_Les_tmoor_scanvas_Block;
+/** @constructor */
+function $h_Les_tmoor_scanvas_Block() {
   /*<skip>*/
 }
-$h_Les_tmoor_scanvas_Borders.prototype = $c_Les_tmoor_scanvas_Borders.prototype;
-$c_Les_tmoor_scanvas_Borders.prototype.all__scm_Set = (function() {
-  return $as_scm_Set(this.left__scm_Set().$plus$plus__sc_IterableOnce__sc_SetOps(this.right__scm_Set()).$plus$plus__sc_IterableOnce__sc_SetOps(this.top__scm_Set()).$plus$plus__sc_IterableOnce__sc_SetOps(this.bottom__scm_Set()))
+$h_Les_tmoor_scanvas_Block.prototype = $c_Les_tmoor_scanvas_Block.prototype;
+$c_Les_tmoor_scanvas_Block.prototype.toString__T = (function() {
+  return (((((((("Block(" + this.l__Les_tmoor_scanvas_Fraction()) + ", ") + this.r__Les_tmoor_scanvas_Fraction()) + ", ") + this.t__Les_tmoor_scanvas_Fraction()) + ", ") + this.b__Les_tmoor_scanvas_Fraction()) + ")")
 });
-$c_Les_tmoor_scanvas_Borders.prototype.left__scm_Set = (function() {
-  return this.Les_tmoor_scanvas_Borders__f_left
+$c_Les_tmoor_scanvas_Block.prototype.l__Les_tmoor_scanvas_Fraction = (function() {
+  return $as_Les_tmoor_scanvas_Fraction(this.Les_tmoor_scanvas_Block__f__left.apply__O())
 });
-$c_Les_tmoor_scanvas_Borders.prototype.right__scm_Set = (function() {
-  return this.Les_tmoor_scanvas_Borders__f_right
+$c_Les_tmoor_scanvas_Block.prototype.r__Les_tmoor_scanvas_Fraction = (function() {
+  return $as_Les_tmoor_scanvas_Fraction(this.Les_tmoor_scanvas_Block__f__right.apply__O())
 });
-$c_Les_tmoor_scanvas_Borders.prototype.top__scm_Set = (function() {
-  return this.Les_tmoor_scanvas_Borders__f_top
+$c_Les_tmoor_scanvas_Block.prototype.t__Les_tmoor_scanvas_Fraction = (function() {
+  return $as_Les_tmoor_scanvas_Fraction(this.Les_tmoor_scanvas_Block__f__top.apply__O())
 });
-$c_Les_tmoor_scanvas_Borders.prototype.bottom__scm_Set = (function() {
-  return this.Les_tmoor_scanvas_Borders__f_bottom
+$c_Les_tmoor_scanvas_Block.prototype.b__Les_tmoor_scanvas_Fraction = (function() {
+  return $as_Les_tmoor_scanvas_Fraction(this.Les_tmoor_scanvas_Block__f__bottom.apply__O())
 });
-var $d_Les_tmoor_scanvas_Borders = new $TypeData().initClass({
-  Les_tmoor_scanvas_Borders: 0
-}, false, "es.tmoor.scanvas.Borders", {
-  Les_tmoor_scanvas_Borders: 1,
+$c_Les_tmoor_scanvas_Block.prototype.excludes__Les_tmoor_scanvas_BaseTemplate__Z = (function(elem) {
+  if (this.Les_tmoor_scanvas_Block__f_excludeSeq.contains__O__Z(elem.uid__T())) {
+    return true
+  } else {
+    var x11 = elem;
+    if ((x11 !== null)) {
+      var x12 = this.Les_tmoor_scanvas_Block__f_evidence$1.unapply__O__s_Option(x11);
+      if ((!x12.isEmpty__Z())) {
+        var x13 = $as_Les_tmoor_scanvas_BaseTemplate(x12.get__O());
+        return true
+      }
+    };
+    return false
+  }
+});
+function $as_Les_tmoor_scanvas_Block(obj) {
+  return (((obj instanceof $c_Les_tmoor_scanvas_Block) || (obj === null)) ? obj : $throwClassCastException(obj, "es.tmoor.scanvas.Block"))
+}
+function $isArrayOf_Les_tmoor_scanvas_Block(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Les_tmoor_scanvas_Block)))
+}
+function $asArrayOf_Les_tmoor_scanvas_Block(obj, depth) {
+  return (($isArrayOf_Les_tmoor_scanvas_Block(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Les.tmoor.scanvas.Block;", depth))
+}
+var $d_Les_tmoor_scanvas_Block = new $TypeData().initClass({
+  Les_tmoor_scanvas_Block: 0
+}, false, "es.tmoor.scanvas.Block", {
+  Les_tmoor_scanvas_Block: 1,
   O: 1
 });
-$c_Les_tmoor_scanvas_Borders.prototype.$classData = $d_Les_tmoor_scanvas_Borders;
+$c_Les_tmoor_scanvas_Block.prototype.$classData = $d_Les_tmoor_scanvas_Block;
 function $p_Les_tmoor_scanvas_EncImage$__Bstr__T__Les_tmoor_scanvas_EncImage$Bstr($thiz, s) {
   return new $c_Les_tmoor_scanvas_EncImage$Bstr(s)
 }
@@ -1539,70 +1583,24 @@ function $f_Les_tmoor_scanvas_Gravitational__updateEnv__V($thiz) {
   var cy = $thiz.y__Les_tmoor_scanvas_Fraction();
   var nx = $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.x__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.dx__Les_tmoor_scanvas_Fraction()));
   var ny = $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.dy__Les_tmoor_scanvas_Fraction()));
-  $as_Les_tmoor_scanvas_Template($thiz).borders__Les_tmoor_scanvas_Borders().all__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => $ps_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$1__Les_tmoor_scanvas_Line__Z($as_Les_tmoor_scanvas_Line(x$1))))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this\u00f8) => ((x$1$2) => $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$2__Les_tmoor_scanvas_Line__Z(this\u00f8, $as_Les_tmoor_scanvas_Line(x$1$2))))($thiz))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$2, cx$2, cy$2) => ((x$1$3) => $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$adapted$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line__O(this$2, cx$2, cy$2, $as_Les_tmoor_scanvas_Line(x$1$3))))($thiz, cx, cy)));
   if ((nx.in__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$minus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()))) && ny.in__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Z($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $as_Les_tmoor_scanvas_Fraction($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$minus__O__O($thiz.h__Les_tmoor_scanvas_Fraction()))))) {
     $thiz.x_$eq__Les_tmoor_scanvas_Fraction__V(nx);
     $thiz.y_$eq__Les_tmoor_scanvas_Fraction__V(ny);
     $thiz.dy_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($thiz.terminal__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).min__O__O($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps($thiz.dy__Les_tmoor_scanvas_Fraction(), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.gravity__Les_tmoor_scanvas_Fraction()))));
     $m_s_Predef$().println__O__V(((("Next: " + nx) + ", ") + ny))
+  };
+  $as_Les_tmoor_scanvas_Template($thiz).blocks__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this\u00f8) => ((b) => $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$1__Les_tmoor_scanvas_Block__Z(this\u00f8, $as_Les_tmoor_scanvas_Block(b))))($thiz))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$2, nx$2, ny$2) => ((b$2) => $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$adapted$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Block__O(this$2, nx$2, ny$2, $as_Les_tmoor_scanvas_Block(b$2))))($thiz, nx, ny)))
+}
+function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$1__Les_tmoor_scanvas_Block__Z($thiz, b) {
+  return (!b.excludes__Les_tmoor_scanvas_BaseTemplate__Z($as_Les_tmoor_scanvas_BaseTemplate($thiz)))
+}
+function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$2__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Block__V($thiz, nx$1, ny$1, b) {
+  if (((($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps(nx$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(b.l__Les_tmoor_scanvas_Fraction()) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps(nx$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(b.r__Les_tmoor_scanvas_Fraction())) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps(ny$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.h__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(b.t__Les_tmoor_scanvas_Fraction())) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps(ny$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(b.b__Les_tmoor_scanvas_Fraction()))) {
+    $m_s_Predef$().println__O__V(((((((("Intersection @ " + nx$1) + ", ") + ny$1) + " between ") + $thiz) + " and ") + b))
   }
 }
-function $ps_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$1__Les_tmoor_scanvas_Line__Z(x$1) {
-  var x1 = x$1;
-  if ((x1 !== null)) {
-    var x2 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x1);
-    var x3 = x2._1__Les_tmoor_scanvas_Fraction();
-    var x4 = x2._2__Les_tmoor_scanvas_Fraction();
-    var x5 = x2._3__Les_tmoor_scanvas_Fraction();
-    var x6 = x2._4__Les_tmoor_scanvas_Fraction();
-    var x1$2 = x3;
-    var y1 = x4;
-    var x2$2 = x5;
-    var y2 = x6;
-    var l = x1;
-    return true
-  };
-  return false
-}
-function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$2__Les_tmoor_scanvas_Line__Z($thiz, x$1) {
-  var x7 = x$1;
-  if ((x7 !== null)) {
-    var x8 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x7);
-    var x9 = x8._1__Les_tmoor_scanvas_Fraction();
-    var x10 = x8._2__Les_tmoor_scanvas_Fraction();
-    var x11 = x8._3__Les_tmoor_scanvas_Fraction();
-    var x12 = x8._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x9;
-    var y1 = x10;
-    var x2 = x11;
-    var y2 = x12;
-    var l = x7;
-    return (!l.exempt__scm_Set().contains__O__Z($as_Les_tmoor_scanvas_Template($thiz).uid__T()))
-  };
-  throw new $c_s_MatchError(x7)
-}
-function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$3__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line__V($thiz, cx$1, cy$1, x$1) {
-  var x13 = x$1;
-  if ((x13 !== null)) {
-    var x14 = $m_Les_tmoor_scanvas_Line$().unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line(x13);
-    var x15 = x14._1__Les_tmoor_scanvas_Fraction();
-    var x16 = x14._2__Les_tmoor_scanvas_Fraction();
-    var x17 = x14._3__Les_tmoor_scanvas_Fraction();
-    var x18 = x14._4__Les_tmoor_scanvas_Fraction();
-    var x1 = x15;
-    var y1 = x16;
-    var x2 = x17;
-    var y2 = x18;
-    var l = x13;
-    if (((($m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps(cx$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(x1) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps(cx$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(x2)) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps($m_s_math_Fractional$Implicits$().infixFractionalOps__O__s_math_Fractional__s_math_Fractional$FractionalOps(cy$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$plus__O__O($thiz.h__Les_tmoor_scanvas_Fraction()), $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$greater__O__Z(y1)) && $m_s_math_Ordering$Implicits$().infixOrderingOps__O__s_math_Ordering__s_math_Ordering$OrderingOps(cy$1, $m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$()).$less__O__Z(y2))) {
-      $m_s_Predef$().println__O__V(("Intersecting line " + l))
-    };
-    return (void 0)
-  };
-  throw new $c_s_MatchError(x13)
-}
-function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$adapted$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line__O($thiz, cx$2, cy$2, x$1) {
-  $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$3__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line__V($thiz, cx$2, cy$2, x$1)
+function $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$adapted$1__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Block__O($thiz, nx$2, ny$2, b) {
+  $p_Les_tmoor_scanvas_Gravitational__updateEnv$$anonfun$2__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Block__V($thiz, nx$2, ny$2, b)
 }
 /** @constructor */
 function $c_Les_tmoor_scanvas_rendering_Colour$() {
@@ -8361,7 +8359,7 @@ function $ct_Les_tmoor_scanvas_SCanvas__Lorg_scalajs_dom_HTMLCanvasElement__I__I
   document.onkeydown = ((this\u00f8) => ((k) => $p_Les_tmoor_scanvas_SCanvas__$init$$$anonfun$1__Lorg_scalajs_dom_KeyboardEvent__O(this\u00f8, k)))($thiz);
   document.onkeyup = ((this$2) => ((k$2) => $p_Les_tmoor_scanvas_SCanvas__$init$$$anonfun$2__Lorg_scalajs_dom_KeyboardEvent__O(this$2, k$2)))($thiz);
   $thiz.Les_tmoor_scanvas_SCanvas__f_context = $ct_Les_tmoor_scanvas_rendering_Context__Lorg_scalajs_dom_HTMLCanvasElement__(new $c_Les_tmoor_scanvas_rendering_Context(), web);
-  $thiz.Les_tmoor_scanvas_SCanvas__f_borders = new $c_Les_tmoor_scanvas_Borders();
+  $thiz.Les_tmoor_scanvas_SCanvas__f_blocks = $as_scm_Set($m_scm_Set$().apply__sci_Seq__O($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Les_tmoor_scanvas_Block.getArrayOf().constr)([]))));
   return $thiz
 }
 function $ct_Les_tmoor_scanvas_SCanvas__Lorg_scalajs_dom_Element__I__I__I__($thiz, web, tick, w, h) {
@@ -8392,7 +8390,7 @@ function $c_Les_tmoor_scanvas_SCanvas() {
   this.Les_tmoor_scanvas_SCanvas__f_height = 0;
   this.Les_tmoor_scanvas_SCanvas__f_keys = null;
   this.Les_tmoor_scanvas_SCanvas__f_context = null;
-  this.Les_tmoor_scanvas_SCanvas__f_borders = null
+  this.Les_tmoor_scanvas_SCanvas__f_blocks = null
 }
 $c_Les_tmoor_scanvas_SCanvas.prototype = new $h_Les_tmoor_scanvas_BaseTemplate();
 $c_Les_tmoor_scanvas_SCanvas.prototype.constructor = $c_Les_tmoor_scanvas_SCanvas;
@@ -8410,8 +8408,8 @@ $c_Les_tmoor_scanvas_SCanvas.prototype.keys__scm_Set = (function() {
 $c_Les_tmoor_scanvas_SCanvas.prototype.context__Les_tmoor_scanvas_rendering_Context = (function() {
   return this.Les_tmoor_scanvas_SCanvas__f_context
 });
-$c_Les_tmoor_scanvas_SCanvas.prototype.borders__Les_tmoor_scanvas_Borders = (function() {
-  return this.Les_tmoor_scanvas_SCanvas__f_borders
+$c_Les_tmoor_scanvas_SCanvas.prototype.blocks__scm_Set = (function() {
+  return this.Les_tmoor_scanvas_SCanvas__f_blocks
 });
 $c_Les_tmoor_scanvas_SCanvas.prototype.bounds__Les_tmoor_scanvas_BoundingBox = (function() {
   return $m_Les_tmoor_scanvas_BoundingBox$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_BoundingBox($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(this.Les_tmoor_scanvas_SCanvas__f_width).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(this.Les_tmoor_scanvas_SCanvas__f_height).$u00A6__I__Les_tmoor_scanvas_Fraction(1))
@@ -8428,7 +8426,7 @@ function $ct_Les_tmoor_scanvas_Template__Les_tmoor_scanvas_BaseTemplate__Les_tmo
   $thiz.Les_tmoor_scanvas_Template__f_context = context;
   $ct_Les_tmoor_scanvas_BaseTemplate__($thiz);
   $thiz.Les_tmoor_scanvas_Template__f_keys = parent.keys__scm_Set();
-  $thiz.Les_tmoor_scanvas_Template__f_borders = parent.borders__Les_tmoor_scanvas_Borders();
+  $thiz.Les_tmoor_scanvas_Template__f_blocks = parent.blocks__scm_Set();
   return $thiz
 }
 /** @constructor */
@@ -8437,7 +8435,7 @@ function $c_Les_tmoor_scanvas_Template() {
   this.Les_tmoor_scanvas_Template__f_parent = null;
   this.Les_tmoor_scanvas_Template__f_context = null;
   this.Les_tmoor_scanvas_Template__f_keys = null;
-  this.Les_tmoor_scanvas_Template__f_borders = null
+  this.Les_tmoor_scanvas_Template__f_blocks = null
 }
 $c_Les_tmoor_scanvas_Template.prototype = new $h_Les_tmoor_scanvas_BaseTemplate();
 $c_Les_tmoor_scanvas_Template.prototype.constructor = $c_Les_tmoor_scanvas_Template;
@@ -8453,35 +8451,35 @@ $c_Les_tmoor_scanvas_Template.prototype.context__Les_tmoor_scanvas_rendering_Con
   return this.Les_tmoor_scanvas_Template__f_context
 });
 $c_Les_tmoor_scanvas_Template.prototype.bounds__Les_tmoor_scanvas_BoundingBox = (function() {
-  matchResult4: {
+  matchResult1: {
     var \u03b41$;
-    var x5 = this.parent__Les_tmoor_scanvas_BaseTemplate().bounds__Les_tmoor_scanvas_BoundingBox().extract__T4();
-    if ((x5 !== null)) {
-      var px = $as_Les_tmoor_scanvas_Fraction(x5._1__O());
-      var py = $as_Les_tmoor_scanvas_Fraction(x5._2__O());
-      var pw = $as_Les_tmoor_scanvas_Fraction(x5._3__O());
-      var ph = $as_Les_tmoor_scanvas_Fraction(x5._4__O());
+    var x1 = this.parent__Les_tmoor_scanvas_BaseTemplate().bounds__Les_tmoor_scanvas_BoundingBox().extract__T4();
+    if ((x1 !== null)) {
+      var px = $as_Les_tmoor_scanvas_Fraction(x1._1__O());
+      var py = $as_Les_tmoor_scanvas_Fraction(x1._2__O());
+      var pw = $as_Les_tmoor_scanvas_Fraction(x1._3__O());
+      var ph = $as_Les_tmoor_scanvas_Fraction(x1._4__O());
       var \u03b41$ = $m_T4$().apply__O__O__O__O__T4(px, py, pw, ph);
-      break matchResult4
+      break matchResult1
     };
-    throw new $c_s_MatchError(x5)
+    throw new $c_s_MatchError(x1)
   };
   var px$2 = $as_Les_tmoor_scanvas_Fraction(\u03b41$._1__O());
   var py$2 = $as_Les_tmoor_scanvas_Fraction(\u03b41$._2__O());
   var pw$2 = $as_Les_tmoor_scanvas_Fraction(\u03b41$._3__O());
   var ph$2 = $as_Les_tmoor_scanvas_Fraction(\u03b41$._4__O());
-  matchResult5: {
+  matchResult2: {
     var \u03b42$;
-    var x10 = this.relativeBounds__Les_tmoor_scanvas_BoundingBox().extract__T4();
-    if ((x10 !== null)) {
-      var x = $as_Les_tmoor_scanvas_Fraction(x10._1__O());
-      var y = $as_Les_tmoor_scanvas_Fraction(x10._2__O());
-      var w = $as_Les_tmoor_scanvas_Fraction(x10._3__O());
-      var h = $as_Les_tmoor_scanvas_Fraction(x10._4__O());
+    var x6 = this.relativeBounds__Les_tmoor_scanvas_BoundingBox().extract__T4();
+    if ((x6 !== null)) {
+      var x = $as_Les_tmoor_scanvas_Fraction(x6._1__O());
+      var y = $as_Les_tmoor_scanvas_Fraction(x6._2__O());
+      var w = $as_Les_tmoor_scanvas_Fraction(x6._3__O());
+      var h = $as_Les_tmoor_scanvas_Fraction(x6._4__O());
       var \u03b42$ = $m_T4$().apply__O__O__O__O__T4(x, y, w, h);
-      break matchResult5
+      break matchResult2
     };
-    throw new $c_s_MatchError(x10)
+    throw new $c_s_MatchError(x6)
   };
   var x$2 = $as_Les_tmoor_scanvas_Fraction(\u03b42$._1__O());
   var y$2 = $as_Les_tmoor_scanvas_Fraction(\u03b42$._2__O());
@@ -8495,8 +8493,8 @@ $c_Les_tmoor_scanvas_Template.prototype.keys__scm_Set = (function() {
 $c_Les_tmoor_scanvas_Template.prototype.tick__I = (function() {
   return this.parent__Les_tmoor_scanvas_BaseTemplate().tick__I()
 });
-$c_Les_tmoor_scanvas_Template.prototype.borders__Les_tmoor_scanvas_Borders = (function() {
-  return this.Les_tmoor_scanvas_Template__f_borders
+$c_Les_tmoor_scanvas_Template.prototype.blocks__scm_Set = (function() {
+  return this.Les_tmoor_scanvas_Template__f_blocks
 });
 function $as_Les_tmoor_scanvas_Template(obj) {
   return (((obj instanceof $c_Les_tmoor_scanvas_Template) || (obj === null)) ? obj : $throwClassCastException(obj, "es.tmoor.scanvas.Template"))
@@ -11556,6 +11554,85 @@ function $m_LMain$() {
   return $n_LMain$
 }
 /** @constructor */
+function $c_Ldevleague_Box$$anon$1(outer) {
+  this.Ldevleague_Box$$anon$1__f_$outer = null;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  this.Ldevleague_Box$$anon$1__f_$outer = outer;
+  $ct_O__(this)
+}
+$c_Ldevleague_Box$$anon$1.prototype = new $h_O();
+$c_Ldevleague_Box$$anon$1.prototype.constructor = $c_Ldevleague_Box$$anon$1;
+/** @constructor */
+function $h_Ldevleague_Box$$anon$1() {
+  /*<skip>*/
+}
+$h_Ldevleague_Box$$anon$1.prototype = $c_Ldevleague_Box$$anon$1.prototype;
+$c_Ldevleague_Box$$anon$1.prototype.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return this.Ldevleague_Box$$anon$1__f_$outer.devleague$Box$$_$$lessinit$greater$$anonfun$5__Les_tmoor_scanvas_BaseTemplate__s_Option(s)
+});
+$c_Ldevleague_Box$$anon$1.prototype.unapply__O__s_Option = (function(x) {
+  return this.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option($as_Les_tmoor_scanvas_BaseTemplate(x))
+});
+var $d_Ldevleague_Box$$anon$1 = new $TypeData().initClass({
+  Ldevleague_Box$$anon$1: 0
+}, false, "devleague.Box$$anon$1", {
+  Ldevleague_Box$$anon$1: 1,
+  O: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_TypeTest: 1
+});
+$c_Ldevleague_Box$$anon$1.prototype.$classData = $d_Ldevleague_Box$$anon$1;
+function $p_Ldevleague_Game$__$init$$$anonfun$1__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$2__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$3__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$4__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$6__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$7__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$8__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$9__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$11__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$12__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$13__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$14__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$16__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$17__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$18__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+function $p_Ldevleague_Game$__$init$$$anonfun$19__Les_tmoor_scanvas_Fraction($thiz) {
+  return $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1)
+}
+/** @constructor */
 function $c_Ldevleague_Game$() {
   this.Les_tmoor_scanvas_BaseTemplate__f_uid = null;
   this.Les_tmoor_scanvas_SCanvas__f_tick = 0;
@@ -11563,15 +11640,15 @@ function $c_Ldevleague_Game$() {
   this.Les_tmoor_scanvas_SCanvas__f_height = 0;
   this.Les_tmoor_scanvas_SCanvas__f_keys = null;
   this.Les_tmoor_scanvas_SCanvas__f_context = null;
-  this.Les_tmoor_scanvas_SCanvas__f_borders = null;
+  this.Les_tmoor_scanvas_SCanvas__f_blocks = null;
   this.Ldevleague_Game$__f_backgroundColour = null;
   this.Ldevleague_Game$__f_children = null;
   $ct_Les_tmoor_scanvas_SCanvas__T__I__I__I__(this, "game", 25, 640, 480);
   $n_Ldevleague_Game$ = this;
-  this.borders__Les_tmoor_scanvas_Borders().left__scm_Set().$plus$eq__O__scm_Growable($m_Les_tmoor_scanvas_Line$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1)));
-  this.borders__Les_tmoor_scanvas_Borders().right__scm_Set().$plus$eq__O__scm_Growable($m_Les_tmoor_scanvas_Line$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1)));
-  this.borders__Les_tmoor_scanvas_Borders().top__scm_Set().$plus$eq__O__scm_Growable($m_Les_tmoor_scanvas_Line$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1)));
-  this.borders__Les_tmoor_scanvas_Borders().bottom__scm_Set().$plus$eq__O__scm_Growable($m_Les_tmoor_scanvas_Line$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(0).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(19).$u00A6__I__Les_tmoor_scanvas_Fraction(20), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(19).$u00A6__I__Les_tmoor_scanvas_Fraction(20)));
+  this.blocks__scm_Set().$plus$eq__O__scm_Growable($ct_Les_tmoor_scanvas_Block__F0__F0__F0__F0__s_reflect_TypeTest__(new $c_Les_tmoor_scanvas_Block(), new $c_sjsr_AnonFunction0(((this\u00f8) => (() => $p_Ldevleague_Game$__$init$$$anonfun$1__Les_tmoor_scanvas_Fraction(this\u00f8)))(this)), new $c_sjsr_AnonFunction0(((this$2) => (() => $p_Ldevleague_Game$__$init$$$anonfun$2__Les_tmoor_scanvas_Fraction(this$2)))(this)), new $c_sjsr_AnonFunction0(((this$3) => (() => $p_Ldevleague_Game$__$init$$$anonfun$3__Les_tmoor_scanvas_Fraction(this$3)))(this)), new $c_sjsr_AnonFunction0(((this$4) => (() => $p_Ldevleague_Game$__$init$$$anonfun$4__Les_tmoor_scanvas_Fraction(this$4)))(this)), new $c_Ldevleague_Game$$anon$1()));
+  this.blocks__scm_Set().$plus$eq__O__scm_Growable($ct_Les_tmoor_scanvas_Block__F0__F0__F0__F0__s_reflect_TypeTest__(new $c_Les_tmoor_scanvas_Block(), new $c_sjsr_AnonFunction0(((this$5) => (() => $p_Ldevleague_Game$__$init$$$anonfun$6__Les_tmoor_scanvas_Fraction(this$5)))(this)), new $c_sjsr_AnonFunction0(((this$6) => (() => $p_Ldevleague_Game$__$init$$$anonfun$7__Les_tmoor_scanvas_Fraction(this$6)))(this)), new $c_sjsr_AnonFunction0(((this$7) => (() => $p_Ldevleague_Game$__$init$$$anonfun$8__Les_tmoor_scanvas_Fraction(this$7)))(this)), new $c_sjsr_AnonFunction0(((this$8) => (() => $p_Ldevleague_Game$__$init$$$anonfun$9__Les_tmoor_scanvas_Fraction(this$8)))(this)), new $c_Ldevleague_Game$$anon$2()));
+  this.blocks__scm_Set().$plus$eq__O__scm_Growable($ct_Les_tmoor_scanvas_Block__F0__F0__F0__F0__s_reflect_TypeTest__(new $c_Les_tmoor_scanvas_Block(), new $c_sjsr_AnonFunction0(((this$9) => (() => $p_Ldevleague_Game$__$init$$$anonfun$11__Les_tmoor_scanvas_Fraction(this$9)))(this)), new $c_sjsr_AnonFunction0(((this$10) => (() => $p_Ldevleague_Game$__$init$$$anonfun$12__Les_tmoor_scanvas_Fraction(this$10)))(this)), new $c_sjsr_AnonFunction0(((this$11) => (() => $p_Ldevleague_Game$__$init$$$anonfun$13__Les_tmoor_scanvas_Fraction(this$11)))(this)), new $c_sjsr_AnonFunction0(((this$12) => (() => $p_Ldevleague_Game$__$init$$$anonfun$14__Les_tmoor_scanvas_Fraction(this$12)))(this)), new $c_Ldevleague_Game$$anon$3()));
+  this.blocks__scm_Set().$plus$eq__O__scm_Growable($ct_Les_tmoor_scanvas_Block__F0__F0__F0__F0__s_reflect_TypeTest__(new $c_Les_tmoor_scanvas_Block(), new $c_sjsr_AnonFunction0(((this$13) => (() => $p_Ldevleague_Game$__$init$$$anonfun$16__Les_tmoor_scanvas_Fraction(this$13)))(this)), new $c_sjsr_AnonFunction0(((this$14) => (() => $p_Ldevleague_Game$__$init$$$anonfun$17__Les_tmoor_scanvas_Fraction(this$14)))(this)), new $c_sjsr_AnonFunction0(((this$15) => (() => $p_Ldevleague_Game$__$init$$$anonfun$18__Les_tmoor_scanvas_Fraction(this$15)))(this)), new $c_sjsr_AnonFunction0(((this$16) => (() => $p_Ldevleague_Game$__$init$$$anonfun$19__Les_tmoor_scanvas_Fraction(this$16)))(this)), new $c_Ldevleague_Game$$anon$4()));
   this.Ldevleague_Game$__f_backgroundColour = $m_Les_tmoor_scanvas_rendering_Colour$().apply__I__T(12579581);
   this.Ldevleague_Game$__f_children = $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Les_tmoor_scanvas_BaseTemplate$SubTemplate.getArrayOf().constr)([$m_Ldevleague_Road$(), new $c_Ldevleague_Box($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(17).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(17).$u00A6__I__Les_tmoor_scanvas_Fraction(1), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(9), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(2)), new $c_Ldevleague_Box($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(17).$u00A6__I__Les_tmoor_scanvas_Fraction(2), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(17).$u00A6__I__Les_tmoor_scanvas_Fraction(2), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(2).$u00A6__I__Les_tmoor_scanvas_Fraction(9), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(2)), new $c_Ldevleague_Box($m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(17).$u00A6__I__Les_tmoor_scanvas_Fraction(3), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(17).$u00A6__I__Les_tmoor_scanvas_Fraction(3), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(3).$u00A6__I__Les_tmoor_scanvas_Fraction(9), $m_Les_tmoor_scanvas_Fraction$package$().i2f__I__Les_tmoor_scanvas_Fraction$package$i2f(1).$u00A6__I__Les_tmoor_scanvas_Fraction(2)), $m_Ldevleague_Guy$()]))))
 }
@@ -11592,6 +11669,18 @@ $c_Ldevleague_Game$.prototype.draw__V = (function() {
 $c_Ldevleague_Game$.prototype.children__sci_Seq = (function() {
   return this.Ldevleague_Game$__f_children
 });
+$c_Ldevleague_Game$.prototype.devleague$Game$$$_$$lessinit$greater$$anonfun$5__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return (((s !== null) && Object.is(s, $m_s_None$())) ? $m_s_Some$().apply__O__s_Some(s) : $m_s_None$())
+});
+$c_Ldevleague_Game$.prototype.devleague$Game$$$_$$lessinit$greater$$anonfun$10__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return (((s !== null) && Object.is(s, $m_s_None$())) ? $m_s_Some$().apply__O__s_Some(s) : $m_s_None$())
+});
+$c_Ldevleague_Game$.prototype.devleague$Game$$$_$$lessinit$greater$$anonfun$15__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return (((s !== null) && Object.is(s, $m_s_None$())) ? $m_s_Some$().apply__O__s_Some(s) : $m_s_None$())
+});
+$c_Ldevleague_Game$.prototype.devleague$Game$$$_$$lessinit$greater$$anonfun$20__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return (((s !== null) && Object.is(s, $m_s_None$())) ? $m_s_Some$().apply__O__s_Some(s) : $m_s_None$())
+});
 var $d_Ldevleague_Game$ = new $TypeData().initClass({
   Ldevleague_Game$: 0
 }, false, "devleague.Game$", {
@@ -11608,6 +11697,110 @@ function $m_Ldevleague_Game$() {
   };
   return $n_Ldevleague_Game$
 }
+/** @constructor */
+function $c_Ldevleague_Game$$anon$1() {
+  $ct_O__(this)
+}
+$c_Ldevleague_Game$$anon$1.prototype = new $h_O();
+$c_Ldevleague_Game$$anon$1.prototype.constructor = $c_Ldevleague_Game$$anon$1;
+/** @constructor */
+function $h_Ldevleague_Game$$anon$1() {
+  /*<skip>*/
+}
+$h_Ldevleague_Game$$anon$1.prototype = $c_Ldevleague_Game$$anon$1.prototype;
+$c_Ldevleague_Game$$anon$1.prototype.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return $m_Ldevleague_Game$().devleague$Game$$$_$$lessinit$greater$$anonfun$5__Les_tmoor_scanvas_BaseTemplate__s_Option(s)
+});
+$c_Ldevleague_Game$$anon$1.prototype.unapply__O__s_Option = (function(x) {
+  return this.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option($as_Les_tmoor_scanvas_BaseTemplate(x))
+});
+var $d_Ldevleague_Game$$anon$1 = new $TypeData().initClass({
+  Ldevleague_Game$$anon$1: 0
+}, false, "devleague.Game$$anon$1", {
+  Ldevleague_Game$$anon$1: 1,
+  O: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_TypeTest: 1
+});
+$c_Ldevleague_Game$$anon$1.prototype.$classData = $d_Ldevleague_Game$$anon$1;
+/** @constructor */
+function $c_Ldevleague_Game$$anon$2() {
+  $ct_O__(this)
+}
+$c_Ldevleague_Game$$anon$2.prototype = new $h_O();
+$c_Ldevleague_Game$$anon$2.prototype.constructor = $c_Ldevleague_Game$$anon$2;
+/** @constructor */
+function $h_Ldevleague_Game$$anon$2() {
+  /*<skip>*/
+}
+$h_Ldevleague_Game$$anon$2.prototype = $c_Ldevleague_Game$$anon$2.prototype;
+$c_Ldevleague_Game$$anon$2.prototype.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return $m_Ldevleague_Game$().devleague$Game$$$_$$lessinit$greater$$anonfun$10__Les_tmoor_scanvas_BaseTemplate__s_Option(s)
+});
+$c_Ldevleague_Game$$anon$2.prototype.unapply__O__s_Option = (function(x) {
+  return this.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option($as_Les_tmoor_scanvas_BaseTemplate(x))
+});
+var $d_Ldevleague_Game$$anon$2 = new $TypeData().initClass({
+  Ldevleague_Game$$anon$2: 0
+}, false, "devleague.Game$$anon$2", {
+  Ldevleague_Game$$anon$2: 1,
+  O: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_TypeTest: 1
+});
+$c_Ldevleague_Game$$anon$2.prototype.$classData = $d_Ldevleague_Game$$anon$2;
+/** @constructor */
+function $c_Ldevleague_Game$$anon$3() {
+  $ct_O__(this)
+}
+$c_Ldevleague_Game$$anon$3.prototype = new $h_O();
+$c_Ldevleague_Game$$anon$3.prototype.constructor = $c_Ldevleague_Game$$anon$3;
+/** @constructor */
+function $h_Ldevleague_Game$$anon$3() {
+  /*<skip>*/
+}
+$h_Ldevleague_Game$$anon$3.prototype = $c_Ldevleague_Game$$anon$3.prototype;
+$c_Ldevleague_Game$$anon$3.prototype.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return $m_Ldevleague_Game$().devleague$Game$$$_$$lessinit$greater$$anonfun$15__Les_tmoor_scanvas_BaseTemplate__s_Option(s)
+});
+$c_Ldevleague_Game$$anon$3.prototype.unapply__O__s_Option = (function(x) {
+  return this.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option($as_Les_tmoor_scanvas_BaseTemplate(x))
+});
+var $d_Ldevleague_Game$$anon$3 = new $TypeData().initClass({
+  Ldevleague_Game$$anon$3: 0
+}, false, "devleague.Game$$anon$3", {
+  Ldevleague_Game$$anon$3: 1,
+  O: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_TypeTest: 1
+});
+$c_Ldevleague_Game$$anon$3.prototype.$classData = $d_Ldevleague_Game$$anon$3;
+/** @constructor */
+function $c_Ldevleague_Game$$anon$4() {
+  $ct_O__(this)
+}
+$c_Ldevleague_Game$$anon$4.prototype = new $h_O();
+$c_Ldevleague_Game$$anon$4.prototype.constructor = $c_Ldevleague_Game$$anon$4;
+/** @constructor */
+function $h_Ldevleague_Game$$anon$4() {
+  /*<skip>*/
+}
+$h_Ldevleague_Game$$anon$4.prototype = $c_Ldevleague_Game$$anon$4.prototype;
+$c_Ldevleague_Game$$anon$4.prototype.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return $m_Ldevleague_Game$().devleague$Game$$$_$$lessinit$greater$$anonfun$20__Les_tmoor_scanvas_BaseTemplate__s_Option(s)
+});
+$c_Ldevleague_Game$$anon$4.prototype.unapply__O__s_Option = (function(x) {
+  return this.unapply__Les_tmoor_scanvas_BaseTemplate__s_Option($as_Les_tmoor_scanvas_BaseTemplate(x))
+});
+var $d_Ldevleague_Game$$anon$4 = new $TypeData().initClass({
+  Ldevleague_Game$$anon$4: 0
+}, false, "devleague.Game$$anon$4", {
+  Ldevleague_Game$$anon$4: 1,
+  O: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_TypeTest: 1
+});
+$c_Ldevleague_Game$$anon$4.prototype.$classData = $d_Ldevleague_Game$$anon$4;
 function $ct_Les_tmoor_scanvas_BaseTemplate$SubTemplate__Les_tmoor_scanvas_BaseTemplate__($thiz, outer) {
   if ((outer === null)) {
     throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
@@ -11622,7 +11815,7 @@ function $c_Les_tmoor_scanvas_BaseTemplate$SubTemplate() {
   this.Les_tmoor_scanvas_Template__f_parent = null;
   this.Les_tmoor_scanvas_Template__f_context = null;
   this.Les_tmoor_scanvas_Template__f_keys = null;
-  this.Les_tmoor_scanvas_Template__f_borders = null;
+  this.Les_tmoor_scanvas_Template__f_blocks = null;
   this.Les_tmoor_scanvas_BaseTemplate$SubTemplate__f_$outer = null
 }
 $c_Les_tmoor_scanvas_BaseTemplate$SubTemplate.prototype = new $h_Les_tmoor_scanvas_Template();
@@ -11674,43 +11867,6 @@ function $m_Les_tmoor_scanvas_BoundingBox$() {
     $n_Les_tmoor_scanvas_BoundingBox$ = new $c_Les_tmoor_scanvas_BoundingBox$()
   };
   return $n_Les_tmoor_scanvas_BoundingBox$
-}
-/** @constructor */
-function $c_Les_tmoor_scanvas_Line$() {
-  $ct_O__(this);
-  $n_Les_tmoor_scanvas_Line$ = this
-}
-$c_Les_tmoor_scanvas_Line$.prototype = new $h_O();
-$c_Les_tmoor_scanvas_Line$.prototype.constructor = $c_Les_tmoor_scanvas_Line$;
-/** @constructor */
-function $h_Les_tmoor_scanvas_Line$() {
-  /*<skip>*/
-}
-$h_Les_tmoor_scanvas_Line$.prototype = $c_Les_tmoor_scanvas_Line$.prototype;
-$c_Les_tmoor_scanvas_Line$.prototype.apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line = (function(x1, y1, x2, y2) {
-  return new $c_Les_tmoor_scanvas_Line(x1, y1, x2, y2)
-});
-$c_Les_tmoor_scanvas_Line$.prototype.unapply__Les_tmoor_scanvas_Line__Les_tmoor_scanvas_Line = (function(x$1) {
-  return x$1
-});
-$c_Les_tmoor_scanvas_Line$.prototype.toString__T = (function() {
-  return "Line"
-});
-var $d_Les_tmoor_scanvas_Line$ = new $TypeData().initClass({
-  Les_tmoor_scanvas_Line$: 0
-}, false, "es.tmoor.scanvas.Line$", {
-  Les_tmoor_scanvas_Line$: 1,
-  O: 1,
-  s_deriving_Mirror: 1,
-  s_deriving_Mirror$Product: 1
-});
-$c_Les_tmoor_scanvas_Line$.prototype.$classData = $d_Les_tmoor_scanvas_Line$;
-var $n_Les_tmoor_scanvas_Line$;
-function $m_Les_tmoor_scanvas_Line$() {
-  if ((!$n_Les_tmoor_scanvas_Line$)) {
-    $n_Les_tmoor_scanvas_Line$ = new $c_Les_tmoor_scanvas_Line$()
-  };
-  return $n_Les_tmoor_scanvas_Line$
 }
 function $ct_jl_Error__T__jl_Throwable__Z__Z__($thiz, s, e, enableSuppression, writableStackTrace) {
   $ct_jl_Throwable__T__jl_Throwable__Z__Z__($thiz, s, e, enableSuppression, writableStackTrace);
@@ -12063,9 +12219,6 @@ function $isArrayOf_sc_IterableOps(obj, depth) {
 function $asArrayOf_sc_IterableOps(obj, depth) {
   return (($isArrayOf_sc_IterableOps(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.IterableOps;", depth))
 }
-function $p_sc_IterableOps$WithFilter__$anonfun$withFilter$1__F1__O__Z($thiz, q$1, a) {
-  return ($uZ($thiz.sc_IterableOps$WithFilter__f_p.apply__O__O(a)) && $uZ(q$1.apply__O__O(a)))
-}
 /** @constructor */
 function $c_sc_IterableOps$WithFilter(self, p) {
   this.sc_IterableOps$WithFilter__f_self = null;
@@ -12086,15 +12239,6 @@ $c_sc_IterableOps$WithFilter.prototype.filtered__sc_Iterable = (function() {
 });
 $c_sc_IterableOps$WithFilter.prototype.foreach__F1__V = (function(f) {
   this.filtered__sc_Iterable().foreach__F1__V(f)
-});
-$c_sc_IterableOps$WithFilter.prototype.withFilter__F1__sc_IterableOps$WithFilter = (function(q) {
-  return new $c_sc_IterableOps$WithFilter(this.sc_IterableOps$WithFilter__f_self, new $c_sjsr_AnonFunction1(((this\u00f8, q) => ((a$2) => {
-    var a = a$2;
-    return $p_sc_IterableOps$WithFilter__$anonfun$withFilter$1__F1__O__Z(this\u00f8, q, a)
-  }))(this, q)))
-});
-$c_sc_IterableOps$WithFilter.prototype.withFilter__F1__sc_WithFilter = (function(q) {
-  return this.withFilter__F1__sc_IterableOps$WithFilter(q)
 });
 var $d_sc_IterableOps$WithFilter = new $TypeData().initClass({
   sc_IterableOps$WithFilter: 0
@@ -12462,65 +12606,6 @@ $c_sci_BitmapIndexedSetNode.prototype.updated__O__I__I__I__sci_BitmapIndexedSetN
   };
   return this.copyAndInsertValue__I__O__I__I__sci_BitmapIndexedSetNode(bitpos, element, originalHash, elementHash)
 });
-$c_sci_BitmapIndexedSetNode.prototype.updateWithShallowMutations__O__I__I__I__I__I = (function(element, originalHash, elementHash, shift, shallowlyMutableNodeMap) {
-  var mask = $m_sci_Node$().maskFrom__I__I__I(elementHash, shift);
-  var bitpos = $m_sci_Node$().bitposFrom__I__I(mask);
-  if (((this.dataMap__I() & bitpos) !== 0)) {
-    var index = $m_sci_Node$().indexFrom__I__I__I__I(this.dataMap__I(), mask, bitpos);
-    var element0 = this.getPayload__I__O(index);
-    var element0UnimprovedHash = this.getHash__I__I(index);
-    if (((element0UnimprovedHash === originalHash) && $m_sr_BoxesRunTime$().equals__O__O__Z(element0, element))) {
-      return shallowlyMutableNodeMap
-    } else {
-      var element0Hash = $m_sc_Hashing$().improve__I__I(element0UnimprovedHash);
-      var subNodeNew = this.mergeTwoKeyValPairs__O__I__I__O__I__I__I__sci_SetNode(element0, element0UnimprovedHash, element0Hash, element, originalHash, elementHash, ((shift + 5) | 0));
-      this.migrateFromInlineToNodeInPlace__I__I__sci_SetNode__sci_BitmapIndexedSetNode(bitpos, element0Hash, subNodeNew);
-      return (shallowlyMutableNodeMap | bitpos)
-    }
-  } else if (((this.nodeMap__I() & bitpos) !== 0)) {
-    var index$2 = $m_sci_Node$().indexFrom__I__I__I__I(this.nodeMap__I(), mask, bitpos);
-    var subNode = this.getNode__I__sci_SetNode(index$2);
-    var subNodeSize = subNode.size__I();
-    var subNodeCachedJavaKeySetHashCode = subNode.cachedJavaKeySetHashCode__I();
-    var returnNodeMap = shallowlyMutableNodeMap;
-    var x1 = subNode;
-    matchEnd4: {
-      var subNodeNew$3;
-      if ((x1 instanceof $c_sci_BitmapIndexedSetNode)) {
-        var x2 = $as_sci_BitmapIndexedSetNode(x1);
-        if (((bitpos & shallowlyMutableNodeMap) !== 0)) {
-          x2.updateWithShallowMutations__O__I__I__I__I__I(element, originalHash, elementHash, ((shift + 5) | 0), 0);
-          var subNodeNew$3 = x2;
-          break matchEnd4
-        }
-      };
-      var subNodeNew$2 = subNode.updated__O__I__I__I__sci_SetNode(element, originalHash, elementHash, ((shift + 5) | 0));
-      if ((!Object.is(subNodeNew$2, subNode))) {
-        returnNodeMap = (returnNodeMap | bitpos)
-      };
-      var subNodeNew$3 = subNodeNew$2
-    };
-    this.content__AO().set(((((this.content__AO().u.length - 1) | 0) - this.nodeIndex__I__I(bitpos)) | 0), subNodeNew$3);
-    this.size_$eq__I__V(((((this.size__I() - subNodeSize) | 0) + subNodeNew$3.size__I()) | 0));
-    this.cachedJavaKeySetHashCode_$eq__I__V(((((this.cachedJavaKeySetHashCode__I() - subNodeCachedJavaKeySetHashCode) | 0) + subNodeNew$3.cachedJavaKeySetHashCode__I()) | 0));
-    return returnNodeMap
-  } else {
-    var dataIx = this.dataIndex__I__I(bitpos);
-    var idx = dataIx;
-    var src = this.content__AO();
-    var dst = new $ac_O(((src.u.length + 1) | 0));
-    $s_jl_System__arraycopy__O__I__O__I__I__V(src, 0, dst, 0, idx);
-    dst.set(idx, element);
-    $s_jl_System__arraycopy__O__I__O__I__I__V(src, idx, dst, ((idx + 1) | 0), ((src.u.length - idx) | 0));
-    var dstHashes = this.insertElement__AI__I__I__AI(this.originalHashes__AI(), dataIx, originalHash);
-    this.dataMap_$eq__I__V((this.dataMap__I() | bitpos));
-    this.content_$eq__AO__V(dst);
-    this.originalHashes_$eq__AI__V(dstHashes);
-    this.size_$eq__I__V(((this.size__I() + 1) | 0));
-    this.cachedJavaKeySetHashCode_$eq__I__V(((this.cachedJavaKeySetHashCode__I() + elementHash) | 0));
-    return shallowlyMutableNodeMap
-  }
-});
 $c_sci_BitmapIndexedSetNode.prototype.removed__O__I__I__I__sci_BitmapIndexedSetNode = (function(element, originalHash, elementHash, shift) {
   var mask = $m_sci_Node$().maskFrom__I__I__I(elementHash, shift);
   var bitpos = $m_sci_Node$().bitposFrom__I__I(mask);
@@ -12810,197 +12895,6 @@ $c_sci_BitmapIndexedSetNode.prototype.copy__sci_BitmapIndexedSetNode = (function
   };
   return new $c_sci_BitmapIndexedSetNode(this.dataMap__I(), this.nodeMap__I(), contentClone, $asArrayOf_I(this.originalHashes__AI().clone__O(), 1), this.size__I(), this.cachedJavaKeySetHashCode__I())
 });
-$c_sci_BitmapIndexedSetNode.prototype.concat__sci_SetNode__I__sci_BitmapIndexedSetNode = (function(that, shift) {
-  var x1 = that;
-  if ((x1 instanceof $c_sci_BitmapIndexedSetNode)) {
-    var x2 = $as_sci_BitmapIndexedSetNode(x1);
-    if ((this.size__I() === 0)) {
-      return x2
-    } else if (((x2.size__I() === 0) || Object.is(x2, this))) {
-      return this
-    } else if ((x2.size__I() === 1)) {
-      var originalHash = x2.getHash__I__I(0);
-      return this.updated__O__I__I__I__sci_BitmapIndexedSetNode(x2.getPayload__I__O(0), originalHash, $m_sc_Hashing$().improve__I__I(originalHash), shift)
-    };
-    var anyChangesMadeSoFar = false;
-    var allMap = (((this.dataMap__I() | x2.dataMap__I()) | this.nodeMap__I()) | x2.nodeMap__I());
-    var minimumBitPos = $m_sci_Node$().bitposFrom__I__I($s_jl_Integer__numberOfTrailingZeros__I__I(allMap));
-    var maximumBitPos = $m_sci_Node$().bitposFrom__I__I(((((32 - $s_jl_Integer__numberOfLeadingZeros__I__I(allMap)) | 0) - 1) | 0));
-    var leftNodeRightNode = 0;
-    var leftDataRightNode = 0;
-    var leftNodeRightData = 0;
-    var leftDataOnly = 0;
-    var rightDataOnly = 0;
-    var leftNodeOnly = 0;
-    var rightNodeOnly = 0;
-    var leftDataRightDataMigrateToNode = 0;
-    var leftDataRightDataLeftOverwrites = 0;
-    var dataToNodeMigrationTargets = 0;
-    var bitpos = minimumBitPos;
-    var leftIdx = 0;
-    var rightIdx = 0;
-    var finished = false;
-    while ((!finished)) {
-      if (((bitpos & this.dataMap__I()) !== 0)) {
-        if (((bitpos & x2.dataMap__I()) !== 0)) {
-          if (((this.getHash__I__I(leftIdx) === x2.getHash__I__I(rightIdx)) && $m_sr_BoxesRunTime$().equals__O__O__Z(this.getPayload__I__O(leftIdx), x2.getPayload__I__O(rightIdx)))) {
-            leftDataRightDataLeftOverwrites = (leftDataRightDataLeftOverwrites | bitpos)
-          } else {
-            leftDataRightDataMigrateToNode = (leftDataRightDataMigrateToNode | bitpos);
-            dataToNodeMigrationTargets = (dataToNodeMigrationTargets | $m_sci_Node$().bitposFrom__I__I($m_sci_Node$().maskFrom__I__I__I($m_sc_Hashing$().improve__I__I(this.getHash__I__I(leftIdx)), shift)))
-          };
-          rightIdx = ((rightIdx + 1) | 0)
-        } else if (((bitpos & x2.nodeMap__I()) !== 0)) {
-          leftDataRightNode = (leftDataRightNode | bitpos)
-        } else {
-          leftDataOnly = (leftDataOnly | bitpos)
-        };
-        leftIdx = ((leftIdx + 1) | 0)
-      } else if (((bitpos & this.nodeMap__I()) !== 0)) {
-        if (((bitpos & x2.dataMap__I()) !== 0)) {
-          leftNodeRightData = (leftNodeRightData | bitpos);
-          rightIdx = ((rightIdx + 1) | 0)
-        } else if (((bitpos & x2.nodeMap__I()) !== 0)) {
-          leftNodeRightNode = (leftNodeRightNode | bitpos)
-        } else {
-          leftNodeOnly = (leftNodeOnly | bitpos)
-        }
-      } else if (((bitpos & x2.dataMap__I()) !== 0)) {
-        rightDataOnly = (rightDataOnly | bitpos);
-        rightIdx = ((rightIdx + 1) | 0)
-      } else if (((bitpos & x2.nodeMap__I()) !== 0)) {
-        rightNodeOnly = (rightNodeOnly | bitpos)
-      };
-      if ((bitpos === maximumBitPos)) {
-        finished = true
-      } else {
-        bitpos = (bitpos << 1)
-      }
-    };
-    var newDataMap = ((leftDataOnly | rightDataOnly) | leftDataRightDataLeftOverwrites);
-    var newNodeMap = (((((leftNodeRightNode | leftDataRightNode) | leftNodeRightData) | leftNodeOnly) | rightNodeOnly) | dataToNodeMigrationTargets);
-    if (((newDataMap === (leftDataOnly | leftDataRightDataLeftOverwrites)) && (newNodeMap === leftNodeOnly))) {
-      return this
-    };
-    var newDataSize = $s_jl_Integer__bitCount__I__I(newDataMap);
-    var newContentSize = ((newDataSize + $s_jl_Integer__bitCount__I__I(newNodeMap)) | 0);
-    var newContent = new $ac_O(newContentSize);
-    var newOriginalHashes = new $ac_I(newDataSize);
-    var newSize = 0;
-    var newCachedHashCode = 0;
-    var leftDataIdx = 0;
-    var rightDataIdx = 0;
-    var leftNodeIdx = 0;
-    var rightNodeIdx = 0;
-    var nextShift = ((shift + 5) | 0);
-    var compressedDataIdx = 0;
-    var compressedNodeIdx = 0;
-    var bitpos$2 = minimumBitPos;
-    var finished$2 = false;
-    while ((!finished$2)) {
-      if (((bitpos$2 & leftNodeRightNode) !== 0)) {
-        var leftNode = this.getNode__I__sci_SetNode(leftNodeIdx);
-        var newNode = leftNode.concat__sci_SetNode__I__sci_SetNode(x2.getNode__I__sci_SetNode(rightNodeIdx), nextShift);
-        if ((!Object.is(leftNode, newNode))) {
-          anyChangesMadeSoFar = true
-        };
-        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode);
-        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
-        rightNodeIdx = ((rightNodeIdx + 1) | 0);
-        leftNodeIdx = ((leftNodeIdx + 1) | 0);
-        newSize = ((newSize + newNode.size__I()) | 0);
-        newCachedHashCode = ((newCachedHashCode + newNode.cachedJavaKeySetHashCode__I()) | 0)
-      } else if (((bitpos$2 & leftDataRightNode) !== 0)) {
-        anyChangesMadeSoFar = true;
-        var n = x2.getNode__I__sci_SetNode(rightNodeIdx);
-        var leftPayload = this.getPayload__I__O(leftDataIdx);
-        var leftOriginalHash = this.getHash__I__I(leftDataIdx);
-        var leftImproved = $m_sc_Hashing$().improve__I__I(leftOriginalHash);
-        var newNode$2 = n.updated__O__I__I__I__sci_SetNode(leftPayload, leftOriginalHash, leftImproved, nextShift);
-        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$2);
-        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
-        rightNodeIdx = ((rightNodeIdx + 1) | 0);
-        leftDataIdx = ((leftDataIdx + 1) | 0);
-        newSize = ((newSize + newNode$2.size__I()) | 0);
-        newCachedHashCode = ((newCachedHashCode + newNode$2.cachedJavaKeySetHashCode__I()) | 0)
-      } else if (((bitpos$2 & leftNodeRightData) !== 0)) {
-        var rightOriginalHash = x2.getHash__I__I(rightDataIdx);
-        var leftNode$2 = this.getNode__I__sci_SetNode(leftNodeIdx);
-        var updated = leftNode$2.updated__O__I__I__I__sci_SetNode(x2.getPayload__I__O(rightDataIdx), x2.getHash__I__I(rightDataIdx), $m_sc_Hashing$().improve__I__I(rightOriginalHash), nextShift);
-        if ((!Object.is(updated, leftNode$2))) {
-          anyChangesMadeSoFar = true
-        };
-        var newNode$3 = updated;
-        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$3);
-        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
-        leftNodeIdx = ((leftNodeIdx + 1) | 0);
-        rightDataIdx = ((rightDataIdx + 1) | 0);
-        newSize = ((newSize + newNode$3.size__I()) | 0);
-        newCachedHashCode = ((newCachedHashCode + newNode$3.cachedJavaKeySetHashCode__I()) | 0)
-      } else if (((bitpos$2 & leftDataOnly) !== 0)) {
-        var originalHash$2 = this.originalHashes__AI().get(leftDataIdx);
-        newContent.set(compressedDataIdx, this.getPayload__I__O(leftDataIdx));
-        newOriginalHashes.set(compressedDataIdx, originalHash$2);
-        compressedDataIdx = ((compressedDataIdx + 1) | 0);
-        leftDataIdx = ((leftDataIdx + 1) | 0);
-        newSize = ((newSize + 1) | 0);
-        newCachedHashCode = ((newCachedHashCode + $m_sc_Hashing$().improve__I__I(originalHash$2)) | 0)
-      } else if (((bitpos$2 & rightDataOnly) !== 0)) {
-        anyChangesMadeSoFar = true;
-        var originalHash$3 = x2.originalHashes__AI().get(rightDataIdx);
-        newContent.set(compressedDataIdx, x2.getPayload__I__O(rightDataIdx));
-        newOriginalHashes.set(compressedDataIdx, originalHash$3);
-        compressedDataIdx = ((compressedDataIdx + 1) | 0);
-        rightDataIdx = ((rightDataIdx + 1) | 0);
-        newSize = ((newSize + 1) | 0);
-        newCachedHashCode = ((newCachedHashCode + $m_sc_Hashing$().improve__I__I(originalHash$3)) | 0)
-      } else if (((bitpos$2 & leftNodeOnly) !== 0)) {
-        var newNode$4 = this.getNode__I__sci_SetNode(leftNodeIdx);
-        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$4);
-        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
-        leftNodeIdx = ((leftNodeIdx + 1) | 0);
-        newSize = ((newSize + newNode$4.size__I()) | 0);
-        newCachedHashCode = ((newCachedHashCode + newNode$4.cachedJavaKeySetHashCode__I()) | 0)
-      } else if (((bitpos$2 & rightNodeOnly) !== 0)) {
-        anyChangesMadeSoFar = true;
-        var newNode$5 = x2.getNode__I__sci_SetNode(rightNodeIdx);
-        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$5);
-        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
-        rightNodeIdx = ((rightNodeIdx + 1) | 0);
-        newSize = ((newSize + newNode$5.size__I()) | 0);
-        newCachedHashCode = ((newCachedHashCode + newNode$5.cachedJavaKeySetHashCode__I()) | 0)
-      } else if (((bitpos$2 & leftDataRightDataMigrateToNode) !== 0)) {
-        anyChangesMadeSoFar = true;
-        var leftOriginalHash$2 = this.getHash__I__I(leftDataIdx);
-        var rightOriginalHash$2 = x2.getHash__I__I(rightDataIdx);
-        var newNode$6 = x2.mergeTwoKeyValPairs__O__I__I__O__I__I__I__sci_SetNode(this.getPayload__I__O(leftDataIdx), leftOriginalHash$2, $m_sc_Hashing$().improve__I__I(leftOriginalHash$2), x2.getPayload__I__O(rightDataIdx), rightOriginalHash$2, $m_sc_Hashing$().improve__I__I(rightOriginalHash$2), nextShift);
-        newContent.set(((((newContentSize - compressedNodeIdx) | 0) - 1) | 0), newNode$6);
-        compressedNodeIdx = ((compressedNodeIdx + 1) | 0);
-        leftDataIdx = ((leftDataIdx + 1) | 0);
-        rightDataIdx = ((rightDataIdx + 1) | 0);
-        newSize = ((newSize + newNode$6.size__I()) | 0);
-        newCachedHashCode = ((newCachedHashCode + newNode$6.cachedJavaKeySetHashCode__I()) | 0)
-      } else if (((bitpos$2 & leftDataRightDataLeftOverwrites) !== 0)) {
-        var originalHash$4 = x2.originalHashes__AI().get(rightDataIdx);
-        newContent.set(compressedDataIdx, x2.getPayload__I__O(rightDataIdx));
-        newOriginalHashes.set(compressedDataIdx, originalHash$4);
-        compressedDataIdx = ((compressedDataIdx + 1) | 0);
-        rightDataIdx = ((rightDataIdx + 1) | 0);
-        newSize = ((newSize + 1) | 0);
-        newCachedHashCode = ((newCachedHashCode + $m_sc_Hashing$().improve__I__I(originalHash$4)) | 0);
-        leftDataIdx = ((leftDataIdx + 1) | 0)
-      };
-      if ((bitpos$2 === maximumBitPos)) {
-        finished$2 = true
-      } else {
-        bitpos$2 = (bitpos$2 << 1)
-      }
-    };
-    return (anyChangesMadeSoFar ? new $c_sci_BitmapIndexedSetNode(newDataMap, newNodeMap, newContent, newOriginalHashes, newSize, newCachedHashCode) : this)
-  } else {
-    throw $ct_jl_UnsupportedOperationException__T__(new $c_jl_UnsupportedOperationException(), "Cannot concatenate a HashCollisionSetNode with a BitmapIndexedSetNode")
-  }
-});
 $c_sci_BitmapIndexedSetNode.prototype.foreachWithHash__F2__V = (function(f) {
   var iN = this.payloadArity__I();
   var i = 0;
@@ -13014,9 +12908,6 @@ $c_sci_BitmapIndexedSetNode.prototype.foreachWithHash__F2__V = (function(f) {
     this.getNode__I__sci_SetNode(j).foreachWithHash__F2__V(f);
     j = ((j + 1) | 0)
   }
-});
-$c_sci_BitmapIndexedSetNode.prototype.concat__sci_SetNode__I__sci_SetNode = (function(that, shift) {
-  return this.concat__sci_SetNode__I__sci_BitmapIndexedSetNode(that, shift)
 });
 $c_sci_BitmapIndexedSetNode.prototype.copy__sci_SetNode = (function() {
   return this.copy__sci_BitmapIndexedSetNode()
@@ -13168,33 +13059,6 @@ $c_sci_HashCollisionSetNode.prototype.hashCode__I = (function() {
 });
 $c_sci_HashCollisionSetNode.prototype.copy__sci_HashCollisionSetNode = (function() {
   return new $c_sci_HashCollisionSetNode(this.originalHash__I(), this.hash__I(), this.content__sci_Vector())
-});
-$c_sci_HashCollisionSetNode.prototype.concat__sci_SetNode__I__sci_SetNode = (function(that, shift) {
-  var x1 = that;
-  if ((x1 instanceof $c_sci_HashCollisionSetNode)) {
-    var x2 = $as_sci_HashCollisionSetNode(x1);
-    if (Object.is(x2, this)) {
-      return this
-    } else {
-      var newContent = null;
-      var iter = x2.content__sci_Vector().iterator__sc_Iterator();
-      while (iter.hasNext__Z()) {
-        var nextPayload = iter.next__O();
-        if ((!this.content__sci_Vector().contains__O__Z(nextPayload))) {
-          if ((newContent === null)) {
-            newContent = new $c_sci_VectorBuilder();
-            newContent.addAll__sc_IterableOnce__sci_VectorBuilder(this.content__sci_Vector())
-          };
-          newContent.addOne__O__sci_VectorBuilder(nextPayload)
-        }
-      };
-      return ((newContent === null) ? this : new $c_sci_HashCollisionSetNode(this.originalHash__I(), this.hash__I(), newContent.result__sci_Vector()))
-    }
-  } else if ((x1 instanceof $c_sci_BitmapIndexedSetNode)) {
-    throw $ct_jl_UnsupportedOperationException__T__(new $c_jl_UnsupportedOperationException(), "Cannot concatenate a HashCollisionSetNode with a BitmapIndexedSetNode")
-  } else {
-    throw new $c_s_MatchError(x1)
-  }
 });
 $c_sci_HashCollisionSetNode.prototype.foreachWithHash__F2__V = (function(f) {
   var iter = this.content__sci_Vector().iterator__sc_Iterator();
@@ -13787,7 +13651,7 @@ function $c_Ldevleague_Road$() {
   this.Les_tmoor_scanvas_Template__f_parent = null;
   this.Les_tmoor_scanvas_Template__f_context = null;
   this.Les_tmoor_scanvas_Template__f_keys = null;
-  this.Les_tmoor_scanvas_Template__f_borders = null;
+  this.Les_tmoor_scanvas_Template__f_blocks = null;
   this.Les_tmoor_scanvas_BaseTemplate$SubTemplate__f_$outer = null;
   this.Ldevleague_Road$__f_x = null;
   this.Ldevleague_Road$__f_y = null;
@@ -14014,154 +13878,6 @@ var $d_Les_tmoor_scanvas_BoundingBox = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Les_tmoor_scanvas_BoundingBox.prototype.$classData = $d_Les_tmoor_scanvas_BoundingBox;
-/** @constructor */
-function $c_Les_tmoor_scanvas_Line(x1, y1, x2, y2) {
-  this.Les_tmoor_scanvas_Line__f_x1 = null;
-  this.Les_tmoor_scanvas_Line__f_y1 = null;
-  this.Les_tmoor_scanvas_Line__f_x2 = null;
-  this.Les_tmoor_scanvas_Line__f_y2 = null;
-  this.Les_tmoor_scanvas_Line__f_exempt = null;
-  this.Les_tmoor_scanvas_Line__f_x1 = x1;
-  this.Les_tmoor_scanvas_Line__f_y1 = y1;
-  this.Les_tmoor_scanvas_Line__f_x2 = x2;
-  this.Les_tmoor_scanvas_Line__f_y2 = y2;
-  $ct_O__(this);
-  this.Les_tmoor_scanvas_Line__f_exempt = $as_scm_Set($m_scm_Set$().apply__sci_Seq__O($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([]))))
-}
-$c_Les_tmoor_scanvas_Line.prototype = new $h_O();
-$c_Les_tmoor_scanvas_Line.prototype.constructor = $c_Les_tmoor_scanvas_Line;
-/** @constructor */
-function $h_Les_tmoor_scanvas_Line() {
-  /*<skip>*/
-}
-$h_Les_tmoor_scanvas_Line.prototype = $c_Les_tmoor_scanvas_Line.prototype;
-$c_Les_tmoor_scanvas_Line.prototype.productIterator__sc_Iterator = (function() {
-  return $f_s_Product__productIterator__sc_Iterator(this)
-});
-$c_Les_tmoor_scanvas_Line.prototype.hashCode__I = (function() {
-  return $m_sr_ScalaRunTime$()._hashCode__s_Product__I(this)
-});
-$c_Les_tmoor_scanvas_Line.prototype.equals__O__Z = (function(x$0) {
-  if (Object.is(this, x$0)) {
-    return true
-  } else {
-    var x1 = x$0;
-    if ((x1 instanceof $c_Les_tmoor_scanvas_Line)) {
-      var x$0$2 = $as_Les_tmoor_scanvas_Line(x1);
-      var x = this.x1__Les_tmoor_scanvas_Fraction();
-      var x$2 = x$0$2.x1__Les_tmoor_scanvas_Fraction();
-      if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
-        var x$3 = this.y1__Les_tmoor_scanvas_Fraction();
-        var x$4 = x$0$2.y1__Les_tmoor_scanvas_Fraction();
-        var $$x3 = ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
-      } else {
-        var $$x3 = false
-      };
-      if ($$x3) {
-        var x$5 = this.x2__Les_tmoor_scanvas_Fraction();
-        var x$6 = x$0$2.x2__Les_tmoor_scanvas_Fraction();
-        var $$x2 = ((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6))
-      } else {
-        var $$x2 = false
-      };
-      if ($$x2) {
-        var x$7 = this.y2__Les_tmoor_scanvas_Fraction();
-        var x$8 = x$0$2.y2__Les_tmoor_scanvas_Fraction();
-        var $$x1 = ((x$7 === null) ? (x$8 === null) : x$7.equals__O__Z(x$8))
-      } else {
-        var $$x1 = false
-      };
-      if ($$x1) {
-        return x$0$2.canEqual__O__Z(this)
-      } else {
-        return false
-      }
-    };
-    return false
-  }
-});
-$c_Les_tmoor_scanvas_Line.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Les_tmoor_scanvas_Line.prototype.canEqual__O__Z = (function(that) {
-  return (that instanceof $c_Les_tmoor_scanvas_Line)
-});
-$c_Les_tmoor_scanvas_Line.prototype.productArity__I = (function() {
-  return 4
-});
-$c_Les_tmoor_scanvas_Line.prototype.productPrefix__T = (function() {
-  return "Line"
-});
-$c_Les_tmoor_scanvas_Line.prototype.productElement__I__O = (function(n) {
-  var x3 = n;
-  switch (x3) {
-    case 0: {
-      return this._1__Les_tmoor_scanvas_Fraction();
-      break
-    }
-    case 1: {
-      return this._2__Les_tmoor_scanvas_Fraction();
-      break
-    }
-    case 2: {
-      return this._3__Les_tmoor_scanvas_Fraction();
-      break
-    }
-    case 3: {
-      return this._4__Les_tmoor_scanvas_Fraction();
-      break
-    }
-    default: {
-      throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), $f_jl_Integer__toString__T(n))
-    }
-  }
-});
-$c_Les_tmoor_scanvas_Line.prototype.x1__Les_tmoor_scanvas_Fraction = (function() {
-  return this.Les_tmoor_scanvas_Line__f_x1
-});
-$c_Les_tmoor_scanvas_Line.prototype.y1__Les_tmoor_scanvas_Fraction = (function() {
-  return this.Les_tmoor_scanvas_Line__f_y1
-});
-$c_Les_tmoor_scanvas_Line.prototype.x2__Les_tmoor_scanvas_Fraction = (function() {
-  return this.Les_tmoor_scanvas_Line__f_x2
-});
-$c_Les_tmoor_scanvas_Line.prototype.y2__Les_tmoor_scanvas_Fraction = (function() {
-  return this.Les_tmoor_scanvas_Line__f_y2
-});
-$c_Les_tmoor_scanvas_Line.prototype.exempt__scm_Set = (function() {
-  return this.Les_tmoor_scanvas_Line__f_exempt
-});
-$c_Les_tmoor_scanvas_Line.prototype._1__Les_tmoor_scanvas_Fraction = (function() {
-  return this.x1__Les_tmoor_scanvas_Fraction()
-});
-$c_Les_tmoor_scanvas_Line.prototype._2__Les_tmoor_scanvas_Fraction = (function() {
-  return this.y1__Les_tmoor_scanvas_Fraction()
-});
-$c_Les_tmoor_scanvas_Line.prototype._3__Les_tmoor_scanvas_Fraction = (function() {
-  return this.x2__Les_tmoor_scanvas_Fraction()
-});
-$c_Les_tmoor_scanvas_Line.prototype._4__Les_tmoor_scanvas_Fraction = (function() {
-  return this.y2__Les_tmoor_scanvas_Fraction()
-});
-function $as_Les_tmoor_scanvas_Line(obj) {
-  return (((obj instanceof $c_Les_tmoor_scanvas_Line) || (obj === null)) ? obj : $throwClassCastException(obj, "es.tmoor.scanvas.Line"))
-}
-function $isArrayOf_Les_tmoor_scanvas_Line(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Les_tmoor_scanvas_Line)))
-}
-function $asArrayOf_Les_tmoor_scanvas_Line(obj, depth) {
-  return (($isArrayOf_Les_tmoor_scanvas_Line(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Les.tmoor.scanvas.Line;", depth))
-}
-var $d_Les_tmoor_scanvas_Line = new $TypeData().initClass({
-  Les_tmoor_scanvas_Line: 0
-}, false, "es.tmoor.scanvas.Line", {
-  Les_tmoor_scanvas_Line: 1,
-  O: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Les_tmoor_scanvas_Line.prototype.$classData = $d_Les_tmoor_scanvas_Line;
 function $as_Ljava_io_IOException(obj) {
   return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "java.io.IOException"))
 }
@@ -16126,29 +15842,17 @@ function $m_scm_Set$() {
   };
   return $n_scm_Set$
 }
-function $p_Ldevleague_Box__rmBorders$$anonfun$1__Les_tmoor_scanvas_Line__Z($thiz, b) {
-  return b.exempt__scm_Set().contains__O__Z($thiz.uid__T())
+function $p_Ldevleague_Box__$init$$$anonfun$1__Les_tmoor_scanvas_Fraction($thiz) {
+  return $thiz.x__Les_tmoor_scanvas_Fraction()
 }
-function $p_Ldevleague_Box__rmBorders$$anonfun$2__Les_tmoor_scanvas_Line__scm_Set($thiz, b) {
-  return $as_scm_Set($thiz.borders__Les_tmoor_scanvas_Borders().left__scm_Set().$minus$eq__O__scm_Shrinkable(b))
+function $p_Ldevleague_Box__$init$$$anonfun$2__Les_tmoor_scanvas_Fraction($thiz) {
+  return $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($thiz.x__Les_tmoor_scanvas_Fraction()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()))
 }
-function $p_Ldevleague_Box__rmBorders$$anonfun$3__Les_tmoor_scanvas_Line__Z($thiz, b) {
-  return b.exempt__scm_Set().contains__O__Z($thiz.uid__T())
+function $p_Ldevleague_Box__$init$$$anonfun$3__Les_tmoor_scanvas_Fraction($thiz) {
+  return $thiz.y__Les_tmoor_scanvas_Fraction()
 }
-function $p_Ldevleague_Box__rmBorders$$anonfun$4__Les_tmoor_scanvas_Line__scm_Set($thiz, b) {
-  return $as_scm_Set($thiz.borders__Les_tmoor_scanvas_Borders().right__scm_Set().$minus$eq__O__scm_Shrinkable(b))
-}
-function $p_Ldevleague_Box__rmBorders$$anonfun$5__Les_tmoor_scanvas_Line__Z($thiz, b) {
-  return b.exempt__scm_Set().contains__O__Z($thiz.uid__T())
-}
-function $p_Ldevleague_Box__rmBorders$$anonfun$6__Les_tmoor_scanvas_Line__scm_Set($thiz, b) {
-  return $as_scm_Set($thiz.borders__Les_tmoor_scanvas_Borders().top__scm_Set().$minus$eq__O__scm_Shrinkable(b))
-}
-function $p_Ldevleague_Box__rmBorders$$anonfun$7__Les_tmoor_scanvas_Line__Z($thiz, b) {
-  return b.exempt__scm_Set().contains__O__Z($thiz.uid__T())
-}
-function $p_Ldevleague_Box__rmBorders$$anonfun$8__Les_tmoor_scanvas_Line__scm_Set($thiz, b) {
-  return $as_scm_Set($thiz.borders__Les_tmoor_scanvas_Borders().bottom__scm_Set().$minus$eq__O__scm_Shrinkable(b))
+function $p_Ldevleague_Box__$init$$$anonfun$4__Les_tmoor_scanvas_Fraction($thiz) {
+  return $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps($thiz.y__Les_tmoor_scanvas_Fraction()).$plus__O__O($thiz.w__Les_tmoor_scanvas_Fraction()))
 }
 /** @constructor */
 function $c_Ldevleague_Box(pxW, pxH, sx, sy) {
@@ -16156,7 +15860,7 @@ function $c_Ldevleague_Box(pxW, pxH, sx, sy) {
   this.Les_tmoor_scanvas_Template__f_parent = null;
   this.Les_tmoor_scanvas_Template__f_context = null;
   this.Les_tmoor_scanvas_Template__f_keys = null;
-  this.Les_tmoor_scanvas_Template__f_borders = null;
+  this.Les_tmoor_scanvas_Template__f_blocks = null;
   this.Les_tmoor_scanvas_BaseTemplate$SubTemplate__f_$outer = null;
   this.Ldevleague_Box__f_x = null;
   this.Ldevleague_Box__f_y = null;
@@ -16165,6 +15869,7 @@ function $c_Ldevleague_Box(pxW, pxH, sx, sy) {
   this.Ldevleague_Box__f_timeScale = null;
   this.Ldevleague_Box__f_children = null;
   this.Ldevleague_Box__f_img = null;
+  this.Ldevleague_Box__f_blocker = null;
   this.Ldevleague_Box__f_px = null;
   this.Ldevleague_Box__f_py = null;
   this.Ldevleague_Box__f_pw = null;
@@ -16177,6 +15882,8 @@ function $c_Ldevleague_Box(pxW, pxH, sx, sy) {
   this.Ldevleague_Box__f_children = $m_s_package$().Nil__sci_Nil$();
   this.Ldevleague_Box__f_img = $m_sjs_js_package$().eval__T__O("new Image(17, 17);");
   this.img__Lorg_scalajs_dom_HTMLImageElement().src = "box.png";
+  this.Ldevleague_Box__f_blocker = $ct_Les_tmoor_scanvas_Block__F0__F0__F0__F0__sci_Seq__s_reflect_TypeTest__(new $c_Les_tmoor_scanvas_Block(), new $c_sjsr_AnonFunction0(((this\u00f8) => (() => $p_Ldevleague_Box__$init$$$anonfun$1__Les_tmoor_scanvas_Fraction(this\u00f8)))(this)), new $c_sjsr_AnonFunction0(((this$2) => (() => $p_Ldevleague_Box__$init$$$anonfun$2__Les_tmoor_scanvas_Fraction(this$2)))(this)), new $c_sjsr_AnonFunction0(((this$3) => (() => $p_Ldevleague_Box__$init$$$anonfun$3__Les_tmoor_scanvas_Fraction(this$3)))(this)), new $c_sjsr_AnonFunction0(((this$4) => (() => $p_Ldevleague_Box__$init$$$anonfun$4__Les_tmoor_scanvas_Fraction(this$4)))(this)), $as_sci_Seq($m_s_package$().Seq__sci_Seq$().apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([this.uid__T()])))), new $c_Ldevleague_Box$$anon$1(this));
+  this.blocks__scm_Set().$plus$eq__O__scm_Growable(this.blocker__Les_tmoor_scanvas_Block());
   matchResult1: {
     var \u03b41$;
     var x1 = this.parent__Les_tmoor_scanvas_BaseTemplate().bounds__Les_tmoor_scanvas_BoundingBox().extract__T4();
@@ -16248,29 +15955,10 @@ $c_Ldevleague_Box.prototype.children__sci_Seq = (function() {
 $c_Ldevleague_Box.prototype.img__Lorg_scalajs_dom_HTMLImageElement = (function() {
   return this.Ldevleague_Box__f_img
 });
-$c_Ldevleague_Box.prototype.rmBorders__V = (function() {
-  this.borders__Les_tmoor_scanvas_Borders().left__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this\u00f8) => ((b) => $p_Ldevleague_Box__rmBorders$$anonfun$1__Les_tmoor_scanvas_Line__Z(this\u00f8, $as_Les_tmoor_scanvas_Line(b))))(this))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$2) => ((b$2) => $p_Ldevleague_Box__rmBorders$$anonfun$2__Les_tmoor_scanvas_Line__scm_Set(this$2, $as_Les_tmoor_scanvas_Line(b$2))))(this)));
-  this.borders__Les_tmoor_scanvas_Borders().right__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this$3) => ((b$3) => $p_Ldevleague_Box__rmBorders$$anonfun$3__Les_tmoor_scanvas_Line__Z(this$3, $as_Les_tmoor_scanvas_Line(b$3))))(this))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$4) => ((b$4) => $p_Ldevleague_Box__rmBorders$$anonfun$4__Les_tmoor_scanvas_Line__scm_Set(this$4, $as_Les_tmoor_scanvas_Line(b$4))))(this)));
-  this.borders__Les_tmoor_scanvas_Borders().top__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this$5) => ((b$5) => $p_Ldevleague_Box__rmBorders$$anonfun$5__Les_tmoor_scanvas_Line__Z(this$5, $as_Les_tmoor_scanvas_Line(b$5))))(this))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$6) => ((b$6) => $p_Ldevleague_Box__rmBorders$$anonfun$6__Les_tmoor_scanvas_Line__scm_Set(this$6, $as_Les_tmoor_scanvas_Line(b$6))))(this)));
-  this.borders__Les_tmoor_scanvas_Borders().bottom__scm_Set().withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((this$7) => ((b$7) => $p_Ldevleague_Box__rmBorders$$anonfun$7__Les_tmoor_scanvas_Line__Z(this$7, $as_Les_tmoor_scanvas_Line(b$7))))(this))).foreach__F1__V(new $c_sjsr_AnonFunction1(((this$8) => ((b$8) => $p_Ldevleague_Box__rmBorders$$anonfun$8__Les_tmoor_scanvas_Line__scm_Set(this$8, $as_Les_tmoor_scanvas_Line(b$8))))(this)))
-});
-$c_Ldevleague_Box.prototype.setBorders__scm_Set = (function() {
-  var l1 = $m_Les_tmoor_scanvas_Line$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().x__Les_tmoor_scanvas_Fraction(), this.relativeBounds__Les_tmoor_scanvas_BoundingBox().y__Les_tmoor_scanvas_Fraction(), this.relativeBounds__Les_tmoor_scanvas_BoundingBox().x__Les_tmoor_scanvas_Fraction(), $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().y__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.h__Les_tmoor_scanvas_Fraction())));
-  l1.exempt__scm_Set().$plus$eq__O__scm_Growable(this.uid__T());
-  this.borders__Les_tmoor_scanvas_Borders().right__scm_Set().$plus$eq__O__scm_Growable(l1);
-  var l2 = $m_Les_tmoor_scanvas_Line$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line($as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().x__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().w__Les_tmoor_scanvas_Fraction())), this.relativeBounds__Les_tmoor_scanvas_BoundingBox().y__Les_tmoor_scanvas_Fraction(), $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().x__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().w__Les_tmoor_scanvas_Fraction())), $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().y__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().h__Les_tmoor_scanvas_Fraction())));
-  l2.exempt__scm_Set().$plus$eq__O__scm_Growable(this.uid__T());
-  this.borders__Les_tmoor_scanvas_Borders().left__scm_Set().$plus$eq__O__scm_Growable(l2);
-  var l3 = $m_Les_tmoor_scanvas_Line$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().x__Les_tmoor_scanvas_Fraction(), $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().y__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().h__Les_tmoor_scanvas_Fraction())), $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().x__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().w__Les_tmoor_scanvas_Fraction())), $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().y__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().h__Les_tmoor_scanvas_Fraction())));
-  l3.exempt__scm_Set().$plus$eq__O__scm_Growable(this.uid__T());
-  this.borders__Les_tmoor_scanvas_Borders().top__scm_Set().$plus$eq__O__scm_Growable(l3);
-  var l4 = $m_Les_tmoor_scanvas_Line$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Line(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().x__Les_tmoor_scanvas_Fraction(), this.relativeBounds__Les_tmoor_scanvas_BoundingBox().y__Les_tmoor_scanvas_Fraction(), $as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().x__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.relativeBounds__Les_tmoor_scanvas_BoundingBox().w__Les_tmoor_scanvas_Fraction())), this.relativeBounds__Les_tmoor_scanvas_BoundingBox().y__Les_tmoor_scanvas_Fraction());
-  l4.exempt__scm_Set().$plus$eq__O__scm_Growable(this.uid__T());
-  return $as_scm_Set(this.borders__Les_tmoor_scanvas_Borders().bottom__scm_Set().$plus$eq__O__scm_Growable(l4))
+$c_Ldevleague_Box.prototype.blocker__Les_tmoor_scanvas_Block = (function() {
+  return this.Ldevleague_Box__f_blocker
 });
 $c_Ldevleague_Box.prototype.draw__V = (function() {
-  this.rmBorders__V();
-  this.setBorders__scm_Set();
   this.context__Les_tmoor_scanvas_rendering_Context().Fill__Les_tmoor_scanvas_rendering_Context$Fill$().image__Lorg_scalajs_dom_HTMLElement__V(this.img__Lorg_scalajs_dom_HTMLImageElement())
 });
 $c_Ldevleague_Box.prototype.pw__Les_tmoor_scanvas_Fraction = (function() {
@@ -16287,6 +15975,9 @@ $c_Ldevleague_Box.prototype.h__Les_tmoor_scanvas_Fraction = (function() {
 });
 $c_Ldevleague_Box.prototype.relativeBounds__Les_tmoor_scanvas_BoundingBox = (function() {
   return $m_Les_tmoor_scanvas_BoundingBox$().apply__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_Fraction__Les_tmoor_scanvas_BoundingBox(this.x__Les_tmoor_scanvas_Fraction(), this.y__Les_tmoor_scanvas_Fraction(), this.w__Les_tmoor_scanvas_Fraction(), this.h__Les_tmoor_scanvas_Fraction())
+});
+$c_Ldevleague_Box.prototype.devleague$Box$$_$$lessinit$greater$$anonfun$5__Les_tmoor_scanvas_BaseTemplate__s_Option = (function(s) {
+  return ((Object.is(s, this) || Object.is(s, $m_Ldevleague_Guy$())) ? $m_s_Some$().apply__O__s_Some($as_Ldevleague_Guy$(s)) : $m_s_None$())
 });
 var $d_Ldevleague_Box = new $TypeData().initClass({
   Ldevleague_Box: 0
@@ -16320,7 +16011,7 @@ function $c_Ldevleague_Guy$() {
   this.Les_tmoor_scanvas_Template__f_parent = null;
   this.Les_tmoor_scanvas_Template__f_context = null;
   this.Les_tmoor_scanvas_Template__f_keys = null;
-  this.Les_tmoor_scanvas_Template__f_borders = null;
+  this.Les_tmoor_scanvas_Template__f_blocks = null;
   this.Les_tmoor_scanvas_BaseTemplate$SubTemplate__f_$outer = null;
   this.Ldevleague_Guy$__f_x = null;
   this.Ldevleague_Guy$__f_y = null;
@@ -16448,8 +16139,23 @@ $c_Ldevleague_Guy$.prototype.drawSkin__O = (function() {
   return this.ld__F1().apply__O__O(new $c_sjsr_AnonFunction0(((this$3) => (() => $p_Ldevleague_Guy$__drawSkin$$anonfun$adapted$1__O(this$3)))(this)))
 });
 $c_Ldevleague_Guy$.prototype.draw__V = (function() {
+  if (this.keys__scm_Set().apply__O__Z(37)) {
+    this.x_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.x__Les_tmoor_scanvas_Fraction()).$minus__O__O(this.gravity__Les_tmoor_scanvas_Fraction().$times__I__Les_tmoor_scanvas_Fraction(5))))
+  };
+  if (this.keys__scm_Set().apply__O__Z(39)) {
+    this.x_$eq__Les_tmoor_scanvas_Fraction__V($as_Les_tmoor_scanvas_Fraction($m_Les_tmoor_scanvas_Fraction$FractionComparisonOps$().mkNumericOps__O__s_math_Fractional$FractionalOps(this.x__Les_tmoor_scanvas_Fraction()).$plus__O__O(this.gravity__Les_tmoor_scanvas_Fraction().$times__I__Les_tmoor_scanvas_Fraction(5))))
+  };
   this.drawSkin__O()
 });
+function $as_Ldevleague_Guy$(obj) {
+  return (((obj instanceof $c_Ldevleague_Guy$) || (obj === null)) ? obj : $throwClassCastException(obj, "devleague.Guy$"))
+}
+function $isArrayOf_Ldevleague_Guy$(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Ldevleague_Guy$)))
+}
+function $asArrayOf_Ldevleague_Guy$(obj, depth) {
+  return (($isArrayOf_Ldevleague_Guy$(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ldevleague.Guy$;", depth))
+}
 var $d_Ldevleague_Guy$ = new $TypeData().initClass({
   Ldevleague_Guy$: 0
 }, false, "devleague.Guy$", {
@@ -17727,6 +17433,16 @@ function $f_sc_LinearSeqOps__exists__F1__Z($thiz, p) {
   };
   return false
 }
+function $f_sc_LinearSeqOps__contains__O__Z($thiz, elem) {
+  var these = $as_sc_LinearSeq($thiz.coll__O());
+  while ((!these.isEmpty__Z())) {
+    if ($m_sr_BoxesRunTime$().equals__O__O__Z(these.head__O(), elem)) {
+      return true
+    };
+    these = $as_sc_LinearSeq(these.tail__O())
+  };
+  return false
+}
 function $f_sc_LinearSeqOps__sameElements__sc_IterableOnce__Z($thiz, that) {
   var x1 = that;
   if ($is_sc_LinearSeq(x1)) {
@@ -17799,36 +17515,8 @@ function $f_sc_SetOps__apply__O__Z($thiz, elem) {
 function $f_sc_SetOps__subsetOf__sc_Set__Z($thiz, that) {
   return $thiz.forall__F1__Z(that)
 }
-function $f_sc_SetOps__concat__sc_IterableOnce__sc_SetOps($thiz, that) {
-  var x1 = that;
-  if ($is_sc_Iterable(x1)) {
-    var x2 = $as_sc_Iterable(x1);
-    var $$x1 = new $c_sc_View$Concat($thiz, x2)
-  } else {
-    var $$x1 = $thiz.iterator__sc_Iterator().concat__F0__sc_Iterator(new $c_sjsr_AnonFunction0(((this\u00f8, that) => (() => $p_sc_SetOps__$anonfun$concat$1__sc_IterableOnce__sc_Iterator(this\u00f8, that)))($thiz, that)))
-  };
-  return $as_sc_SetOps($thiz.fromSpecific__sc_IterableOnce__O($$x1))
-}
-function $f_sc_SetOps__$plus$plus__sc_IterableOnce__sc_SetOps($thiz, that) {
-  return $thiz.concat__sc_IterableOnce__sc_SetOps(that)
-}
-function $p_sc_SetOps__$anonfun$concat$1__sc_IterableOnce__sc_Iterator($thiz, that$1) {
-  return that$1.iterator__sc_Iterator()
-}
 function $f_sc_SetOps__$init$__V($thiz) {
   /*<skip>*/
-}
-function $is_sc_SetOps(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.sc_SetOps)))
-}
-function $as_sc_SetOps(obj) {
-  return (($is_sc_SetOps(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.SetOps"))
-}
-function $isArrayOf_sc_SetOps(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sc_SetOps)))
-}
-function $asArrayOf_sc_SetOps(obj, depth) {
-  return (($isArrayOf_sc_SetOps(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.SetOps;", depth))
 }
 function $f_sc_StrictOptimizedClassTagSeqFactory__$init$__V($thiz) {
   /*<skip>*/
@@ -24951,12 +24639,6 @@ $c_sc_AbstractSet.prototype.apply__O__Z = (function(elem) {
 $c_sc_AbstractSet.prototype.subsetOf__sc_Set__Z = (function(that) {
   return $f_sc_SetOps__subsetOf__sc_Set__Z(this, that)
 });
-$c_sc_AbstractSet.prototype.concat__sc_IterableOnce__sc_SetOps = (function(that) {
-  return $f_sc_SetOps__concat__sc_IterableOnce__sc_SetOps(this, that)
-});
-$c_sc_AbstractSet.prototype.$plus$plus__sc_IterableOnce__sc_SetOps = (function(that) {
-  return $f_sc_SetOps__$plus$plus__sc_IterableOnce__sc_SetOps(this, that)
-});
 $c_sc_AbstractSet.prototype.apply__O__O = (function(v1) {
   return this.apply__O__Z(v1)
 });
@@ -27241,59 +26923,6 @@ $c_sci_HashSet.prototype.excl__O__sci_HashSet = (function(element) {
   var newRootNode = this.rootNode__sci_BitmapIndexedSetNode().removed__O__I__I__I__sci_BitmapIndexedSetNode(element, elementUnimprovedHash, elementHash, 0);
   return $p_sci_HashSet__newHashSetOrThis__sci_BitmapIndexedSetNode__sci_HashSet(this, newRootNode)
 });
-$c_sci_HashSet.prototype.concat__sc_IterableOnce__sci_HashSet = (function(that) {
-  var x1 = that;
-  if ((x1 instanceof $c_sci_HashSet)) {
-    var x2 = $as_sci_HashSet(x1);
-    if (this.isEmpty__Z()) {
-      return x2
-    } else {
-      var newNode = this.rootNode__sci_BitmapIndexedSetNode().concat__sci_SetNode__I__sci_BitmapIndexedSetNode(x2.rootNode__sci_BitmapIndexedSetNode(), 0);
-      return (Object.is(newNode, x2.rootNode__sci_BitmapIndexedSetNode()) ? x2 : $p_sci_HashSet__newHashSetOrThis__sci_BitmapIndexedSetNode__sci_HashSet(this, newNode))
-    }
-  } else if ((x1 instanceof $c_scm_HashSet)) {
-    var x3 = $as_scm_HashSet(x1);
-    var iter = x3.nodeIterator__sc_Iterator();
-    var current = this.rootNode__sci_BitmapIndexedSetNode();
-    while (iter.hasNext__Z()) {
-      var next = $as_scm_HashSet$Node(iter.next__O());
-      var originalHash = x3.unimproveHash__I__I(next.hash__I());
-      var improved = $m_sc_Hashing$().improve__I__I(originalHash);
-      current = current.updated__O__I__I__I__sci_BitmapIndexedSetNode(next.key__O(), originalHash, improved, 0);
-      if ((!Object.is(current, this.rootNode__sci_BitmapIndexedSetNode()))) {
-        var shallowlyMutableNodeMap = $m_sci_Node$().bitposFrom__I__I($m_sci_Node$().maskFrom__I__I__I(improved, 0));
-        while (iter.hasNext__Z()) {
-          var next$2 = $as_scm_HashSet$Node(iter.next__O());
-          var originalHash$2 = x3.unimproveHash__I__I(next$2.hash__I());
-          var improved$2 = $m_sc_Hashing$().improve__I__I(originalHash$2);
-          shallowlyMutableNodeMap = current.updateWithShallowMutations__O__I__I__I__I__I(next$2.key__O(), originalHash$2, improved$2, 0, shallowlyMutableNodeMap)
-        };
-        return new $c_sci_HashSet(current)
-      }
-    };
-    return this
-  } else {
-    var iter$2 = that.iterator__sc_Iterator();
-    var current$2 = this.rootNode__sci_BitmapIndexedSetNode();
-    while (iter$2.hasNext__Z()) {
-      var element = iter$2.next__O();
-      var originalHash$3 = $s_sr_Statics__anyHash__O__I(element);
-      var improved$3 = $m_sc_Hashing$().improve__I__I(originalHash$3);
-      current$2 = current$2.updated__O__I__I__I__sci_BitmapIndexedSetNode(element, originalHash$3, improved$3, 0);
-      if ((!Object.is(current$2, this.rootNode__sci_BitmapIndexedSetNode()))) {
-        var shallowlyMutableNodeMap$2 = $m_sci_Node$().bitposFrom__I__I($m_sci_Node$().maskFrom__I__I__I(improved$3, 0));
-        while (iter$2.hasNext__Z()) {
-          var element$2 = iter$2.next__O();
-          var originalHash$4 = $s_sr_Statics__anyHash__O__I(element$2);
-          var improved$4 = $m_sc_Hashing$().improve__I__I(originalHash$4);
-          shallowlyMutableNodeMap$2 = current$2.updateWithShallowMutations__O__I__I__I__I__I(element$2, originalHash$4, improved$4, 0, shallowlyMutableNodeMap$2)
-        };
-        return new $c_sci_HashSet(current$2)
-      }
-    };
-    return this
-  }
-});
 $c_sci_HashSet.prototype.tail__sci_HashSet = (function() {
   return $as_sci_HashSet(this.$minus__O__sci_SetOps(this.head__O()))
 });
@@ -27344,9 +26973,6 @@ $c_sci_HashSet.prototype.filterImpl__F1__Z__O = (function(pred, isFlipped) {
 });
 $c_sci_HashSet.prototype.tail__O = (function() {
   return this.tail__sci_HashSet()
-});
-$c_sci_HashSet.prototype.concat__sc_IterableOnce__sc_SetOps = (function(that) {
-  return this.concat__sc_IterableOnce__sci_HashSet(that)
 });
 $c_sci_HashSet.prototype.excl__O__sci_SetOps = (function(elem) {
   return this.excl__O__sci_HashSet(elem)
@@ -27580,6 +27206,9 @@ $c_sci_LazyList.prototype.apply__I__O = (function(n) {
 });
 $c_sci_LazyList.prototype.exists__F1__Z = (function(p) {
   return $f_sc_LinearSeqOps__exists__F1__Z(this, p)
+});
+$c_sci_LazyList.prototype.contains__O__Z = (function(elem) {
+  return $f_sc_LinearSeqOps__contains__O__Z(this, elem)
 });
 $c_sci_LazyList.prototype.sameElements__sc_IterableOnce__Z = (function(that) {
   return $f_sc_LinearSeqOps__sameElements__sc_IterableOnce__Z(this, that)
@@ -27840,6 +27469,9 @@ $c_sci_Stream.prototype.apply__I__O = (function(n) {
 });
 $c_sci_Stream.prototype.exists__F1__Z = (function(p) {
   return $f_sc_LinearSeqOps__exists__F1__Z(this, p)
+});
+$c_sci_Stream.prototype.contains__O__Z = (function(elem) {
+  return $f_sc_LinearSeqOps__contains__O__Z(this, elem)
 });
 $c_sci_Stream.prototype.sameElements__sc_IterableOnce__Z = (function(that) {
   return $f_sc_LinearSeqOps__sameElements__sc_IterableOnce__Z(this, that)
@@ -28178,6 +27810,9 @@ $c_sjsr_WrappedVarArgs.prototype.indexWhere__F1__I__I = (function(p, from) {
 });
 $c_sjsr_WrappedVarArgs.prototype.indexOf__O__I__I = (function(elem, from) {
   return $f_sc_SeqOps__indexOf__O__I__I(this, elem, from)
+});
+$c_sjsr_WrappedVarArgs.prototype.contains__O__Z = (function(elem) {
+  return $f_sc_SeqOps__contains__O__Z(this, elem)
 });
 $c_sjsr_WrappedVarArgs.prototype.isEmpty__Z = (function() {
   return $f_sc_SeqOps__isEmpty__Z(this)
@@ -28985,6 +28620,15 @@ $c_sci_Range.prototype.drop__I__sci_Range = (function(n) {
 });
 $c_sci_Range.prototype.contains__I__Z = (function(x) {
   return (((x === this.end__I()) && (!this.isInclusive__Z())) ? false : ((this.step__I() > 0) ? (((x < this.start__I()) || (x > this.end__I())) ? false : ((this.step__I() === 1) || ($intMod(((x - this.start__I()) | 0), this.step__I()) === 0))) : (((x < this.end__I()) || (x > this.start__I())) ? false : ((this.step__I() === (-1)) || ($intMod(((x - this.start__I()) | 0), this.step__I()) === 0)))))
+});
+$c_sci_Range.prototype.contains__O__Z = (function(elem) {
+  var x1 = elem;
+  if ($isInt(x1)) {
+    var x2 = $uI(x1);
+    return this.contains__I__Z(x2)
+  } else {
+    return $f_sc_SeqOps__contains__O__Z(this, elem)
+  }
 });
 $c_sci_Range.prototype.max__s_math_Ordering__I = (function(ord) {
   return (Object.is(ord, $m_s_math_Ordering$Int$()) ? ((this.step__I() > 0) ? this.last__I() : this.head__I()) : ($m_s_math_Ordering$Int$().isReverseOf__s_math_Ordering__Z(ord) ? ((this.step__I() > 0) ? this.head__I() : this.last__I()) : $uI($f_sc_IterableOnceOps__max__s_math_Ordering__O(this, ord))))
@@ -30823,6 +30467,16 @@ $c_sci_List.prototype.exists__F1__Z = (function(p) {
   var these = this;
   while ((!these.isEmpty__Z())) {
     if ($uZ(p.apply__O__O(these.head__O()))) {
+      return true
+    };
+    these = $as_sci_List(these.tail__O())
+  };
+  return false
+});
+$c_sci_List.prototype.contains__O__Z = (function(elem) {
+  var these = this;
+  while ((!these.isEmpty__Z())) {
+    if ($m_sr_BoxesRunTime$().equals__O__O__Z(these.head__O(), elem)) {
       return true
     };
     these = $as_sci_List(these.tail__O())

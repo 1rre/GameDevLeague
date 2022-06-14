@@ -35,5 +35,8 @@ trait Gravitational { this: Template =>
       y = ny
       dy = terminal min dy + gravity
       println(s"Next: $nx, $ny")
+    for (b <- blocks if !(b excludes this))
+      if (nx + w > b.l && nx < b.r && ny + h > b.t && ny < b.b)
+        println(s"Intersection @ $nx, $ny between $this and $b")
   }
 }

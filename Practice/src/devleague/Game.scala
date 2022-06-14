@@ -3,10 +3,10 @@ import es.tmoor.scanvas._, BoundingBox._, rendering._
 import org.scalajs.dom.KeyCode
 
 object Game extends SCanvas("game", 25, 640, 480) {
-  blocks += Block(0¦1, 0¦1, 0¦1, 1¦1) // Left wall
-  blocks += Block(0¦1, 0¦1, 0¦1, 1¦1) // Right wall
-  blocks += Block(0¦1, 0¦1, 0¦1, 1¦1) // Top ceiling
-  blocks += Block(0¦1, 0¦1, 0¦1, 1¦1) // Bottom floor
+  blocks += Block[CollideAll](0¦1, 0¦1, 0¦1, 1¦1) // Left wall
+  blocks += Block[CollideAll](0¦1, 0¦1, 0¦1, 1¦1) // Right wall
+  blocks += Block[CollideAll](0¦1, 0¦1, 0¦1, 1¦1) // Top ceiling
+  blocks += Block[CollideAll](0¦1, 0¦1, 0¦1, 1¦1) // Bottom floor
   val backgroundColour = Colour(0xbff2fd)
   def draw(): Unit = {
     context.Fill.colour = backgroundColour

@@ -34,6 +34,8 @@ object Guy extends SubTemplate with Gravitational {
   }
 
   def draw(): Unit = {
+    if (keys(KeyCode.Left)) x -= gravity * 5
+    if (keys(KeyCode.Right)) x += gravity * 5
     // println(s"Guy @ $bounds")
     drawSkin()
   }

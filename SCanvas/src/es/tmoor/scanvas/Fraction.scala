@@ -37,8 +37,7 @@ object Fraction:
     def toDouble(x: Fraction): Double = (x.num.toDouble / x.den.toDouble)
 
 
-implicit class i2f(i: Int):
-  implicit def ¦(that: Int): Fraction = Fraction(i, that)
+extension (i: Int) def ¦(that: Int) = Fraction(that, i)
 
 class Fraction private (val num: Long, val den: Long):
   override def toString = s"$num/$den"
